@@ -15,8 +15,12 @@ module write_address(ACLK,ARESETn,AWVALID, AWREADY, i_AWADDR, o_AWADDR, AWPROT);
 		if (AWVALID && AWREADY) begin
 			o_AWADDR <= i_AWADDR;
 		end
+		else o_AWADDR <= 0;
 	end
 endmodule
+
+
+
 module write_address_tb;
 	reg ACLK;
 	reg ARESETn;
@@ -40,8 +44,11 @@ module write_address_tb;
 initial
 begin
 ACLK=1'b0;
-	forever #2 ACLK<=~ACLK;
+forever #3 ACLK<=~ACLK;
 end
 endmodule
 			
+
+		
+
 	
