@@ -5,45 +5,36 @@ input WVALID;
 input WREADY;
 input [31:0] i_WDATA;
 output reg [31:0] o_WDATA;
-input [3:0] WSTRB;         // Check
+input [3:0] WSTRB;         
 
-wire [31:0] temp_WDATA;
+reg [31:0] temp_WDATA;
 	
 	
 always @(posedge ARESETn) begin    // RESET
 o_WDATA <= 0;
 end
 
-always @(i_WDATA) begin
-temp_WDATA=0;
-case (WSTRB)
-1'bxxx1:
-temp_WDATA[3:0]=4'b1111;
-1'bxx1x:
-temp_WDATA[7:4]=4'b1111;
-1'bx1xx:
-temp_WDATA[11:8]=4'b1111;
-1'b1xxx:
-temp_WDATA[15:12]=4'b1111;
+always @(WSTRB) begin
+temp_WDATA=32'h0;
+casex (WSTRB)
+4'b1???: temp_WDATA[31:24]=8'b11111111;
+4'b?1??: temp_WDATA[23:16]=8'b11111111;
+4'b??1?: temp_WDATA[15:8]=8'b11111111;
+4'b???1: temp_WDATA[7:0]=8'b11111111;
 default:
 temp_WDATA=0;
 endcase
-i_WDATA=i_WDATA*temp_WDATA;
+temp_WDATA=i_WDATA&temp_WDATA;
 end
 
 
 	
 always @(posedge ACLK) begin       //Hand Shaking and addr sending
 if (WVALID && WREADY) 
-o_WDATA <= i_WDATA;
+o_WDATA <= temp_WDATA;
 		
 else 
 o_WDATA <= 0;
 end
-	
-	
-wdata = 32'b000zzz
-	
-	
 	
 endmodule	
