@@ -1,0 +1,22 @@
+module write_data (ACLK, ARESETn,WVALID, WREADY, i_WDATA, o_WDATA, WSTRB);
+	input ACLK;
+	input ARESETn;
+	input WVALID;
+	input WREADY;
+	input [31:0] i_WDATA;
+	output reg [31:0] o_WDATA;
+	input [3:0] WSTRB;         // Check
+	
+	always @(posedge ARESETn) begin    // RESET
+		o_WDATA <= 0;
+	end
+	
+	always @(posedge ACLK) begin       //Hand Shaking and addr sending
+		if (WVALID && WREADY) 
+		o_WDATA <= i_WDATA;
+		
+		else 
+		o_WDATA <= 0;
+	
+	end
+endmodule	

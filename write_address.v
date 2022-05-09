@@ -12,15 +12,11 @@ module write_address(ACLK,ARESETn,AWVALID, AWREADY, i_AWADDR, o_AWADDR, AWPROT);
 	end
 	
 	always @(posedge ACLK) begin       //Hand Shaking and addr sending
-		if (AWVALID && AWREADY) begin
-			o_AWADDR <= i_AWADDR;
-		end
-		else o_AWADDR <= 0;
-	end
-endmodule
-
-			
-
+		if (AWVALID && AWREADY) 
+		o_AWADDR <= i_AWADDR;
 		
-
+		else 
+		o_AWADDR <= 0;
 	
+	end
+endmodule	
