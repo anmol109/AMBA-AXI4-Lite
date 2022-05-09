@@ -15,7 +15,9 @@ module write_address(ACLK,ARESETn,AWVALID, AWREADY, i_AWADDR, o_AWADDR, AWPROT);
 		if (AWVALID && AWREADY) begin
 			o_AWADDR <= i_AWADDR;
 		end
-		else o_AWADDR <= 0;
+		else begin 
+		o_AWADDR <= 0;
+		end
 	end
 endmodule
 
