@@ -1,6 +1,6 @@
 Analysis & Synthesis report for AXI_lite
-Mon May 09 21:43:43 2022
-Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Mon May 09 21:41:22 2022
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
 ---------------------
@@ -37,8 +37,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Mon May 09 21:43:43 2022           ;
-; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Analysis & Synthesis Status        ; Failed - Mon May 09 21:41:21 2022           ;
+; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; AXI_lite                                    ;
 ; Top-level Entity Name              ; AXI_lite                                    ;
 ; Family                             ; MAX 10                                      ;
@@ -147,8 +147,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -163,19 +163,19 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Mon May 09 21:43:33 2022
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Mon May 09 21:41:13 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off AXI_lite -c AXI_lite
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Error (10171): Verilog HDL syntax error at AXI_lite.v(1) near end of file ;  expecting "endmodule" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 1
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Error (10171): Verilog HDL syntax error at AXI_lite.v(1) near end of file ;  expecting "endmodule" File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 1
 Info (12021): Found 0 design units, including 0 entities, in source file axi_lite.v
 Info (12021): Found 1 design units, including 1 entities, in source file write_address.v
-    Info (12023): Found entity 1: write_address File: D:/Workspace/AMBA-AXI4-Lite/write_address.v Line: 1
+    Info (12023): Found entity 1: write_address File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/write_address.v Line: 1
 Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 4705 megabytes
-    Error: Processing ended: Mon May 09 21:43:43 2022
-    Error: Elapsed time: 00:00:10
-    Error: Total CPU time (on all processors): 00:00:26
+    Error: Peak virtual memory: 4704 megabytes
+    Error: Processing ended: Mon May 09 21:41:22 2022
+    Error: Elapsed time: 00:00:09
+    Error: Total CPU time (on all processors): 00:00:19
 
 

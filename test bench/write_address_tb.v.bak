@@ -2,7 +2,7 @@ module write_address_tb;
 	reg ACLK;
 	reg ARESETn;
 	reg AWVALID;
-	reg[31:0] i_AWADDR;
+	reg[7:0] i_AWADDR;
 	reg[2:0] AWPROT;
 	reg AWREADY;
 	wire[31:0] o_AWADDR;
@@ -12,7 +12,7 @@ module write_address_tb;
 	initial
 	begin
 	
-	i_AWADDR = 32'h10;
+	i_AWADDR = 7'b0000zzzz;
 	#5 AWREADY=1'b0;  AWVALID=1'b1;
 	#5 AWREADY=1'b1;  AWVALID=1'b1;
 	#5 AWREADY=1'b1;  AWVALID=1'b1;
