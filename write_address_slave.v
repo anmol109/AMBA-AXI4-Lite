@@ -1,8 +1,8 @@
 module write_address_slave(ACLK,ARESETn, i_AWREADY, o_AWREADY, AWADDR);
 	input ACLK;
 	input ARESETn;
-	output reg o_AWREADY;
 	input i_AWREADY;
+	output reg o_AWREADY;
 	output reg [31:0] AWADDR;
 	//input [2:0] AWPROT;         // Check
 	
