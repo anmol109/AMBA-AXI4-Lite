@@ -30,9 +30,12 @@ module write_address_master(ACLK, ARESETn,i_AWVALID, o_AWVALID, AWREADY, i_AWADD
 		o_AWVALID <=0;
 	end
 	
-	always @(posedge ACLK) begin       //Hand Shaking and addr sending
+	always @(i_AWVALID) begin       //Hand Shaking and addr sending
 		if(i_AWVALID)
 		o_AWVALID<=1;
+		end
+
+	always @(posedge ACLK) begin
 
 		if (o_AWVALID && AWREADY) 
 		o_AWADDR <= i_AWADDR;
@@ -60,10 +63,12 @@ module write_address_slave(ACLK,ARESETn, AWVALID, i_AWREADY, o_AWREADY, i_AWADDR
 		o_AWREADY <=0;
 	end
 	
-	always @(posedge ACLK) begin       //Hand Shaking and addr sending
+	always @(i_AWREADY) begin       //Hand Shaking and addr sending
 		if(i_AWREADY)
 		o_AWREADY<=1;
+		end
 
+	always @(posedge ACLK) begin
 		if (AWVALID && o_AWREADY) 
 		o_AWADDR <= i_AWADDR;
 		

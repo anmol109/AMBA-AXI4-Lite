@@ -8,8 +8,8 @@ output [31:0]o_AWADDR;
 wire o_AREADY, o_AVALID;
 wire [31:0] w_AWADDR;
 
-write_address_slave addr_s(ACLK, ARESETn, o_AWVALID, AWREADY, o_AWREADY, w_AWADDR, o_AWADDR);
 write_address_master addr_m(ACLK, ARESETn, AWVALID, o_AWVALID, o_AWREADY, i_AWADDR, w_AWADDR, AWPROT);
+write_address_slave addr_s(ACLK, ARESETn, o_AWVALID, AWREADY, o_AWREADY, w_AWADDR, o_AWADDR);
 
 endmodule
 
@@ -30,9 +30,12 @@ module write_address_master(ACLK, ARESETn,i_AWVALID, o_AWVALID, AWREADY, i_AWADD
 		o_AWVALID <=0;
 	end
 	
-	always @(posedge ACLK) begin       //Hand Shaking and addr sending
+	always @(i_AWVALID) begin       //Hand Shaking and addr sending
 		if(i_AWVALID)
 		o_AWVALID<=1;
+		end
+
+	always @(posedge ACLK) begin
 
 		if (o_AWVALID && AWREADY) 
 		o_AWADDR <= i_AWADDR;

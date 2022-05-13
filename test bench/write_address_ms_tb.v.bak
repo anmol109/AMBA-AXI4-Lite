@@ -11,6 +11,8 @@ write_address_ms uut(ACLK, ARESETn, AWVALID, AWREADY, i_AWADDR, o_AWADDR, AWPROT
 initial	begin
 i_AWADDR = 32'hffffffff;
 #5 AWREADY=1'b0;  AWVALID=1'b1;
+#5 AWREADY=1'b0;  AWVALID=1'b1;
+#5 AWREADY=1'b1;  AWVALID=1'b1;
 #5 AWREADY=1'b1;  AWVALID=1'b1;
 #5 AWREADY=1'b1;  AWVALID=1'b1;
 #15 $finish;
