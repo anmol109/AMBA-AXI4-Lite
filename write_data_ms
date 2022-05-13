@@ -81,9 +81,9 @@ temp_WDATA=i_WDATA&temp_WDATA;
 end
 
 always @(i_WVALID) begin       //valid signal high
-		if(i_WVALID)
-		o_WVALID<=1;
-		end
+	if(i_WVALID)
+	o_WVALID<=1;
+	end
 	
 always @(posedge ACLK) begin       //Hand Shaking and data sending
 if (o_WVALID && WREADY) 
