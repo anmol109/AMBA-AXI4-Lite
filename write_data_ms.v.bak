@@ -10,7 +10,7 @@ wire [3:0] w_WSTRB;
 wire [31:0] w_WDATA;
 
 write_data_master data1(ACLK, ARESETn,WVALID,o_WVALID, o_WREADY, i_WDATA, w_WDATA, i_WSTRB, w_WSTRB);
-write_data_slave data2(ACLK, ARESETn,WVALID, o_WREADY, i_WREADY, w_WDATA, o_WDATA, w_WSTRB, o_WSTRB);
+write_data_slave data2(ACLK, ARESETn,o_WVALID, o_WREADY, WREADY, w_WDATA, o_WDATA, w_WSTRB, o_WSTRB);
 
 
 endmodule
@@ -27,11 +27,16 @@ output reg [3:0] o_WSTRB;
 output reg o_WVALID;  
 output reg [31:0] o_WDATA;    
 
-wire [31:0]temp_WDATA;
+reg [31:0]temp_WDATA;
 	
 always @(posedge ARESETn) begin    // RESET
 o_WDATA <= 0;
 o_WVALID <=0;
+end
+
+always @(i_WVALID) begin       //valid signal high
+if(i_WVALID)
+o_WVALID<=1;
 end
 
 always @(i_WSTRB) begin
@@ -39,21 +44,34 @@ always @(i_WSTRB) begin
 o_WSTRB=i_WSTRB;
 
 temp_WDATA=32'h0;
-casex (i_WSTRB)
-4'b1???: temp_WDATA[31:24]=8'b11111111;
-4'b?1??: temp_WDATA[23:16]=8'b11111111;
-4'b??1?: temp_WDATA[15:8]=8'b11111111;
-4'b???1: temp_WDATA[7:0]=8'b11111111;
-default:
-temp_WDATA=0;
+case (i_WSTRB)
+4'b1111: temp_WDATA[31:24]=8'b11111111;
+4'b1110: temp_WDATA[23:16]=8'b11111111;
+4'b1101: temp_WDATA[15:8]=8'b11111111;
+4'b1100: temp_WDATA[7:0]=8'b11111111;
+4'b1011: temp_WDATA[31:24]=8'b11111111;
+4'b1010: temp_WDATA[23:16]=8'b11111111;
+4'b1001: temp_WDATA[15:8]=8'b11111111;
+4'b1000: temp_WDATA[7:0]=8'b11111111;
+4'b0111: temp_WDATA[31:24]=8'b11111111;
+4'b0110: temp_WDATA[23:16]=8'b11111111;
+4'b0101: temp_WDATA[15:8]=8'b11111111;
+4'b0100: temp_WDATA[7:0]=8'b11111111;
+4'b0011: temp_WDATA[31:24]=8'b11111111;
+4'b0010: temp_WDATA[23:16]=8'b11111111;
+4'b0001: temp_WDATA[15:8]=8'b11111111;
+4'b0000: temp_WDATA[7:0]=8'b11111111;
+default: temp_WDATA=0;
 endcase
+
+/*if (o_WSTRB == 4'b1xxx) temp_WDATA[31:24]=8'b11111111;
+if (o_WSTRB == 4'bx1xx) temp_WDATA[23:16]=8'b11111111;
+if (o_WSTRB == 4'bxx1x) temp_WDATA[15:8]=8'b11111111;
+if (o_WSTRB == 4'bxxx1) temp_WDATA[7:0]=8'b11111111;
+else temp_WDATA=0;*/
+
 temp_WDATA=i_WDATA&temp_WDATA;
 end
-
-always @(i_WVALID) begin       //valid signal high
-		if(i_WVALID)
-		o_WVALID<=1;
-		end
 	
 always @(posedge ACLK) begin       //Hand Shaking and data sending
 if (o_WVALID && WREADY) 
@@ -70,13 +88,13 @@ module write_data_slave (ACLK, ARESETn,WVALID, o_WREADY, i_WREADY, i_WDATA, o_WD
 input ACLK;
 input ARESETn;
 input WVALID;
-output reg o_WREADY;
 input i_WREADY;
 input [31:0] i_WDATA;
-output reg [31:0] o_WDATA;
-input [3:0] i_WSTRB;         
+input [3:0] i_WSTRB;  
+output reg o_WREADY;
+output reg [31:0] o_WDATA;       
 output reg [3:0] o_WSTRB;
-reg [31:0] temp_WDATA;
+//reg [31:0] temp_WDATA;
 	
 	
 always @(posedge ARESETn) begin    // RESET
@@ -85,17 +103,18 @@ o_WREADY <= 0;
 o_WSTRB <= 0;
 end
 
-always @(i_WSTRB) begin
-o_WSTRB <= i_WSTRB;
-end
-always @(i_WREADY) begin       //valid signal high
+always @(i_WREADY) begin       //ready signal high
 if(i_WREADY)
 o_WREADY<=1;
+end
+
+always @(i_WSTRB) begin
+o_WSTRB <= i_WSTRB;
 end
 	
 always @(posedge ACLK) begin       //Hand Shaking and data sending
 if (o_WREADY && WVALID) 
-o_WDATA <= temp_WDATA;
+o_WDATA <= i_WDATA;
 		
 else 
 o_WDATA <= 0;

@@ -10,13 +10,16 @@ wire [31:0]o_WDATA;
 write_data_ms uut(ACLK, ARESETn,WVALID, WREADY, i_WDATA, o_WDATA, i_WSTRB, o_WSTRB);
 
 initial	begin
-i_AWADDR = 32'hffffffff;
-#5 AWREADY=1'b0;  AWVALID=1'b1;
-#5 AWREADY=1'b0;  AWVALID=1'b1;
-#5 AWREADY=1'b1;  AWVALID=1'b0;
-#5 AWREADY=1'b1;  AWVALID=1'b1;
-#5 AWREADY=1'b0;  AWVALID=1'b1;
-#20 $finish;
+i_WDATA = 32'hffffffff;
+i_WSTRB = 4'b0000;
+ARESETn = 0;
+#5 WREADY=1'b0;  WVALID=1'b1; 
+#5 WREADY=1'b0;  WVALID=1'b1;
+#5 WREADY=1'b0;  WVALID=1'b1;
+#5 WREADY=1'b1;  WVALID=1'b1; i_WSTRB = 4'b1001;
+#5 WREADY=1'b1;  WVALID=1'b1; i_WSTRB = 4'b1101;
+#5 WREADY=1'b1;  WVALID=1'b1; i_WSTRB = 4'b0111;
+#200 $finish;
 end
 initial begin
 ACLK=1'b0;
