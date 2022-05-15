@@ -43,24 +43,23 @@ always @(i_WSTRB) begin
 
 o_WSTRB=i_WSTRB;
 
-temp_WDATA=32'h0;
 case (i_WSTRB)
-4'b1111: temp_WDATA[31:24]=8'b11111111;
-4'b1110: temp_WDATA[23:16]=8'b11111111;
-4'b1101: temp_WDATA[15:8]=8'b11111111;
-4'b1100: temp_WDATA[7:0]=8'b11111111;
-4'b1011: temp_WDATA[31:24]=8'b11111111;
-4'b1010: temp_WDATA[23:16]=8'b11111111;
-4'b1001: temp_WDATA[15:8]=8'b11111111;
-4'b1000: temp_WDATA[7:0]=8'b11111111;
-4'b0111: temp_WDATA[31:24]=8'b11111111;
-4'b0110: temp_WDATA[23:16]=8'b11111111;
-4'b0101: temp_WDATA[15:8]=8'b11111111;
-4'b0100: temp_WDATA[7:0]=8'b11111111;
-4'b0011: temp_WDATA[31:24]=8'b11111111;
-4'b0010: temp_WDATA[23:16]=8'b11111111;
-4'b0001: temp_WDATA[15:8]=8'b11111111;
-4'b0000: temp_WDATA[7:0]=8'b11111111;
+4'b1111: temp_WDATA = 32'hffffffff;
+4'b1110: temp_WDATA = 32'hffffff00;
+4'b1101: temp_WDATA = 32'hffff00ff;
+4'b1100: temp_WDATA = 32'hffff0000;
+4'b1011: temp_WDATA = 32'hff00ffff;
+4'b1010: temp_WDATA = 32'hff00ff00;
+4'b1001: temp_WDATA = 32'hff0000ff;
+4'b1000: temp_WDATA = 32'hff000000;
+4'b0111: temp_WDATA = 32'h00ffffff;
+4'b0110: temp_WDATA = 32'h00ffff00;
+4'b0101: temp_WDATA = 32'h00fff00f;
+4'b0100: temp_WDATA = 32'h00ff0000;
+4'b0011: temp_WDATA = 32'h0000ffff;
+4'b0010: temp_WDATA = 32'h0000ff00;
+4'b0001: temp_WDATA = 32'h000000ff;
+4'b0000: temp_WDATA = 32'hff000000;
 default: temp_WDATA=0;
 endcase
 

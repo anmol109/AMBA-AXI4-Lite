@@ -37,6 +37,8 @@ end
 always @(i_WVALID) begin       //valid signal high
 if(i_WVALID)
 o_WVALID<=1;
+else
+o_WVALID<=0;
 end
 
 always @(i_WSTRB) begin
