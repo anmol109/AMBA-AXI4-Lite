@@ -1,0 +1,51 @@
+module write_response(ACLK,ARESETn,BRESP, BVALID, BREADY,);
+	input ACLK;
+        input ARESETn;
+        input [1:0] BRESP;
+        input BVALID;
+        output BREADY;
+write_response_master addr_m(ACLK,ARESETn, BVALID, i_BREADY, o_BREADY);
+write_response_slave addr_s(ACLK, ARESETn,i_BVALID, o_BVALID, BREADY);
+endmodule
+
+
+
+
+module write_response_master addr_m(ACLK,ARESETn, BVALID, i_BREADY, o_BREADY);
+	input ACLK;
+	input ARESETn;
+	output reg o_BREADY;
+	input i_BREADY;
+	input BVALID;
+	
+	
+	always @(posedge ARESETn) begin    // RESET
+		
+		o_BREADY <=0;
+	end
+	
+	always @(i_BREADY) begin       //Hand Shaking and addr sending
+		if(i_BREADY)
+		o_BREADY<=1;
+		end
+      
+endmodule
+module write_response_slave addr_s(ACLK, ARESETn,i_BVALID, o_BVALID, BREADY);
+	input ACLK;
+	input ARESETn;
+	input i_AWVALID;
+	input BREADY;
+	output reg o_BVALID;
+	        	
+	always @(posedge ARESETn) begin    // RESET
+		o_BVALID <=0;
+	end
+	
+	always @(i_BVALID) begin       //Hand Shaking and addr sending
+		if(i_BVALID)
+		o_BVALID<=1;
+		end
+
+endmodule	
+
+                    
