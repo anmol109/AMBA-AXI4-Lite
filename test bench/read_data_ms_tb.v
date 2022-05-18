@@ -1,0 +1,28 @@
+module read_data_ms_tb;
+
+reg ACLK, ARESETn;
+reg RVALID, RREADY;
+reg [31:0] i_RDATA;
+reg [1:0] i_RRESP;
+
+wire [31:0] o_RDATA;
+wire [1:0] o_RRESP;
+
+read_data_ms uut(ACLK, ARESETn, RVALID, RREADY, i_RDATA, o_RDATA, i_RRESP, o_RRESP);
+
+initial	begin
+i_RDATA = 32'hffffffff;
+#5 RREADY=1'b0;  RVALID=1'b1;
+#5 RREADY=1'b0;  RVALID=1'b1;
+#5 RREADY=1'b0;  RVALID=1'b1;
+#5 RREADY=1'b1;  RVALID=1'b1;
+#5 RREADY=1'b1;  RVALID=1'b1;
+#5 RREADY=1'b1;  RVALID=1'b1;
+
+#200 $finish;
+end
+initial begin
+ACLK=1'b0;
+forever #3 ACLK<=~ACLK;
+end
+endmodule
