@@ -1,6 +1,6 @@
 module top(ACLK,ARESETn,BREADY, BVALID, i_BRESP, o_BRESP
 ,WVALID, WREADY, i_WDATA, o_WDATA, i_WSTRB, o_WSTRB
- ,AWVALID, AWREADY, i_AWADDR, o_AWADDR, AWPROT);//hello anmol
+ ,AWVALID, AWREADY, i_AWADDR, o_AWADDR, AWPROT);
 //Write Transaction
 	input ACLK;
 	input ARESETn;
