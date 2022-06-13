@@ -4,7 +4,7 @@ input ACLK, ARESETn;
 input ARVALID, ARREADY;
 input [2:0] ARPROT;
 input [31:0] i_ARADDR;
-output reg [31:0] o_ARADDR;
+output [31:0] o_ARADDR;
 
 wire o_ARREADY, o_ARVALID;
 wire [31:0] w_ARADDR;

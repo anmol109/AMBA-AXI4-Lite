@@ -23,7 +23,7 @@ input [1:0] i_BRESP;
 output reg [1:0] o_BRESP;
 output reg o_BREADY;
 	
-always @(negedge ARESETn) begin   //RESET
+always @(posedge ARESETn) begin   //RESET
 o_BREADY <= 0;	
 o_BRESP <= 0;
 end
@@ -50,7 +50,7 @@ input [1:0] i_BRESP;
 output reg o_BVALID;
 output reg [1:0] o_BRESP;
 	        	
-always @(negedge ARESETn) begin    // RESET
+always @(posedge ARESETn) begin    // RESET
 o_BVALID <=0;
 o_BRESP <= 0;
 end

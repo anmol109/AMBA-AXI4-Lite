@@ -1,4 +1,4 @@
-module write_response_ms(ACLK,ARESETn,BRESP, BVALID, BREADY,);
+module write_response_ms(ACLK,ARESETn,BREADY, BVALID, i_BRESP, o_BRESP);
 input ACLK, ARESETn;
 input BVALID, BREADY;
 input [1:0] i_BRESP;
