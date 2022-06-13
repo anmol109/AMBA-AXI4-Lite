@@ -1,6 +1,7 @@
 module top(ACLK,ARESETn,BREADY, BVALID, i_BRESP, o_BRESP
 ,WVALID, WREADY, i_WDATA, o_WDATA, i_WSTRB, o_WSTRB
- ,AWVALID, AWREADY, i_AWADDR, o_AWADDR, AWPROT);
+ ,AWVALID, AWREADY, i_AWADDR, o_AWADDR, AWPROT, ARVALID, ARREADY, ARPROT,
+ i_ARADDR, o_ARADDR, RVALID, RREADY, i_RDATA, i_RRESP,o_RDATA, o_RRESP);
 //Write Transaction
 	input ACLK;
 	input ARESETn;
@@ -15,7 +16,7 @@ module top(ACLK,ARESETn,BREADY, BVALID, i_BRESP, o_BRESP
 	input [3:0] i_WSTRB;  
 	output [3:0] o_WSTRB;
 	output [31:0] o_WDATA;
-	wire o_WVALID, o_WREADY;
+	wire o_WVALID, o_WREADY; 
 	wire [3:0] w_WSTRB;
 	wire [31:0] w_WDATA;
 	input BVALID, BREADY;
@@ -23,6 +24,17 @@ module top(ACLK,ARESETn,BREADY, BVALID, i_BRESP, o_BRESP
 	output [1:0] o_BRESP;
 	wire o_BVALID, o_BREADY;
 	wire [1:0] w_BRESP;
+
+	input ARVALID;
+	input ARREADY;
+	input [2:0] ARPROT;
+	input [31:0] i_ARADDR;
+	output [31:0] o_ARADDR;
+	input RVALID, RREADY;
+	input [31:0] i_RDATA;
+	input [1:0] i_RRESP;
+	output [31:0] o_RDATA;
+	output [1:0] o_RRESP;
 
 	reg[2:0] PS_r, NS_r, PS_w, NS_w;
 	//idle
@@ -42,55 +54,55 @@ module top(ACLK,ARESETn,BREADY, BVALID, i_BRESP, o_BRESP
 	end
 	end
 
-	always@(posedge ACLK)
-	begin
+	//always@(posedge ACLK)
+	//begin
 		case(PS_w)
 		idle_w:begin
-			if(AWVALID)
-			NS_w<=w_addr;
+			if(AWVALID==1'b1)
+			assign NS_w=w_addr;
 			end
 		w_addr:begin
 			write_address_ms addr_w(ACLK, ARESETn, AWVALID, AWREADY, i_AWADDR, o_AWADDR, AWPROT);
 			if(WVALID)begin
-			NS_w<=w_data;
+			assign NS_w=w_data;
 			end
 			end
 		w_data:begin
 			write_data_ms data_w(ACLK, ARESETn,WVALID, WREADY, i_WDATA, o_WDATA, i_WSTRB, o_WSTRB);
 			if(BVALID) begin
-			NS_w<=w_resp;
+			assign NS_w=w_resp;
 			end
 			end
 		w_resp:begin
 			write_response_ms resp_w(ACLK,ARESETn,BREADY, BVALID, i_BRESP, o_BRESP);
 			if(o_BRESP==2'b00)
-			NS_w<=idle_w;
+			assign NS_w=idle_w;
 			else
-			NS_w<=w_addr;
+			assign NS_w=w_addr;
 			end
 		endcase
-	end
-	always@(posedge ACLK)
-	begin
+	//end
+	//always@(posedge ACLK)
+	//begin
 		case(PS_r)
 		idle_r:begin
 			if(ARVALID)
-			PS_r<=r_addr;
+			assign PS_r=r_addr;
 			end
 		r_addr:begin
 			read_address_ms addr_r(ACLK, ARESETn, ARVALID, ARREADY,i_ARADDR, o_ARADDR, ARPROT);
 			if(RVALID)
-			PS_r<=r_data;
+			assign PS_r=r_data;
 			end
 		r_data:begin
 			read_data_ms data_r(ACLK, ARESETn, RVALID, RREADY, i_RDATA, o_RDATA, i_RRESP, o_RRESP);
 			if(o_RRESP==0)
-			PS_r<=r_addr;
+			assign PS_r=r_addr;
 			else
-			PS_r<=idle_r;
+			assign PS_r=idle_r;
 			end
 		endcase
-	end
+	//end
 endmodule
 
 
