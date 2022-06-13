@@ -40,6 +40,7 @@ module top(ACLK,ARESETn,BREADY, BVALID, i_BRESP, o_BRESP
 	PS_w<=NS_w;
 	PS_r<=NS_r;
 	end
+	end
 
 	always@(posedge ACLK)
 	begin
