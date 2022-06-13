@@ -1,4 +1,4 @@
-module top_ms(ACLK,ARESETn,BREADY, BVALID, i_BRESP, o_BRESP
+module top(ACLK,ARESETn,BREADY, BVALID, i_BRESP, o_BRESP
 ,WVALID, WREADY, i_WDATA, o_WDATA, i_WSTRB, o_WSTRB
  ,AWVALID, AWREADY, i_AWADDR, o_AWADDR, AWPROT);
 //Write Transaction
@@ -24,7 +24,7 @@ module top_ms(ACLK,ARESETn,BREADY, BVALID, i_BRESP, o_BRESP
 	wire o_BVALID, o_BREADY;
 	wire [1:0] w_BRESP;
 
-	reg[2:0] PS_r, NS_r, PS_w, NS_r;
+	reg[2:0] PS_r, NS_r, PS_w, NS_w;
 	//idle
 	parameter idle_w=3'b000, idle_r=3'b001, w_addr=3'b010, w_data=3'b011, w_resp=3'b100, r_addr=3'b101 , r_data=3'b110;
 	
@@ -39,6 +39,7 @@ module top_ms(ACLK,ARESETn,BREADY, BVALID, i_BRESP, o_BRESP
 	begin
 	PS_w<=NS_w;
 	PS_r<=NS_r;
+	end
 	end
 
 	always@(posedge ACLK)
@@ -78,4 +79,23 @@ module top_ms(ACLK,ARESETn,BREADY, BVALID, i_BRESP, o_BRESP
 			end
 		r_addr:begin
 			read_address_ms addr_r(ACLK, ARESETn, ARVALID, ARREADY,i_ARADDR, o_ARADDR, ARPROT);
-			if(
+			if(RVALID)
+			PS_r<=r_data;
+			end
+		r_data:begin
+			read_data_ms data_r(ACLK, ARESETn, RVALID, RREADY, i_RDATA, o_RDATA, i_RRESP, o_RRESP);
+			if(o_RRESP==0)
+			PS_r<=r_addr;
+			else
+			PS_r<=idle_r;
+			end
+		endcase
+	end
+endmodule
+
+
+
+
+
+
+
