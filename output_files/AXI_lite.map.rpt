@@ -1,6 +1,6 @@
 Analysis & Synthesis report for AXI_lite
-Mon May 09 21:41:22 2022
-Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Tue Jun 14 13:30:40 2022
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
 ---------------------
@@ -37,8 +37,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Mon May 09 21:41:21 2022           ;
-; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Analysis & Synthesis Status        ; Failed - Tue Jun 14 13:30:40 2022           ;
+; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; AXI_lite                                    ;
 ; Top-level Entity Name              ; AXI_lite                                    ;
 ; Family                             ; MAX 10                                      ;
@@ -61,7 +61,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                           ; 10M50DAF256C7G     ;                    ;
+; Device                                                           ; 10M50DAF484C7G     ;                    ;
 ; Top-level entity name                                            ; AXI_lite           ; AXI_lite           ;
 ; Family name                                                      ; MAX 10             ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
@@ -147,8 +147,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 12          ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -163,19 +163,89 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Mon May 09 21:41:13 2022
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Tue Jun 14 13:30:31 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off AXI_lite -c AXI_lite
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
-Error (10171): Verilog HDL syntax error at AXI_lite.v(1) near end of file ;  expecting "endmodule" File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 1
-Info (12021): Found 0 design units, including 0 entities, in source file axi_lite.v
-Info (12021): Found 1 design units, including 1 entities, in source file write_address.v
-    Info (12023): Found entity 1: write_address File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/write_address.v Line: 1
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 4704 megabytes
-    Error: Processing ended: Mon May 09 21:41:22 2022
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Warning (10275): Verilog HDL Module Instantiation warning at AXI_lite.v(42): ignored dangling comma in List of Port Connections File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 42
+Info (12021): Found 1 design units, including 1 entities, in source file axi_lite.v
+    Info (12023): Found entity 1: AXI_lite File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 1
+Info (12021): Found 3 design units, including 3 entities, in source file write_address_ms.v
+    Info (12023): Found entity 1: write_address_ms File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 1
+    Info (12023): Found entity 2: write_address_master File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 18
+    Info (12023): Found entity 3: write_address_slave File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 58
+Info (12021): Found 3 design units, including 3 entities, in source file write_data_ms.v
+    Info (12023): Found entity 1: write_data_ms File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 1
+    Info (12023): Found entity 2: write_data_master File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 19
+    Info (12023): Found entity 3: write_data_slave File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 88
+Info (12021): Found 3 design units, including 3 entities, in source file write_response_ms.v
+    Info (12023): Found entity 1: write_response_ms File: D:/Workspace/AMBA-AXI4-Lite/write_response_ms.v Line: 1
+    Info (12023): Found entity 2: write_response_master File: D:/Workspace/AMBA-AXI4-Lite/write_response_ms.v Line: 18
+    Info (12023): Found entity 3: write_response_slave File: D:/Workspace/AMBA-AXI4-Lite/write_response_ms.v Line: 45
+Info (12021): Found 3 design units, including 3 entities, in source file read_address_ms.v
+    Info (12023): Found entity 1: read_address_ms File: D:/Workspace/AMBA-AXI4-Lite/read_address_ms.v Line: 1
+    Info (12023): Found entity 2: read_address_master File: D:/Workspace/AMBA-AXI4-Lite/read_address_ms.v Line: 18
+    Info (12023): Found entity 3: read_address_slave File: D:/Workspace/AMBA-AXI4-Lite/read_address_ms.v Line: 46
+Info (12021): Found 3 design units, including 3 entities, in source file read_data_ms.v
+    Info (12023): Found entity 1: read_data_ms File: D:/Workspace/AMBA-AXI4-Lite/read_data_ms.v Line: 1
+    Info (12023): Found entity 2: read_data_master File: D:/Workspace/AMBA-AXI4-Lite/read_data_ms.v Line: 19
+    Info (12023): Found entity 3: read_data_slave File: D:/Workspace/AMBA-AXI4-Lite/read_data_ms.v Line: 48
+Warning (10236): Verilog HDL Implicit Net warning at AXI_lite.v(42): created implicit net for "BRESP" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 42
+Warning (10236): Verilog HDL Implicit Net warning at write_address_ms.v(11): created implicit net for "o_AWVALID" File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 11
+Warning (10236): Verilog HDL Implicit Net warning at write_address_ms.v(11): created implicit net for "o_AWREADY" File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 11
+Warning (10236): Verilog HDL Implicit Net warning at read_data_ms.v(14): created implicit net for "o_RVALID" File: D:/Workspace/AMBA-AXI4-Lite/read_data_ms.v Line: 14
+Warning (10236): Verilog HDL Implicit Net warning at read_data_ms.v(14): created implicit net for "o_RREADY" File: D:/Workspace/AMBA-AXI4-Lite/read_data_ms.v Line: 14
+Info (12127): Elaborating entity "AXI_lite" for the top level hierarchy
+Warning (10034): Output port "o_BRESP" at AXI_lite.v(24) has no driver File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 24
+Info (12128): Elaborating entity "write_address_ms" for hierarchy "write_address_ms:wa" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 40
+Warning (10036): Verilog HDL or VHDL warning at write_address_ms.v(8): object "o_AREADY" assigned a value but never read File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 8
+Warning (10036): Verilog HDL or VHDL warning at write_address_ms.v(8): object "o_AVALID" assigned a value but never read File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 8
+Info (12128): Elaborating entity "write_address_master" for hierarchy "write_address_ms:wa|write_address_master:addr_m" File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 11
+Error (10122): Verilog HDL Event Control error at write_address_ms.v(30): mixed single- and double-edge expressions are not supported File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Warning (10235): Verilog HDL Always Construct warning at write_address_ms.v(46): variable "o_AWVALID" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 46
+Warning (10235): Verilog HDL Always Construct warning at write_address_ms.v(46): variable "AWREADY" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 46
+Warning (10235): Verilog HDL Always Construct warning at write_address_ms.v(47): variable "i_AWADDR" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 47
+Warning (10240): Verilog HDL Always Construct warning at write_address_ms.v(30): inferring latch(es) for variable "o_AWADDR", which holds its previous value in one or more paths through the always construct File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Warning (10240): Verilog HDL Always Construct warning at write_address_ms.v(30): inferring latch(es) for variable "o_AWVALID", which holds its previous value in one or more paths through the always construct File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWVALID" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[0]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[1]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[2]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[3]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[4]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[5]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[6]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[7]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[8]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[9]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[10]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[11]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[12]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[13]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[14]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[15]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[16]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[17]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[18]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[19]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[20]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[21]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[22]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[23]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[24]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[25]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[26]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[27]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[28]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[29]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[30]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Info (10041): Inferred latch for "o_AWADDR[31]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
+Error (12152): Can't elaborate user hierarchy "write_address_ms:wa|write_address_master:addr_m" File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 11
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 15 warnings
+    Error: Peak virtual memory: 4705 megabytes
+    Error: Processing ended: Tue Jun 14 13:30:40 2022
     Error: Elapsed time: 00:00:09
-    Error: Total CPU time (on all processors): 00:00:19
+    Error: Total CPU time (on all processors): 00:00:22
 
 
