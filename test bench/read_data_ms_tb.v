@@ -12,12 +12,17 @@ read_data_ms uut(ACLK, ARESETn, RVALID, RREADY, i_RDATA, o_RDATA, i_RRESP, o_RRE
 
 initial	begin
 i_RDATA = 32'hffffffff;
+i_RRESP=2'b01;
 #5 RREADY=1'b0;  RVALID=1'b1;
 #5 RREADY=1'b0;  RVALID=1'b1;
 #5 RREADY=1'b0;  RVALID=1'b1;
 #5 RREADY=1'b1;  RVALID=1'b1;
 #5 RREADY=1'b1;  RVALID=1'b1;
-#5 RREADY=1'b1;  RVALID=1'b1;
+#5 RREADY=1'b1;  RVALID=1'b0;
+#5 RREADY=1'b1;  RVALID=1'b0;
+#5 RREADY=1'b1;  RVALID=1'b0;
+#5 RREADY=1'b1;  RVALID=1'b0;
+
 
 #200 $finish;
 end

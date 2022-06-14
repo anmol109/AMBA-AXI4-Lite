@@ -532,6 +532,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "o_RRESP[0]",
+					"strict" : false
+				},
+				{
+					"name" : "o_RRESP[1]",
+					"strict" : false
+				},
+				{
 					"name" : "i_WDATA[0]",
 					"strict" : false
 				},
@@ -693,10 +701,6 @@
 				},
 				{
 					"name" : "AWREADY",
-					"strict" : false
-				},
-				{
-					"name" : "RREADY",
 					"strict" : false
 				},
 				{
@@ -972,10 +976,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "RVALID",
-					"strict" : false
-				},
-				{
 					"name" : "i_RDATA[1]",
 					"strict" : false
 				},
@@ -1097,6 +1097,22 @@
 				},
 				{
 					"name" : "i_RDATA[31]",
+					"strict" : false
+				},
+				{
+					"name" : "i_RRESP[0]",
+					"strict" : false
+				},
+				{
+					"name" : "i_RRESP[1]",
+					"strict" : false
+				},
+				{
+					"name" : "RVALID",
+					"strict" : false
+				},
+				{
+					"name" : "RREADY",
 					"strict" : false
 				}
 			]
