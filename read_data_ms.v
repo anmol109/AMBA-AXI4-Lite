@@ -28,7 +28,7 @@ output reg [1:0] o_RRESP;    //RESP remaining
 output reg [31:0] o_RDATA; 
 
 
-always @ (posedge ACLK) begin
+always @ (posedge ACLK or posedge ARESETn) begin
 o_RRESP<=i_RRESP;
 o_RDATA <= i_RDATA;
 o_RREADY <= i_RREADY;
@@ -59,7 +59,7 @@ else
 o_RVALID=0;
 end*/
 
-always @ (posedge ACLK)
+always @ (posedge ACLK or posedge ARESETn)
 begin
 o_RVALID <= i_RVALID;
 if(ARESETn)

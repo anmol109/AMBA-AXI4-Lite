@@ -25,8 +25,8 @@ output reg o_ARVALID;
 output reg [31:0] o_ARADDR;
 
 
-always @(posedge ACLK) begin
-o_ARVALID = i_ARVALID;
+always @(posedge ACLK  or posedge ARESETn) begin
+o_ARVALID <= i_ARVALID;
 
 if(ARESETn) begin
 o_ARADDR <= 0;
