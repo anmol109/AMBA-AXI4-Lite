@@ -28,20 +28,10 @@ output reg o_WVALID;
 output reg [31:0] o_WDATA;    
 
 reg [31:0]temp_WDATA;
-	
-always @(posedge ARESETn) begin    // RESET
-o_WDATA <= 0;
-o_WVALID <=0;
-end
 
-always @(i_WVALID) begin       //valid signal high
-if(i_WVALID)
-o_WVALID<=1;
-else
-o_WVALID<=0;
-end
+always @(i_WVALID) o_WVALID <= i_WVALID;
 
-always @(i_WSTRB) begin
+always @(i_WSTRB) begin       //Strobe function
 
 o_WSTRB=i_WSTRB;
 
@@ -74,12 +64,14 @@ else temp_WDATA=0;*/
 temp_WDATA=i_WDATA&temp_WDATA;
 end
 	
-always @(posedge ACLK) begin       //Hand Shaking and data sending
-if (o_WVALID && WREADY) 
-o_WDATA <= temp_WDATA;
-		
-else 
+always @(posedge ACLK or posedge ARESETn) begin    // RESET
+if(ARESETn) begin
 o_WDATA <= 0;
+o_WVALID <=0;
+end
+
+if (o_WVALID && WREADY) o_WDATA <= temp_WDATA;
+else o_WDATA <= 0;
 end
 	
 endmodule	
@@ -98,27 +90,21 @@ output reg [3:0] o_WSTRB;
 //reg [31:0] temp_WDATA;
 	
 	
-always @(posedge ARESETn) begin    // RESET
+always @(posedge ACLK or posedge ARESETn) begin    // RESET
+if (ARESETn) begin
 o_WDATA <= 0;
 o_WREADY <= 0;
 o_WSTRB <= 0;
 end
 
-always @(i_WREADY) begin       //ready signal high
-if(i_WREADY)
-o_WREADY<=1;
+if (o_WREADY && WVALID) o_WDATA <= i_WDATA;  //Hand Shaking and data sending
+else o_WDATA <= 0;
+
+o_WSTRB <= i_WSTRB;
+
 end
 
-always @(i_WSTRB) begin
-o_WSTRB <= i_WSTRB;
-end
-	
-always @(posedge ACLK) begin       //Hand Shaking and data sending
-if (o_WREADY && WVALID) 
-o_WDATA <= i_WDATA;
-		
-else 
-o_WDATA <= 0;
-end
+always @(i_WREADY)  o_WREADY <= i_WREADY;     //ready signal assigned
+
 	
 endmodule	

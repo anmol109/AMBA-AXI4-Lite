@@ -14,8 +14,8 @@ i_AWADDR = 32'hffffffff;
 #5 AWREADY=1'b0;  AWVALID=1'b1;
 #5 AWREADY=1'b1;  AWVALID=1'b0;
 #5 AWREADY=1'b1;  AWVALID=1'b1;
-#5 AWREADY=1'b0;  AWVALID=1'b1;
-#20 $finish;
+#5 AWREADY=1'b1;  AWVALID=1'b1;
+#100 $finish;
 end
 initial begin
 ACLK=1'b0;
