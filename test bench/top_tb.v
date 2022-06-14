@@ -26,9 +26,9 @@ module top_tb;
 	wire [1:0] o_RRESP;
 
 	top2 top_uut(ACLK,ARESETn,BREADY, BVALID, i_BRESP, o_BRESP
-,WVALID, WREADY, i_WDATA, o_WDATA, i_WSTRB, o_WSTRB
- ,AWVALID, AWREADY, i_AWADDR, o_AWADDR, AWPROT, ARVALID, ARREADY, ARPROT,
- i_ARADDR, o_ARADDR, RVALID, RREADY, i_RDATA, i_RRESP,o_RDATA, o_RRESP);
+		     ,WVALID, WREADY, i_WDATA, o_WDATA, i_WSTRB, o_WSTRB
+		     ,AWVALID, AWREADY, i_AWADDR, o_AWADDR, AWPROT, ARVALID, ARREADY, ARPROT,
+ 		     i_ARADDR, o_ARADDR, RVALID, RREADY, i_RDATA, i_RRESP,o_RDATA, o_RRESP);
 
 
 	initial begin
@@ -36,7 +36,7 @@ module top_tb;
 		forever #5 ACLK=~ACLK;
 	end
 
-	initial begin
+	/*initial begin
 		ARESETn<=1'b0;
 		AWREADY<=1'b0; AWVALID<=1'b0;
 		WVALID<=1'b0; WREADY<=1'b0;
@@ -56,7 +56,27 @@ module top_tb;
 		 AWVALID=1'b1;
 		
 		#100 WVALID=1'b1;#10 WREADY=1'b1;
+	end*/
+
+initial begin
+		ARESETn=1'b0;
+		ARREADY=1'b0; ARVALID=1'b0;
+		RVALID=1'b0; RREADY=1'b0;
+		RVALID=1'b0; RREADY=1'b0;
+		i_ARADDR= 32'hFFFFFFFF;
+		AWPROT= 3'b0;
+		i_RDATA=32'hFFFFFFFF;
+		//i_WSTRB<=4'b1111;
 	end
+initial	begin
+i_ARADDR = 32'hffffffff;
+#5 ARREADY=1'b0;  ARVALID=1'b1;
+#5 ARREADY=1'b0;  ARVALID=1'b1;
+#5 ARREADY=1'b1;  ARVALID=1'b1;
+#5 ARREADY=1'b1;  ARVALID=1'b1;
+#5 ARREADY=1'b1;  ARVALID=1'b0;
+#200 $finish;
+end
 endmodule
 		
 				 
