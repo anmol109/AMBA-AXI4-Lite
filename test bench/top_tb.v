@@ -74,7 +74,7 @@ i_ARADDR = 32'hffffffff;
 #5 ARREADY=1'b0;  ARVALID=1'b1;
 #5 ARREADY=1'b1;  ARVALID=1'b1;
 #5 ARREADY=1'b1;  ARVALID=1'b1;
-#5 ARREADY=1'b1;  ARVALID=1'b0;
+#5 ARREADY=1'b1;  ARVALID=1'b1;
 #200 $finish;
 end
 endmodule

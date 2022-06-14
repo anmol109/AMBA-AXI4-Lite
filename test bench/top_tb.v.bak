@@ -68,17 +68,15 @@ initial begin
 		i_RDATA=32'hFFFFFFFF;
 		//i_WSTRB<=4'b1111;
 	end
-
-	initial begin
-		#10 ARREADY=1'b1; ARVALID=1'b1;
-		
-		// ARREADY=1'b0;
-	//	 ARVALID=1'b0;
-		//#10 ARREADY=1'b1;
-	//	 ARVALID=1'b1;
-		
-		#100 RVALID=1'b1;#10 RREADY=1'b1;
-	end
+initial	begin
+i_ARADDR = 32'hffffffff;
+#5 ARREADY=1'b0;  ARVALID=1'b1;
+#5 ARREADY=1'b0;  ARVALID=1'b1;
+#5 ARREADY=1'b1;  ARVALID=1'b1;
+#5 ARREADY=1'b1;  ARVALID=1'b1;
+#5 ARREADY=1'b1;  ARVALID=1'b0;
+#200 $finish;
+end
 endmodule
 		
 				 
