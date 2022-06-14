@@ -4,6 +4,10 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "o_BRESP[0]",
+					"strict" : false
+				},
+				{
 					"name" : "o_WDATA[0]",
 					"strict" : false
 				},
@@ -540,11 +544,35 @@
 					"strict" : false
 				},
 				{
-					"name" : "i_WDATA[0]",
+					"name" : "ARESETn",
+					"strict" : false
+				},
+				{
+					"name" : "ACLK",
 					"strict" : false
 				},
 				{
 					"name" : "i_WSTRB[0]",
+					"strict" : false
+				},
+				{
+					"name" : "i_WSTRB[1]",
+					"strict" : false
+				},
+				{
+					"name" : "i_WSTRB[2]",
+					"strict" : false
+				},
+				{
+					"name" : "i_WSTRB[3]",
+					"strict" : false
+				},
+				{
+					"name" : "BREADY",
+					"strict" : false
+				},
+				{
+					"name" : "i_WDATA[0]",
 					"strict" : false
 				},
 				{
@@ -553,10 +581,6 @@
 				},
 				{
 					"name" : "WREADY",
-					"strict" : false
-				},
-				{
-					"name" : "ARESETn",
 					"strict" : false
 				},
 				{
@@ -573,18 +597,6 @@
 				},
 				{
 					"name" : "i_WDATA[4]",
-					"strict" : false
-				},
-				{
-					"name" : "i_WSTRB[1]",
-					"strict" : false
-				},
-				{
-					"name" : "i_WSTRB[2]",
-					"strict" : false
-				},
-				{
-					"name" : "i_WSTRB[3]",
 					"strict" : false
 				},
 				{
@@ -696,19 +708,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "ACLK",
-					"strict" : false
-				},
-				{
-					"name" : "AWREADY",
-					"strict" : false
-				},
-				{
 					"name" : "i_AWADDR[0]",
 					"strict" : false
 				},
 				{
 					"name" : "AWVALID",
+					"strict" : false
+				},
+				{
+					"name" : "AWREADY",
 					"strict" : false
 				},
 				{
@@ -1105,6 +1113,14 @@
 				},
 				{
 					"name" : "i_RRESP[1]",
+					"strict" : false
+				},
+				{
+					"name" : "BVALID",
+					"strict" : false
+				},
+				{
+					"name" : "i_BRESP[0]",
 					"strict" : false
 				},
 				{

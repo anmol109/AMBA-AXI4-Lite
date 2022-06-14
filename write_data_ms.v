@@ -63,7 +63,7 @@ else temp_WDATA=0;*/
 temp_WDATA=i_WDATA&temp_WDATA;
 end
 	
-always @(posedge ACLK or posedge ARESETn) begin 
+always @(posedge ACLK) begin 
 o_WVALID<=i_WVALID;
    // RESET
 if(ARESETn) begin
@@ -91,7 +91,7 @@ output reg [3:0] o_WSTRB;
 //reg [31:0] temp_WDATA;
 	
 	
-always @(posedge ACLK or posedge ARESETn) begin 
+always @(posedge ACLK) begin 
 o_WREADY <= i_WREADY;  
 o_WSTRB <= i_WSTRB;
    // RESET

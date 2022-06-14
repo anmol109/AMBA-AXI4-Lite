@@ -39,7 +39,7 @@ input ACLK;
 
 	write_address_ms wa(ACLK, ARESETn, AWVALID, AWREADY, i_AWADDR, o_AWADDR, AWPROT);
  	write_data_ms wd(ACLK, ARESETn,WVALID, WREADY, i_WDATA, o_WDATA, i_WSTRB, o_WSTRB);
-	write_response_ms wr(ACLK,ARESETn,BRESP, BVALID, BREADY);
+	write_response_ms wr(ACLK,ARESETn,i_BRESP, BVALID, BREADY,o_BRESP);
 	read_address_ms ra(ACLK, ARESETn, ARVALID, ARREADY,i_ARADDR, o_ARADDR, ARPROT);
 	read_data_ms rd(ACLK, ARESETn, RVALID, RREADY, i_RDATA, o_RDATA, i_RRESP, o_RRESP);
 

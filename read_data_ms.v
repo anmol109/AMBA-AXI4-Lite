@@ -10,6 +10,7 @@ output [1:0] o_RRESP;
 
 wire [31:0] w_RDATA;
 wire [1:0] w_RRESP;
+wire o_RVALID,o_RREADY;
 
 read_data_slave data2 (ACLK, ARESETn, RVALID, o_RVALID, o_RREADY, i_RDATA, w_RDATA, i_RRESP, w_RRESP);
 read_data_master data1 (ACLK, ARESETn ,o_RVALID, RREADY, o_RREADY, w_RDATA, o_RDATA, w_RRESP, o_RRESP);
@@ -28,7 +29,7 @@ output reg [1:0] o_RRESP;    //RESP remaining
 output reg [31:0] o_RDATA; 
 
 
-always @ (posedge ACLK or posedge ARESETn) begin
+always @ (posedge ACLK) begin
 o_RRESP<=i_RRESP;
 o_RDATA <= i_RDATA;
 o_RREADY <= i_RREADY;
@@ -59,7 +60,7 @@ else
 o_RVALID=0;
 end*/
 
-always @ (posedge ACLK or posedge ARESETn)
+always @ (posedge ACLK)
 begin
 o_RVALID <= i_RVALID;
 if(ARESETn)
