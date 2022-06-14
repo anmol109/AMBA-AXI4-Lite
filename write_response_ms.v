@@ -23,16 +23,17 @@ input [1:0] i_BRESP;
 output reg [1:0] o_BRESP;
 output reg o_BREADY;
 	
-always @(posedge ARESETn) begin   //RESET
+ 
+always @(*) begin
+if (ARESETn) begin   //RESET
 o_BREADY <= 0;	
 o_BRESP <= 0;
 end
 
-always @(i_BREADY) o_BREADY <= i_BREADY;    
+else if(i_BREADY)
+ o_BREADY <= i_BREADY;  
 
-always @(posedge ACLK) begin
-
-if(o_BREADY && BVALID) o_BRESP <= i_BRESP;
+else if(o_BREADY && BVALID) o_BRESP <= i_BRESP;
 else o_BRESP <= 0;
 
 end
@@ -50,17 +51,20 @@ input [1:0] i_BRESP;
 output reg o_BVALID;
 output reg [1:0] o_BRESP;
 	        	
-always @(posedge ARESETn) begin    // RESET
-o_BVALID <=0;
-o_BRESP <= 0;
-end
 	
-always @(i_BVALID) o_BVALID <= i_BVALID;
 
-always @(posedge ACLK) begin
-
-if(BREADY && o_BVALID) o_BRESP <= i_BRESP;
-else o_BRESP <= 0;
+always @(*) begin
+if(ARESETn)
+begin    // RESET
+o_BVALID <= 1'b0;
+o_BRESP <= 1'b0;
+end
+else if (i_BVALID)
+o_BVALID <= i_BVALID;
+else if(BREADY && o_BVALID)
+o_BRESP <= i_BRESP;
+else 
+o_BRESP <= 1'b0;
 
 end
 

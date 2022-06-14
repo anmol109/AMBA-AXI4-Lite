@@ -27,18 +27,16 @@ output reg o_RREADY;
 output reg [1:0] o_RRESP;    //RESP remaining
 output reg [31:0] o_RDATA; 
 
-always @ (posedge ARESETn)
+
+always @ (*) begin
+if(ARESETn)
 begin
 o_RREADY <= 0;
 o_RDATA <= 0;
 end
+else if(i_RREADY) o_RREADY <= i_RREADY;
 
-always @ (i_RREADY) o_RREADY <= i_RREADY;
-
-
-always @ (posedge ACLK) begin
-
-if(o_RREADY && RVALID) o_RDATA <= i_RDATA;
+else if(o_RREADY && RVALID) o_RDATA <= i_RDATA;
 
 else o_RDATA <= 0;
 
@@ -55,13 +53,8 @@ output reg o_RVALID;
 output reg [1:0] o_RRESP; 
 output reg [31:0] o_RDATA; 
 
-always @ (posedge ARESETn)
-begin
-o_RVALID <= 0;
-o_RDATA <= 0;
-end
 
-always @ (i_RVALID) o_RVALID <= i_RVALID;
+
 /*begin
 if(i_RVALID)
 o_RVALID=1;
@@ -69,10 +62,15 @@ else
 o_RVALID=0;
 end*/
 
-always @ (posedge ACLK)
+always @ (*)
 begin
-
-if(RREADY && o_RVALID) o_RDATA <= i_RDATA;
+if(ARESETn)
+begin
+o_RVALID <= 0;
+o_RDATA <= 0;
+end
+else if(i_RVALID) o_RVALID <= i_RVALID;
+else if(RREADY && o_RVALID) o_RDATA <= i_RDATA;
 else o_RDATA <= 0;
 
 end

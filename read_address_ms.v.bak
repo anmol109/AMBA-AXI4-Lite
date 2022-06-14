@@ -21,22 +21,22 @@ input ACLK, ARESETn;
 input i_ARVALID, ARREADY;
 input [31:0] i_ARADDR;
 input [2:0] ARPROT; // unfinished
-
 output reg o_ARVALID;
 output reg [31:0] o_ARADDR;
 
-always @(i_ARVALID) o_ARVALID <= i_ARVALID;
 
-always @(posedge ACLK or posedge ARESETn) begin
+always @(posedge ACLK) begin
+o_ARVALID = i_ARVALID;
 
-if(!ARESETn) begin
+if(ARESETn) begin
 o_ARADDR <= 0;
 o_ARVALID <= 0;
 end
 
-if(o_ARVALID && ARREADY) o_ARADDR <= i_ARADDR;     //handshaking and address send
-
-else  o_ARADDR <= 0;
+if(o_ARVALID && ARREADY) 
+o_ARADDR <= i_ARADDR;     //handshaking and address send
+else  
+o_ARADDR <= 32'b0;
 
 end
 
@@ -52,19 +52,18 @@ input [31:0] i_ARADDR;
 output reg [31:0] o_ARADDR;
 output reg o_ARREADY;
 
-always @(i_ARREADY) o_ARREADY <= i_ARREADY;
 
-always @(posedge ACLK or posedge ARESETn) begin
-
+always @(posedge ACLK) begin
+o_ARREADY <= i_ARREADY;
 if(ARESETn) begin
 o_ARADDR <= 0;
 o_ARREADY <= 0;
 end
 
-if(ARVALID && o_ARREADY) o_ARADDR <= i_ARADDR;
-
-else o_ARADDR <= 0;
-
+if(ARVALID && o_ARREADY) 
+o_ARADDR <= i_ARADDR;
+else
+o_ARADDR<=0;
 end
 
 endmodule 

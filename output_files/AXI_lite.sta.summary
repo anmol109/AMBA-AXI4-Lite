@@ -1,0 +1,101 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'RREADY'
+Slack : -1.196
+TNS   : -32.131
+
+Type  : Slow 1200mV 85C Model Setup 'ACLK'
+Slack : -0.705
+TNS   : -39.394
+
+Type  : Slow 1200mV 85C Model Hold 'ACLK'
+Slack : 0.424
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'RREADY'
+Slack : 0.524
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ACLK'
+Slack : -3.000
+TNS   : -185.390
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'RREADY'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'RVALID'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'WREADY'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 0C Model Setup 'RREADY'
+Slack : -1.011
+TNS   : -26.743
+
+Type  : Slow 1200mV 0C Model Setup 'ACLK'
+Slack : -0.546
+TNS   : -29.198
+
+Type  : Slow 1200mV 0C Model Hold 'ACLK'
+Slack : 0.390
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'RREADY'
+Slack : 0.459
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ACLK'
+Slack : -3.000
+TNS   : -185.390
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'RREADY'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'RVALID'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'WREADY'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Fast 1200mV 0C Model Setup 'RREADY'
+Slack : 0.055
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'ACLK'
+Slack : 0.217
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'ACLK'
+Slack : 0.160
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'RREADY'
+Slack : 0.182
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ACLK'
+Slack : -3.000
+TNS   : -136.994
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'WREADY'
+Slack : -3.000
+TNS   : -3.502
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'RREADY'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'RVALID'
+Slack : -3.000
+TNS   : -3.000
+
+------------------------------------------------------------
