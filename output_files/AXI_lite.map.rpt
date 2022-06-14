@@ -1,5 +1,5 @@
 Analysis & Synthesis report for AXI_lite
-Tue Jun 14 13:30:40 2022
+Wed Jun 15 00:33:52 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -10,7 +10,17 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Port Connectivity Checks: "write_response_ms:wr"
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
+ 15. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -37,22 +47,22 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Tue Jun 14 13:30:40 2022           ;
+; Analysis & Synthesis Status        ; Successful - Wed Jun 15 00:33:52 2022       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; AXI_lite                                    ;
 ; Top-level Entity Name              ; AXI_lite                                    ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
-; UFM blocks                         ; N/A until Partition Merge                   ;
-; ADC blocks                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 275                                         ;
+;     Total combinational functions  ; 273                                         ;
+;     Dedicated logic registers      ; 200                                         ;
+; Total registers                    ; 200                                         ;
+; Total pins                         ; 290                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -151,11 +161,195 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                  ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                    ; Library ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------+---------+
+; AXI_lite.v                       ; yes             ; User Verilog HDL File  ; D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v          ;         ;
+; write_address_ms.v               ; yes             ; User Verilog HDL File  ; D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v  ;         ;
+; write_data_ms.v                  ; yes             ; User Verilog HDL File  ; D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v     ;         ;
+; write_response_ms.v              ; yes             ; User Verilog HDL File  ; D:/Workspace/AMBA-AXI4-Lite/write_response_ms.v ;         ;
+; read_address_ms.v                ; yes             ; User Verilog HDL File  ; D:/Workspace/AMBA-AXI4-Lite/read_address_ms.v   ;         ;
+; read_data_ms.v                   ; yes             ; User Verilog HDL File  ; D:/Workspace/AMBA-AXI4-Lite/read_data_ms.v      ;         ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------+---------+
+
+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimated Total logic elements              ; 275        ;
+;                                             ;            ;
+; Total combinational functions               ; 273        ;
+; Logic element usage by number of LUT inputs ;            ;
+;     -- 4 input functions                    ; 103        ;
+;     -- 3 input functions                    ; 134        ;
+;     -- <=2 input functions                  ; 36         ;
+;                                             ;            ;
+; Logic elements by mode                      ;            ;
+;     -- normal mode                          ; 273        ;
+;     -- arithmetic mode                      ; 0          ;
+;                                             ;            ;
+; Total registers                             ; 200        ;
+;     -- Dedicated logic registers            ; 200        ;
+;     -- I/O registers                        ; 0          ;
+;                                             ;            ;
+; I/O pins                                    ; 290        ;
+;                                             ;            ;
+; Embedded Multiplier 9-bit elements          ; 0          ;
+;                                             ;            ;
+; Maximum fan-out node                        ; ACLK~input ;
+; Maximum fan-out                             ; 200        ;
+; Total fan-out                               ; 1840       ;
+; Average fan-out                             ; 1.75       ;
++---------------------------------------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                        ;
++-------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node          ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                       ; Entity Name          ; Library Name ;
++-------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------+----------------------+--------------+
+; |AXI_lite                           ; 273 (0)             ; 200 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 290  ; 0            ; 0          ; |AXI_lite                                                 ; AXI_lite             ; work         ;
+;    |read_address_ms:ra|             ; 66 (0)              ; 66 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |AXI_lite|read_address_ms:ra                              ; read_address_ms      ; work         ;
+;       |read_address_master:addr1|   ; 33 (33)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |AXI_lite|read_address_ms:ra|read_address_master:addr1    ; read_address_master  ; work         ;
+;       |read_address_slave:addr2|    ; 33 (33)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |AXI_lite|read_address_ms:ra|read_address_slave:addr2     ; read_address_slave   ; work         ;
+;    |read_data_ms:rd|                ; 68 (0)              ; 70 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |AXI_lite|read_data_ms:rd                                 ; read_data_ms         ; work         ;
+;       |read_data_master:data1|      ; 33 (33)             ; 35 (35)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |AXI_lite|read_data_ms:rd|read_data_master:data1          ; read_data_master     ; work         ;
+;       |read_data_slave:data2|       ; 35 (35)             ; 35 (35)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |AXI_lite|read_data_ms:rd|read_data_slave:data2           ; read_data_slave      ; work         ;
+;    |write_address_ms:wa|            ; 66 (0)              ; 64 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |AXI_lite|write_address_ms:wa                             ; write_address_ms     ; work         ;
+;       |write_address_master:addr_m| ; 33 (33)             ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |AXI_lite|write_address_ms:wa|write_address_master:addr_m ; write_address_master ; work         ;
+;       |write_address_slave:addr_s|  ; 33 (33)             ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |AXI_lite|write_address_ms:wa|write_address_slave:addr_s  ; write_address_slave  ; work         ;
+;    |write_data_ms:wd|               ; 73 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |AXI_lite|write_data_ms:wd                                ; write_data_ms        ; work         ;
+;       |write_data_master:data1|     ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |AXI_lite|write_data_ms:wd|write_data_master:data1        ; write_data_master    ; work         ;
+;       |write_data_slave:data2|      ; 70 (70)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |AXI_lite|write_data_ms:wd|write_data_slave:data2         ; write_data_slave     ; work         ;
++-------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------+----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                                     ;
++-----------------------------------------------------------+----------------------------------------------------+------------------------+
+; Latch Name                                                ; Latch Enable Signal                                ; Free of Timing Hazards ;
++-----------------------------------------------------------+----------------------------------------------------+------------------------+
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[0]        ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[1]        ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[2]        ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[3]        ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[4]        ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[5]        ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[6]        ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[7]        ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[8]        ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[9]        ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[10]       ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[11]       ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[12]       ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[13]       ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[14]       ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[15]       ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[16]       ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[17]       ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[18]       ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[19]       ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[20]       ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[21]       ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[22]       ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[23]       ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[24]       ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[25]       ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[26]       ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[27]       ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[28]       ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[29]       ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[30]       ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WDATA[31]       ; WREADY                                             ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WSTRB[0]        ; write_data_ms:wd|write_data_slave:data2|o_WSTRB[3] ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WSTRB[1]        ; write_data_ms:wd|write_data_slave:data2|o_WSTRB[3] ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WSTRB[2]        ; write_data_ms:wd|write_data_slave:data2|o_WSTRB[3] ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WSTRB[3]        ; write_data_ms:wd|write_data_slave:data2|o_WSTRB[3] ; yes                    ;
+; write_data_ms:wd|write_data_slave:data2|o_WREADY          ; GND                                                ; yes                    ;
+; write_address_ms:wa|write_address_master:addr_m|o_AWVALID ; GND                                                ; yes                    ;
+; write_address_ms:wa|write_address_slave:addr_s|o_AWREADY  ; GND                                                ; yes                    ;
+; Number of user-specified and inferred latches = 39        ;                                                    ;                        ;
++-----------------------------------------------------------+----------------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 200   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 64    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 66    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |AXI_lite|read_data_ms:rd|read_data_slave:data2|o_RDATA[27] ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |AXI_lite|write_data_ms:wd|write_data_slave:data2|o_WDATA   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "write_response_ms:wr"                                                                                                                              ;
++---------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                         ;
++---------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+; i_BRESP ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (2 bits) it drives.  Extra input bit(s) "i_BRESP[1..1]" will be connected to GND. ;
+; o_BRESP ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
++---------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 290                         ;
+; cycloneiii_ff         ; 200                         ;
+;     ENA               ; 2                           ;
+;     ENA CLR           ; 64                          ;
+;     plain             ; 134                         ;
+; cycloneiii_lcell_comb ; 274                         ;
+;     normal            ; 274                         ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 36                          ;
+;         3 data inputs ; 134                         ;
+;         4 data inputs ; 103                         ;
+;                       ;                             ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 1.07                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -164,7 +358,7 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Tue Jun 14 13:30:31 2022
+    Info: Processing started: Wed Jun 15 00:33:40 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off AXI_lite -c AXI_lite
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -182,7 +376,7 @@ Info (12021): Found 3 design units, including 3 entities, in source file write_d
 Info (12021): Found 3 design units, including 3 entities, in source file write_response_ms.v
     Info (12023): Found entity 1: write_response_ms File: D:/Workspace/AMBA-AXI4-Lite/write_response_ms.v Line: 1
     Info (12023): Found entity 2: write_response_master File: D:/Workspace/AMBA-AXI4-Lite/write_response_ms.v Line: 18
-    Info (12023): Found entity 3: write_response_slave File: D:/Workspace/AMBA-AXI4-Lite/write_response_ms.v Line: 45
+    Info (12023): Found entity 3: write_response_slave File: D:/Workspace/AMBA-AXI4-Lite/write_response_ms.v Line: 41
 Info (12021): Found 3 design units, including 3 entities, in source file read_address_ms.v
     Info (12023): Found entity 1: read_address_ms File: D:/Workspace/AMBA-AXI4-Lite/read_address_ms.v Line: 1
     Info (12023): Found entity 2: read_address_master File: D:/Workspace/AMBA-AXI4-Lite/read_address_ms.v Line: 18
@@ -190,7 +384,7 @@ Info (12021): Found 3 design units, including 3 entities, in source file read_ad
 Info (12021): Found 3 design units, including 3 entities, in source file read_data_ms.v
     Info (12023): Found entity 1: read_data_ms File: D:/Workspace/AMBA-AXI4-Lite/read_data_ms.v Line: 1
     Info (12023): Found entity 2: read_data_master File: D:/Workspace/AMBA-AXI4-Lite/read_data_ms.v Line: 19
-    Info (12023): Found entity 3: read_data_slave File: D:/Workspace/AMBA-AXI4-Lite/read_data_ms.v Line: 48
+    Info (12023): Found entity 3: read_data_slave File: D:/Workspace/AMBA-AXI4-Lite/read_data_ms.v Line: 43
 Warning (10236): Verilog HDL Implicit Net warning at AXI_lite.v(42): created implicit net for "BRESP" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 42
 Warning (10236): Verilog HDL Implicit Net warning at write_address_ms.v(11): created implicit net for "o_AWVALID" File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 11
 Warning (10236): Verilog HDL Implicit Net warning at write_address_ms.v(11): created implicit net for "o_AWREADY" File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 11
@@ -199,53 +393,97 @@ Warning (10236): Verilog HDL Implicit Net warning at read_data_ms.v(14): created
 Info (12127): Elaborating entity "AXI_lite" for the top level hierarchy
 Warning (10034): Output port "o_BRESP" at AXI_lite.v(24) has no driver File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 24
 Info (12128): Elaborating entity "write_address_ms" for hierarchy "write_address_ms:wa" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 40
-Warning (10036): Verilog HDL or VHDL warning at write_address_ms.v(8): object "o_AREADY" assigned a value but never read File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 8
-Warning (10036): Verilog HDL or VHDL warning at write_address_ms.v(8): object "o_AVALID" assigned a value but never read File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 8
 Info (12128): Elaborating entity "write_address_master" for hierarchy "write_address_ms:wa|write_address_master:addr_m" File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 11
-Error (10122): Verilog HDL Event Control error at write_address_ms.v(30): mixed single- and double-edge expressions are not supported File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Warning (10235): Verilog HDL Always Construct warning at write_address_ms.v(46): variable "o_AWVALID" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 46
-Warning (10235): Verilog HDL Always Construct warning at write_address_ms.v(46): variable "AWREADY" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 46
-Warning (10235): Verilog HDL Always Construct warning at write_address_ms.v(47): variable "i_AWADDR" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 47
-Warning (10240): Verilog HDL Always Construct warning at write_address_ms.v(30): inferring latch(es) for variable "o_AWADDR", which holds its previous value in one or more paths through the always construct File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
 Warning (10240): Verilog HDL Always Construct warning at write_address_ms.v(30): inferring latch(es) for variable "o_AWVALID", which holds its previous value in one or more paths through the always construct File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
 Info (10041): Inferred latch for "o_AWVALID" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[0]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[1]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[2]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[3]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[4]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[5]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[6]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[7]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[8]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[9]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[10]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[11]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[12]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[13]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[14]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[15]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[16]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[17]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[18]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[19]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[20]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[21]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[22]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[23]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[24]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[25]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[26]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[27]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[28]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[29]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[30]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Info (10041): Inferred latch for "o_AWADDR[31]" at write_address_ms.v(30) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 30
-Error (12152): Can't elaborate user hierarchy "write_address_ms:wa|write_address_master:addr_m" File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 11
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 15 warnings
-    Error: Peak virtual memory: 4705 megabytes
-    Error: Processing ended: Tue Jun 14 13:30:40 2022
-    Error: Elapsed time: 00:00:09
-    Error: Total CPU time (on all processors): 00:00:22
+Info (12128): Elaborating entity "write_address_slave" for hierarchy "write_address_ms:wa|write_address_slave:addr_s" File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 12
+Warning (10240): Verilog HDL Always Construct warning at write_address_ms.v(69): inferring latch(es) for variable "o_AWREADY", which holds its previous value in one or more paths through the always construct File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 69
+Info (10041): Inferred latch for "o_AWREADY" at write_address_ms.v(69) File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 69
+Info (12128): Elaborating entity "write_data_ms" for hierarchy "write_data_ms:wd" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 41
+Info (12128): Elaborating entity "write_data_master" for hierarchy "write_data_ms:wd|write_data_master:data1" File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 12
+Info (12128): Elaborating entity "write_data_slave" for hierarchy "write_data_ms:wd|write_data_slave:data2" File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 13
+Warning (10240): Verilog HDL Always Construct warning at write_data_ms.v(102): inferring latch(es) for variable "o_WDATA", which holds its previous value in one or more paths through the always construct File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Warning (10240): Verilog HDL Always Construct warning at write_data_ms.v(102): inferring latch(es) for variable "o_WREADY", which holds its previous value in one or more paths through the always construct File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Warning (10240): Verilog HDL Always Construct warning at write_data_ms.v(102): inferring latch(es) for variable "o_WSTRB", which holds its previous value in one or more paths through the always construct File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WSTRB[0]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WSTRB[1]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WSTRB[2]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WSTRB[3]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WREADY" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[0]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[1]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[2]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[3]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[4]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[5]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[6]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[7]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[8]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[9]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[10]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[11]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[12]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[13]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[14]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[15]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[16]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[17]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[18]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[19]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[20]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[21]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[22]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[23]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[24]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[25]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[26]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[27]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[28]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[29]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[30]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (10041): Inferred latch for "o_WDATA[31]" at write_data_ms.v(102) File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 102
+Info (12128): Elaborating entity "write_response_ms" for hierarchy "write_response_ms:wr" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 42
+Info (12128): Elaborating entity "write_response_slave" for hierarchy "write_response_ms:wr|write_response_slave:resp_s" File: D:/Workspace/AMBA-AXI4-Lite/write_response_ms.v Line: 10
+Info (12128): Elaborating entity "write_response_master" for hierarchy "write_response_ms:wr|write_response_master:resp_m" File: D:/Workspace/AMBA-AXI4-Lite/write_response_ms.v Line: 11
+Info (12128): Elaborating entity "read_address_ms" for hierarchy "read_address_ms:ra" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 43
+Info (12128): Elaborating entity "read_address_master" for hierarchy "read_address_ms:ra|read_address_master:addr1" File: D:/Workspace/AMBA-AXI4-Lite/read_address_ms.v Line: 12
+Info (12128): Elaborating entity "read_address_slave" for hierarchy "read_address_ms:ra|read_address_slave:addr2" File: D:/Workspace/AMBA-AXI4-Lite/read_address_ms.v Line: 13
+Info (12128): Elaborating entity "read_data_ms" for hierarchy "read_data_ms:rd" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 44
+Info (12128): Elaborating entity "read_data_slave" for hierarchy "read_data_ms:rd|read_data_slave:data2" File: D:/Workspace/AMBA-AXI4-Lite/read_data_ms.v Line: 14
+Info (12128): Elaborating entity "read_data_master" for hierarchy "read_data_ms:rd|read_data_master:data1" File: D:/Workspace/AMBA-AXI4-Lite/read_data_ms.v Line: 15
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "o_BRESP[0]" is stuck at GND File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 24
+    Warning (13410): Pin "o_BRESP[1]" is stuck at GND File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 24
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file D:/Workspace/AMBA-AXI4-Lite/output_files/AXI_lite.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 10 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "BREADY" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 22
+    Warning (15610): No output dependent on input pin "BVALID" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 22
+    Warning (15610): No output dependent on input pin "i_BRESP[0]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 23
+    Warning (15610): No output dependent on input pin "i_BRESP[1]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 23
+    Warning (15610): No output dependent on input pin "AWPROT[0]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 10
+    Warning (15610): No output dependent on input pin "AWPROT[1]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 10
+    Warning (15610): No output dependent on input pin "AWPROT[2]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 10
+    Warning (15610): No output dependent on input pin "ARPROT[0]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 30
+    Warning (15610): No output dependent on input pin "ARPROT[1]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 30
+    Warning (15610): No output dependent on input pin "ARPROT[2]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 30
+Info (21057): Implemented 565 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 154 input pins
+    Info (21059): Implemented 136 output pins
+    Info (21061): Implemented 275 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 28 warnings
+    Info: Peak virtual memory: 4763 megabytes
+    Info: Processing ended: Wed Jun 15 00:33:52 2022
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:30
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/Workspace/AMBA-AXI4-Lite/output_files/AXI_lite.map.smsg.
 
 

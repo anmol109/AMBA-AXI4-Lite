@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at write_data_ms.v(35): always construct contains both blocking and non-blocking assignments File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 35

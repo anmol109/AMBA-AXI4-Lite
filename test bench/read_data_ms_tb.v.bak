@@ -17,7 +17,11 @@ i_RDATA = 32'hffffffff;
 #5 RREADY=1'b0;  RVALID=1'b1;
 #5 RREADY=1'b1;  RVALID=1'b1;
 #5 RREADY=1'b1;  RVALID=1'b1;
-#5 RREADY=1'b0;  RVALID=1'b1;
+#5 RREADY=1'b1;  RVALID=1'b0;
+#5 RREADY=1'b1;  RVALID=1'b0;
+#5 RREADY=1'b1;  RVALID=1'b0;
+#5 RREADY=1'b1;  RVALID=1'b0;
+
 
 #200 $finish;
 end
