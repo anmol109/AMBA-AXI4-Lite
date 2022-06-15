@@ -1,15 +1,15 @@
-Fitter Status : Successful - Wed Jun 15 13:01:14 2022
-Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Fitter Status : Successful - Wed Jun 15 13:23:30 2022
+Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : AXI_lite
 Top-level Entity Name : AXI_lite
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
-Total logic elements : 842 / 49,760 ( 2 % )
+Total logic elements : 844 / 49,760 ( 2 % )
     Total combinational functions : 704 / 49,760 ( 1 % )
     Dedicated logic registers : 680 / 49,760 ( 1 % )
 Total registers : 680
-Total pins : 162 / 360 ( 45 % )
+Total pins : 163 / 360 ( 45 % )
 Total virtual pins : 128
 Total memory bits : 768 / 1,677,312 ( < 1 % )
 Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )

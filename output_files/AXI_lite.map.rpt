@@ -1,6 +1,6 @@
 Analysis & Synthesis report for AXI_lite
-Wed Jun 15 13:00:55 2022
-Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Wed Jun 15 13:22:41 2022
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
 ---------------------
@@ -25,9 +25,11 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
  17. Port Connectivity Checks: "write_response_ms:wr"
  18. Signal Tap Logic Analyzer Settings
  19. Post-Synthesis Netlist Statistics for Top Partition
- 20. Elapsed Time Per Partition
- 21. Connections to In-System Debugging Instance "auto_signaltap_0"
- 22. Analysis & Synthesis Messages
+ 20. Post-Synthesis Netlist Statistics for Partition sld_signaltap:auto_signaltap_0
+ 21. Post-Synthesis Netlist Statistics for Partition sld_hub:auto_hub
+ 22. Elapsed Time Per Partition
+ 23. Connections to In-System Debugging Instance "auto_signaltap_0"
+ 24. Analysis & Synthesis Messages
 
 
 
@@ -54,8 +56,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jun 15 13:00:54 2022       ;
-; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Analysis & Synthesis Status        ; Successful - Wed Jun 15 13:22:41 2022       ;
+; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; AXI_lite                                    ;
 ; Top-level Entity Name              ; AXI_lite                                    ;
 ; Family                             ; MAX 10                                      ;
@@ -63,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 ;     Total combinational functions  ; 701                                         ;
 ;     Dedicated logic registers      ; 680                                         ;
 ; Total registers                    ; 680                                         ;
-; Total pins                         ; 162                                         ;
+; Total pins                         ; 163                                         ;
 ; Total virtual pins                 ; 128                                         ;
 ; Total memory bits                  ; 768                                         ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -164,87 +166,87 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processors 2-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                             ;
-+--------------------------------------------------------------------+-----------------+----------------------------------------------+------------------------------------------------------------------------------------------------+-------------+
-; File Name with User-Entered Path                                   ; Used in Netlist ; File Type                                    ; File Name with Absolute Path                                                                   ; Library     ;
-+--------------------------------------------------------------------+-----------------+----------------------------------------------+------------------------------------------------------------------------------------------------+-------------+
-; AXI_lite.v                                                         ; yes             ; User Verilog HDL File                        ; D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v                                                         ;             ;
-; write_address_ms.v                                                 ; yes             ; User Verilog HDL File                        ; D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v                                                 ;             ;
-; write_data_ms.v                                                    ; yes             ; User Verilog HDL File                        ; D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v                                                    ;             ;
-; write_response_ms.v                                                ; yes             ; User Verilog HDL File                        ; D:/Workspace/AMBA-AXI4-Lite/write_response_ms.v                                                ;             ;
-; read_address_ms.v                                                  ; yes             ; User Verilog HDL File                        ; D:/Workspace/AMBA-AXI4-Lite/read_address_ms.v                                                  ;             ;
-; read_data_ms.v                                                     ; yes             ; User Verilog HDL File                        ; D:/Workspace/AMBA-AXI4-Lite/read_data_ms.v                                                     ;             ;
-; sld_signaltap.vhd                                                  ; yes             ; Megafunction                                 ; d:/others/quartus/libraries/megafunctions/sld_signaltap.vhd                                    ;             ;
-; sld_signaltap_impl.vhd                                             ; yes             ; Encrypted Megafunction                       ; d:/others/quartus/libraries/megafunctions/sld_signaltap_impl.vhd                               ;             ;
-; sld_ela_control.vhd                                                ; yes             ; Encrypted Megafunction                       ; d:/others/quartus/libraries/megafunctions/sld_ela_control.vhd                                  ;             ;
-; lpm_shiftreg.tdf                                                   ; yes             ; Megafunction                                 ; d:/others/quartus/libraries/megafunctions/lpm_shiftreg.tdf                                     ;             ;
-; lpm_constant.inc                                                   ; yes             ; Megafunction                                 ; d:/others/quartus/libraries/megafunctions/lpm_constant.inc                                     ;             ;
-; dffeea.inc                                                         ; yes             ; Megafunction                                 ; d:/others/quartus/libraries/megafunctions/dffeea.inc                                           ;             ;
-; aglobal201.inc                                                     ; yes             ; Megafunction                                 ; d:/others/quartus/libraries/megafunctions/aglobal201.inc                                       ;             ;
-; sld_mbpmg.vhd                                                      ; yes             ; Encrypted Megafunction                       ; d:/others/quartus/libraries/megafunctions/sld_mbpmg.vhd                                        ;             ;
-; sld_ela_trigger_flow_mgr.vhd                                       ; yes             ; Encrypted Megafunction                       ; d:/others/quartus/libraries/megafunctions/sld_ela_trigger_flow_mgr.vhd                         ;             ;
-; sld_buffer_manager.vhd                                             ; yes             ; Encrypted Megafunction                       ; d:/others/quartus/libraries/megafunctions/sld_buffer_manager.vhd                               ;             ;
-; sld_gap_detector.vhd                                               ; yes             ; Encrypted Megafunction                       ; d:/others/quartus/libraries/megafunctions/sld_gap_detector.vhd                                 ;             ;
-; altsyncram.tdf                                                     ; yes             ; Megafunction                                 ; d:/others/quartus/libraries/megafunctions/altsyncram.tdf                                       ;             ;
-; stratix_ram_block.inc                                              ; yes             ; Megafunction                                 ; d:/others/quartus/libraries/megafunctions/stratix_ram_block.inc                                ;             ;
-; lpm_mux.inc                                                        ; yes             ; Megafunction                                 ; d:/others/quartus/libraries/megafunctions/lpm_mux.inc                                          ;             ;
-; lpm_decode.inc                                                     ; yes             ; Megafunction                                 ; d:/others/quartus/libraries/megafunctions/lpm_decode.inc                                       ;             ;
-; a_rdenreg.inc                                                      ; yes             ; Megafunction                                 ; d:/others/quartus/libraries/megafunctions/a_rdenreg.inc                                        ;             ;
-; altrom.inc                                                         ; yes             ; Megafunction                                 ; d:/others/quartus/libraries/megafunctions/altrom.inc                                           ;             ;
-; altram.inc                                                         ; yes             ; Megafunction                                 ; d:/others/quartus/libraries/megafunctions/altram.inc                                           ;             ;
-; altdpram.inc                                                       ; yes             ; Megafunction                                 ; d:/others/quartus/libraries/megafunctions/altdpram.inc                                         ;             ;
-; db/altsyncram_oc14.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; D:/Workspace/AMBA-AXI4-Lite/db/altsyncram_oc14.tdf                                             ;             ;
-; altdpram.tdf                                                       ; yes             ; Megafunction                                 ; d:/others/quartus/libraries/megafunctions/altdpram.tdf                                         ;             ;
-; memmodes.inc                                                       ; yes             ; Megafunction                                 ; d:/others/quartus/libraries/others/maxplus2/memmodes.inc                                       ;             ;
-; a_hdffe.inc                                                        ; yes             ; Megafunction                                 ; d:/others/quartus/libraries/megafunctions/a_hdffe.inc                                          ;             ;
-; alt_le_rden_reg.inc                                                ; yes             ; Megafunction                                 ; d:/others/quartus/libraries/megafunctions/alt_le_rden_reg.inc                                  ;             ;
-; altsyncram.inc                                                     ; yes             ; Megafunction                                 ; d:/others/quartus/libraries/megafunctions/altsyncram.inc                                       ;             ;
-; lpm_mux.tdf                                                        ; yes             ; Megafunction                                 ; d:/others/quartus/libraries/megafunctions/lpm_mux.tdf                                          ;             ;
-; muxlut.inc                                                         ; yes             ; Megafunction                                 ; d:/others/quartus/libraries/megafunctions/muxlut.inc                                           ;             ;
-; bypassff.inc                                                       ; yes             ; Megafunction                                 ; d:/others/quartus/libraries/megafunctions/bypassff.inc                                         ;             ;
-; altshift.inc                                                       ; yes             ; Megafunction                                 ; d:/others/quartus/libraries/megafunctions/altshift.inc                                         ;             ;
-; db/mux_i7c.tdf                                                     ; yes             ; Auto-Generated Megafunction                  ; D:/Workspace/AMBA-AXI4-Lite/db/mux_i7c.tdf                                                     ;             ;
-; lpm_decode.tdf                                                     ; yes             ; Megafunction                                 ; d:/others/quartus/libraries/megafunctions/lpm_decode.tdf                                       ;             ;
-; declut.inc                                                         ; yes             ; Megafunction                                 ; d:/others/quartus/libraries/megafunctions/declut.inc                                           ;             ;
-; lpm_compare.inc                                                    ; yes             ; Megafunction                                 ; d:/others/quartus/libraries/megafunctions/lpm_compare.inc                                      ;             ;
-; db/decode_3af.tdf                                                  ; yes             ; Auto-Generated Megafunction                  ; D:/Workspace/AMBA-AXI4-Lite/db/decode_3af.tdf                                                  ;             ;
-; lpm_counter.tdf                                                    ; yes             ; Megafunction                                 ; d:/others/quartus/libraries/megafunctions/lpm_counter.tdf                                      ;             ;
-; lpm_add_sub.inc                                                    ; yes             ; Megafunction                                 ; d:/others/quartus/libraries/megafunctions/lpm_add_sub.inc                                      ;             ;
-; cmpconst.inc                                                       ; yes             ; Megafunction                                 ; d:/others/quartus/libraries/megafunctions/cmpconst.inc                                         ;             ;
-; lpm_counter.inc                                                    ; yes             ; Megafunction                                 ; d:/others/quartus/libraries/megafunctions/lpm_counter.inc                                      ;             ;
-; alt_counter_stratix.inc                                            ; yes             ; Megafunction                                 ; d:/others/quartus/libraries/megafunctions/alt_counter_stratix.inc                              ;             ;
-; db/cntr_jph.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/Workspace/AMBA-AXI4-Lite/db/cntr_jph.tdf                                                    ;             ;
-; db/cmpr_frb.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/Workspace/AMBA-AXI4-Lite/db/cmpr_frb.tdf                                                    ;             ;
-; db/cntr_8hi.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/Workspace/AMBA-AXI4-Lite/db/cntr_8hi.tdf                                                    ;             ;
-; db/cntr_4rh.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/Workspace/AMBA-AXI4-Lite/db/cntr_4rh.tdf                                                    ;             ;
-; db/cmpr_grb.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/Workspace/AMBA-AXI4-Lite/db/cmpr_grb.tdf                                                    ;             ;
-; db/cntr_odi.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/Workspace/AMBA-AXI4-Lite/db/cntr_odi.tdf                                                    ;             ;
-; db/cmpr_drb.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/Workspace/AMBA-AXI4-Lite/db/cmpr_drb.tdf                                                    ;             ;
-; sld_rom_sr.vhd                                                     ; yes             ; Encrypted Megafunction                       ; d:/others/quartus/libraries/megafunctions/sld_rom_sr.vhd                                       ;             ;
-; sld_jtag_endpoint_adapter.vhd                                      ; yes             ; Encrypted Megafunction                       ; d:/others/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd                        ;             ;
-; sld_jtag_endpoint_adapter_impl.sv                                  ; yes             ; Encrypted Megafunction                       ; d:/others/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter_impl.sv                    ;             ;
-; sld_hub.vhd                                                        ; yes             ; Encrypted Megafunction                       ; d:/others/quartus/libraries/megafunctions/sld_hub.vhd                                          ; altera_sld  ;
-; db/ip/sldd921ae6f/alt_sld_fab.v                                    ; yes             ; Encrypted Auto-Found Verilog HDL File        ; D:/Workspace/AMBA-AXI4-Lite/db/ip/sldd921ae6f/alt_sld_fab.v                                    ; alt_sld_fab ;
-; db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab.v             ; yes             ; Encrypted Auto-Found Verilog HDL File        ; D:/Workspace/AMBA-AXI4-Lite/db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab.v             ; alt_sld_fab ;
-; db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; yes             ; Auto-Found SystemVerilog HDL File            ; D:/Workspace/AMBA-AXI4-Lite/db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; alt_sld_fab ;
-; db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; D:/Workspace/AMBA-AXI4-Lite/db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; alt_sld_fab ;
-; db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; yes             ; Encrypted Auto-Found VHDL File               ; D:/Workspace/AMBA-AXI4-Lite/db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; alt_sld_fab ;
-; db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; D:/Workspace/AMBA-AXI4-Lite/db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; alt_sld_fab ;
-; sld_jtag_hub.vhd                                                   ; yes             ; Encrypted Megafunction                       ; d:/others/quartus/libraries/megafunctions/sld_jtag_hub.vhd                                     ;             ;
-+--------------------------------------------------------------------+-----------------+----------------------------------------------+------------------------------------------------------------------------------------------------+-------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                  ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------+
+; File Name with User-Entered Path                                   ; Used in Netlist ; File Type                                    ; File Name with Absolute Path                                                                        ; Library     ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------+
+; AXI_lite.v                                                         ; yes             ; User Verilog HDL File                        ; D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v                                                         ;             ;
+; write_address_ms.v                                                 ; yes             ; User Verilog HDL File                        ; D:/AMBA AXI4-lite/AMBA-AXI4-Lite/write_address_ms.v                                                 ;             ;
+; write_data_ms.v                                                    ; yes             ; User Verilog HDL File                        ; D:/AMBA AXI4-lite/AMBA-AXI4-Lite/write_data_ms.v                                                    ;             ;
+; write_response_ms.v                                                ; yes             ; User Verilog HDL File                        ; D:/AMBA AXI4-lite/AMBA-AXI4-Lite/write_response_ms.v                                                ;             ;
+; read_address_ms.v                                                  ; yes             ; User Verilog HDL File                        ; D:/AMBA AXI4-lite/AMBA-AXI4-Lite/read_address_ms.v                                                  ;             ;
+; read_data_ms.v                                                     ; yes             ; User Verilog HDL File                        ; D:/AMBA AXI4-lite/AMBA-AXI4-Lite/read_data_ms.v                                                     ;             ;
+; sld_signaltap.vhd                                                  ; yes             ; Megafunction                                 ; d:/quartusprime/quartus/libraries/megafunctions/sld_signaltap.vhd                                   ;             ;
+; sld_signaltap_impl.vhd                                             ; yes             ; Encrypted Megafunction                       ; d:/quartusprime/quartus/libraries/megafunctions/sld_signaltap_impl.vhd                              ;             ;
+; sld_ela_control.vhd                                                ; yes             ; Encrypted Megafunction                       ; d:/quartusprime/quartus/libraries/megafunctions/sld_ela_control.vhd                                 ;             ;
+; lpm_shiftreg.tdf                                                   ; yes             ; Megafunction                                 ; d:/quartusprime/quartus/libraries/megafunctions/lpm_shiftreg.tdf                                    ;             ;
+; lpm_constant.inc                                                   ; yes             ; Megafunction                                 ; d:/quartusprime/quartus/libraries/megafunctions/lpm_constant.inc                                    ;             ;
+; dffeea.inc                                                         ; yes             ; Megafunction                                 ; d:/quartusprime/quartus/libraries/megafunctions/dffeea.inc                                          ;             ;
+; aglobal201.inc                                                     ; yes             ; Megafunction                                 ; d:/quartusprime/quartus/libraries/megafunctions/aglobal201.inc                                      ;             ;
+; sld_mbpmg.vhd                                                      ; yes             ; Encrypted Megafunction                       ; d:/quartusprime/quartus/libraries/megafunctions/sld_mbpmg.vhd                                       ;             ;
+; sld_ela_trigger_flow_mgr.vhd                                       ; yes             ; Encrypted Megafunction                       ; d:/quartusprime/quartus/libraries/megafunctions/sld_ela_trigger_flow_mgr.vhd                        ;             ;
+; sld_buffer_manager.vhd                                             ; yes             ; Encrypted Megafunction                       ; d:/quartusprime/quartus/libraries/megafunctions/sld_buffer_manager.vhd                              ;             ;
+; sld_gap_detector.vhd                                               ; yes             ; Encrypted Megafunction                       ; d:/quartusprime/quartus/libraries/megafunctions/sld_gap_detector.vhd                                ;             ;
+; altsyncram.tdf                                                     ; yes             ; Megafunction                                 ; d:/quartusprime/quartus/libraries/megafunctions/altsyncram.tdf                                      ;             ;
+; stratix_ram_block.inc                                              ; yes             ; Megafunction                                 ; d:/quartusprime/quartus/libraries/megafunctions/stratix_ram_block.inc                               ;             ;
+; lpm_mux.inc                                                        ; yes             ; Megafunction                                 ; d:/quartusprime/quartus/libraries/megafunctions/lpm_mux.inc                                         ;             ;
+; lpm_decode.inc                                                     ; yes             ; Megafunction                                 ; d:/quartusprime/quartus/libraries/megafunctions/lpm_decode.inc                                      ;             ;
+; a_rdenreg.inc                                                      ; yes             ; Megafunction                                 ; d:/quartusprime/quartus/libraries/megafunctions/a_rdenreg.inc                                       ;             ;
+; altrom.inc                                                         ; yes             ; Megafunction                                 ; d:/quartusprime/quartus/libraries/megafunctions/altrom.inc                                          ;             ;
+; altram.inc                                                         ; yes             ; Megafunction                                 ; d:/quartusprime/quartus/libraries/megafunctions/altram.inc                                          ;             ;
+; altdpram.inc                                                       ; yes             ; Megafunction                                 ; d:/quartusprime/quartus/libraries/megafunctions/altdpram.inc                                        ;             ;
+; db/altsyncram_oc14.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/altsyncram_oc14.tdf                                             ;             ;
+; altdpram.tdf                                                       ; yes             ; Megafunction                                 ; d:/quartusprime/quartus/libraries/megafunctions/altdpram.tdf                                        ;             ;
+; memmodes.inc                                                       ; yes             ; Megafunction                                 ; d:/quartusprime/quartus/libraries/others/maxplus2/memmodes.inc                                      ;             ;
+; a_hdffe.inc                                                        ; yes             ; Megafunction                                 ; d:/quartusprime/quartus/libraries/megafunctions/a_hdffe.inc                                         ;             ;
+; alt_le_rden_reg.inc                                                ; yes             ; Megafunction                                 ; d:/quartusprime/quartus/libraries/megafunctions/alt_le_rden_reg.inc                                 ;             ;
+; altsyncram.inc                                                     ; yes             ; Megafunction                                 ; d:/quartusprime/quartus/libraries/megafunctions/altsyncram.inc                                      ;             ;
+; lpm_mux.tdf                                                        ; yes             ; Megafunction                                 ; d:/quartusprime/quartus/libraries/megafunctions/lpm_mux.tdf                                         ;             ;
+; muxlut.inc                                                         ; yes             ; Megafunction                                 ; d:/quartusprime/quartus/libraries/megafunctions/muxlut.inc                                          ;             ;
+; bypassff.inc                                                       ; yes             ; Megafunction                                 ; d:/quartusprime/quartus/libraries/megafunctions/bypassff.inc                                        ;             ;
+; altshift.inc                                                       ; yes             ; Megafunction                                 ; d:/quartusprime/quartus/libraries/megafunctions/altshift.inc                                        ;             ;
+; db/mux_i7c.tdf                                                     ; yes             ; Auto-Generated Megafunction                  ; D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/mux_i7c.tdf                                                     ;             ;
+; lpm_decode.tdf                                                     ; yes             ; Megafunction                                 ; d:/quartusprime/quartus/libraries/megafunctions/lpm_decode.tdf                                      ;             ;
+; declut.inc                                                         ; yes             ; Megafunction                                 ; d:/quartusprime/quartus/libraries/megafunctions/declut.inc                                          ;             ;
+; lpm_compare.inc                                                    ; yes             ; Megafunction                                 ; d:/quartusprime/quartus/libraries/megafunctions/lpm_compare.inc                                     ;             ;
+; db/decode_3af.tdf                                                  ; yes             ; Auto-Generated Megafunction                  ; D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/decode_3af.tdf                                                  ;             ;
+; lpm_counter.tdf                                                    ; yes             ; Megafunction                                 ; d:/quartusprime/quartus/libraries/megafunctions/lpm_counter.tdf                                     ;             ;
+; lpm_add_sub.inc                                                    ; yes             ; Megafunction                                 ; d:/quartusprime/quartus/libraries/megafunctions/lpm_add_sub.inc                                     ;             ;
+; cmpconst.inc                                                       ; yes             ; Megafunction                                 ; d:/quartusprime/quartus/libraries/megafunctions/cmpconst.inc                                        ;             ;
+; lpm_counter.inc                                                    ; yes             ; Megafunction                                 ; d:/quartusprime/quartus/libraries/megafunctions/lpm_counter.inc                                     ;             ;
+; alt_counter_stratix.inc                                            ; yes             ; Megafunction                                 ; d:/quartusprime/quartus/libraries/megafunctions/alt_counter_stratix.inc                             ;             ;
+; db/cntr_jph.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/cntr_jph.tdf                                                    ;             ;
+; db/cmpr_frb.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/cmpr_frb.tdf                                                    ;             ;
+; db/cntr_8hi.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/cntr_8hi.tdf                                                    ;             ;
+; db/cntr_4rh.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/cntr_4rh.tdf                                                    ;             ;
+; db/cmpr_grb.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/cmpr_grb.tdf                                                    ;             ;
+; db/cntr_odi.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/cntr_odi.tdf                                                    ;             ;
+; db/cmpr_drb.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/cmpr_drb.tdf                                                    ;             ;
+; sld_rom_sr.vhd                                                     ; yes             ; Encrypted Megafunction                       ; d:/quartusprime/quartus/libraries/megafunctions/sld_rom_sr.vhd                                      ;             ;
+; sld_jtag_endpoint_adapter.vhd                                      ; yes             ; Encrypted Megafunction                       ; d:/quartusprime/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd                       ;             ;
+; sld_jtag_endpoint_adapter_impl.sv                                  ; yes             ; Encrypted Megafunction                       ; d:/quartusprime/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter_impl.sv                   ;             ;
+; sld_hub.vhd                                                        ; yes             ; Encrypted Megafunction                       ; d:/quartusprime/quartus/libraries/megafunctions/sld_hub.vhd                                         ; altera_sld  ;
+; db/ip/sldd921ae6f/alt_sld_fab.v                                    ; yes             ; Encrypted Auto-Found Verilog HDL File        ; D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/ip/sldd921ae6f/alt_sld_fab.v                                    ; alt_sld_fab ;
+; db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab.v             ; yes             ; Encrypted Auto-Found Verilog HDL File        ; D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab.v             ; alt_sld_fab ;
+; db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; yes             ; Auto-Found SystemVerilog HDL File            ; D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; alt_sld_fab ;
+; db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; alt_sld_fab ;
+; db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; yes             ; Encrypted Auto-Found VHDL File               ; D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; alt_sld_fab ;
+; db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; alt_sld_fab ;
+; sld_jtag_hub.vhd                                                   ; yes             ; Encrypted Megafunction                       ; d:/quartusprime/quartus/libraries/megafunctions/sld_jtag_hub.vhd                                    ;             ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------+
 
 
 +----------------------------------------------------------+
@@ -269,14 +271,14 @@ https://fpgasoftware.intel.com/eula.
 ;     -- I/O registers                        ; 0          ;
 ;                                             ;            ;
 ; Virtual pins                                ; 128        ;
-; I/O pins                                    ; 162        ;
+; I/O pins                                    ; 163        ;
 ; Total memory bits                           ; 768        ;
 ;                                             ;            ;
 ; Embedded Multiplier 9-bit elements          ; 0          ;
 ;                                             ;            ;
 ; Maximum fan-out node                        ; ACLK~input ;
 ; Maximum fan-out                             ; 416        ;
-; Total fan-out                               ; 4462       ;
+; Total fan-out                               ; 4463       ;
 ; Average fan-out                             ; 2.41       ;
 +---------------------------------------------+------------+
 
@@ -286,7 +288,7 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                  ; Entity Name                       ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |AXI_lite                                                                                                                               ; 701 (1)             ; 680 (0)                   ; 768         ; 0          ; 0            ; 0       ; 0         ; 162  ; 128          ; 0          ; |AXI_lite                                                                                                                                                                                                                                                                                                                                            ; AXI_lite                          ; work         ;
+; |AXI_lite                                                                                                                               ; 701 (1)             ; 680 (0)                   ; 768         ; 0          ; 0            ; 0       ; 0         ; 163  ; 128          ; 0          ; |AXI_lite                                                                                                                                                                                                                                                                                                                                            ; AXI_lite                          ; work         ;
 ;    |read_address_ms:ra|                                                                                                                 ; 66 (0)              ; 66 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |AXI_lite|read_address_ms:ra                                                                                                                                                                                                                                                                                                                         ; read_address_ms                   ; work         ;
 ;       |read_address_master:addr1|                                                                                                       ; 33 (33)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |AXI_lite|read_address_ms:ra|read_address_master:addr1                                                                                                                                                                                                                                                                                               ; read_address_master               ; work         ;
 ;       |read_address_slave:addr2|                                                                                                        ; 33 (33)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |AXI_lite|read_address_ms:ra|read_address_slave:addr2                                                                                                                                                                                                                                                                                                ; read_address_slave                ; work         ;
@@ -373,25 +375,46 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 
 
-+-------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                    ;
-+--------------------------------------------------------------+----------------------------------------+
-; Register name                                                ; Reason for Removal                     ;
-+--------------------------------------------------------------+----------------------------------------+
-; write_response_ms:wr|write_response_slave:resp_s|o_BRESP[1]  ; Stuck at GND due to stuck port data_in ;
-; write_response_ms:wr|write_response_master:resp_m|o_BRESP[1] ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 2                        ;                                        ;
-+--------------------------------------------------------------+----------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                                                                                                                                                                                                                              ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                                                                                                                            ; Reason for Removal                                                                                                                                                                                                   ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; write_response_ms:wr|write_response_slave:resp_s|o_BRESP[1]                                                                                                                                              ; Stuck at GND due to stuck port data_in                                                                                                                                                                               ;
+; write_response_ms:wr|write_response_master:resp_m|o_BRESP[1]                                                                                                                                             ; Stuck at GND due to stuck port data_in                                                                                                                                                                               ;
+; Total Number of Removed Registers = 2                                                                                                                                                                    ;                                                                                                                                                                                                                      ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|final_trigger_processed                           ; Stuck at GND due to stuck port data_in                                                                                                                                                                               ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|segment_shift_clk_ena                                                                        ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_enable_delayed                                                                  ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\storage_qualifier_buffer_manager:offset_count[0] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\storage_qualifier_buffer_manager:next_address[0] ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\storage_qualifier_buffer_manager:offset_count[1] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\storage_qualifier_buffer_manager:next_address[1] ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\storage_qualifier_buffer_manager:offset_count[2] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\storage_qualifier_buffer_manager:next_address[2] ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\storage_qualifier_buffer_manager:offset_count[3] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\storage_qualifier_buffer_manager:next_address[3] ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\storage_qualifier_buffer_manager:offset_count[4] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\storage_qualifier_buffer_manager:next_address[4] ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\storage_qualifier_buffer_manager:offset_count[5] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\storage_qualifier_buffer_manager:next_address[5] ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\storage_qualifier_buffer_manager:offset_count[6] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\storage_qualifier_buffer_manager:next_address[6] ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[0]                                                                    ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[0]                                                              ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[1]                                                                    ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[1]                                                              ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[2]                                                                    ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[2]                                                              ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[3]                                                                    ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[3]                                                              ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[4]                                                                    ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[4]                                                              ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[5]                                                                    ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[5]                                                              ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[6]                                                                    ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[6]                                                              ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|serial_crc_16:\tdo_crc_gen:tdo_crc_calc|lfsr[13..15]                                         ; Stuck at GND due to stuck port data_in                                                                                                                                                                               ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[7]                            ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|final_trigger_set                                 ;
+; Total Number of Removed Registers = 20                                                                                                                                                                   ;                                                                                                                                                                                                                      ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                            ;
-+-------------------------------------------------------------+---------------------------+--------------------------------------------------------------+
-; Register name                                               ; Reason for Removal        ; Registers Removed due to This Register                       ;
-+-------------------------------------------------------------+---------------------------+--------------------------------------------------------------+
-; write_response_ms:wr|write_response_slave:resp_s|o_BRESP[1] ; Stuck at GND              ; write_response_ms:wr|write_response_master:resp_m|o_BRESP[1] ;
-;                                                             ; due to stuck port data_in ;                                                              ;
-+-------------------------------------------------------------+---------------------------+--------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                                                                                                                                                                              ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                                                                                ; Reason for Removal        ; Registers Removed due to This Register                                                                                                                        ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; write_response_ms:wr|write_response_slave:resp_s|o_BRESP[1]                                                                                                  ; Stuck at GND              ; write_response_ms:wr|write_response_master:resp_m|o_BRESP[1]                                                                                                  ;
+;                                                                                                                                                              ; due to stuck port data_in ;                                                                                                                                                               ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|serial_crc_16:\tdo_crc_gen:tdo_crc_calc|lfsr[15] ; Stuck at GND              ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|serial_crc_16:\tdo_crc_gen:tdo_crc_calc|lfsr[14], ;
+;                                                                                                                                                              ; due to stuck port data_in ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|serial_crc_16:\tdo_crc_gen:tdo_crc_calc|lfsr[13]  ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -427,13 +450,27 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |AXI_lite|read_data_ms:rd|read_data_slave:data2|o_RDATA[6] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                                                                                                                                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                                                                                                                                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |AXI_lite|read_data_ms:rd|read_data_slave:data2|o_RDATA[6]                                                                                                                                                                                                                                                                                                         ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |AXI_lite|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|tdo_crc_val_shift_reg[15]                                                                                                                                                                                                                    ;
+; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |AXI_lite|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|tdo_crc_val_shift_reg[0]                                                                                                                                                                                                                     ;
+; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |AXI_lite|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|serial_crc_16:\tdo_crc_gen:tdo_crc_calc|lfsr[0]                                                                                                                                                                                              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |AXI_lite|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|tdo_crc_len_reg[30]                                                                                                                                                                                                                          ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |AXI_lite|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_rom_sr:crc_rom_sr|word_counter[3]                                                                                                                                                                                                        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |AXI_lite|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|counter[7]                                                                                                                                                                                        ;
+; 12:1               ; 4 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; Yes        ; |AXI_lite|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_rom_sr:crc_rom_sr|WORD_SR[3]                                                                                                                                                                                                             ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; No         ; |AXI_lite|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|offset_count                                                                                                                                                                                      ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |AXI_lite|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|irsr_reg[0]                             ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |AXI_lite|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|hub_minor_ver_reg[1]                    ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |AXI_lite|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|word_counter[0] ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |AXI_lite|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|mixer_addr_reg_internal[4]              ;
+; 34:1               ; 4 bits    ; 88 LEs        ; 56 LEs               ; 32 LEs                 ; Yes        ; |AXI_lite|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|design_hash_reg[0]                      ;
+; 20:1               ; 4 bits    ; 52 LEs        ; 32 LEs               ; 20 LEs                 ; Yes        ; |AXI_lite|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|WORD_SR[0]      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------+
@@ -552,60 +589,122 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 
 
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
++--------------------------------------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Partition sld_signaltap:auto_signaltap_0 ;
++-----------------------+--------------------------------------------------------+
+; Type                  ; Count                                                  ;
++-----------------------+--------------------------------------------------------+
+; boundary_port         ; 101                                                    ;
+; cycloneiii_ff         ; 314                                                    ;
+;     CLR               ; 40                                                     ;
+;     ENA               ; 103                                                    ;
+;     ENA CLR           ; 61                                                     ;
+;     ENA SCLR SLD      ; 36                                                     ;
+;     ENA SLD           ; 8                                                      ;
+;     SLD               ; 7                                                      ;
+;     plain             ; 59                                                     ;
+; cycloneiii_lcell_comb ; 300                                                    ;
+;     arith             ; 58                                                     ;
+;         2 data inputs ; 58                                                     ;
+;     normal            ; 242                                                    ;
+;         0 data inputs ; 5                                                      ;
+;         1 data inputs ; 12                                                     ;
+;         2 data inputs ; 20                                                     ;
+;         3 data inputs ; 88                                                     ;
+;         4 data inputs ; 117                                                    ;
+; cycloneiii_ram_block  ; 6                                                      ;
+;                       ;                                                        ;
+; Max LUT depth         ; 4.30                                                   ;
+; Average LUT depth     ; 2.12                                                   ;
++-----------------------+--------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Connections to In-System Debugging Instance "auto_signaltap_0"                                                                                        ;
-+----------------------+---------------+-----------+--------------------------------+-------------------+-------------------------------------+---------+
-; Name                 ; Type          ; Status    ; Partition Name                 ; Netlist Type Used ; Actual Connection                   ; Details ;
-+----------------------+---------------+-----------+--------------------------------+-------------------+-------------------------------------+---------+
-; WVALID               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; WVALID                              ; N/A     ;
-; ACLK                 ; post-fitting  ; connected ; Top                            ; post-synthesis    ; ACLK                                ; N/A     ;
-; ARESETn              ; post-fitting  ; connected ; Top                            ; post-synthesis    ; ARESETn                             ; N/A     ;
-; AWREADY              ; post-fitting  ; connected ; Top                            ; post-synthesis    ; AWREADY                             ; N/A     ;
-; AWVALID              ; post-fitting  ; connected ; Top                            ; post-synthesis    ; AWVALID                             ; N/A     ;
-; WREADY               ; post-fitting  ; connected ; Top                            ; post-synthesis    ; WREADY                              ; N/A     ;
-; WVALID               ; post-fitting  ; connected ; Top                            ; post-synthesis    ; WVALID                              ; N/A     ;
-; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
-; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
-; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
-; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
-; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
-; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
-; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
-; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
-; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
-; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
-; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
-; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
-; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
-+----------------------+---------------+-----------+--------------------------------+-------------------+-------------------------------------+---------+
++------------------------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Partition sld_hub:auto_hub ;
++-----------------------+------------------------------------------+
+; Type                  ; Count                                    ;
++-----------------------+------------------------------------------+
+; boundary_port         ; 107                                      ;
+; cycloneiii_ff         ; 90                                       ;
+;     CLR               ; 5                                        ;
+;     ENA               ; 16                                       ;
+;     ENA CLR           ; 31                                       ;
+;     ENA CLR SLD       ; 1                                        ;
+;     ENA SCLR          ; 5                                        ;
+;     ENA SLD           ; 9                                        ;
+;     SCLR              ; 7                                        ;
+;     plain             ; 16                                       ;
+; cycloneiii_lcell_comb ; 123                                      ;
+;     arith             ; 8                                        ;
+;         2 data inputs ; 8                                        ;
+;     normal            ; 115                                      ;
+;         0 data inputs ; 1                                        ;
+;         1 data inputs ; 6                                        ;
+;         2 data inputs ; 22                                       ;
+;         3 data inputs ; 34                                       ;
+;         4 data inputs ; 52                                       ;
+;                       ;                                          ;
+; Max LUT depth         ; 4.00                                     ;
+; Average LUT depth     ; 1.81                                     ;
++-----------------------+------------------------------------------+
+
+
++-----------------------------------------------+
+; Elapsed Time Per Partition                    ;
++--------------------------------+--------------+
+; Partition Name                 ; Elapsed Time ;
++--------------------------------+--------------+
+; Top                            ; 00:00:01     ;
+; sld_signaltap:auto_signaltap_0 ; 00:00:02     ;
+; sld_hub:auto_hub               ; 00:00:01     ;
++--------------------------------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Connections to In-System Debugging Instance "auto_signaltap_0"                                                                                                      ;
++-------------------------------------+--------------+-----------+--------------------------------+-------------------+-------------------------------------+---------+
+; Name                                ; Type         ; Status    ; Partition Name                 ; Netlist Type Used ; Actual Connection                   ; Details ;
++-------------------------------------+--------------+-----------+--------------------------------+-------------------+-------------------------------------+---------+
+; ACLK                                ; post-fitting ; connected ; Top                            ; post-synthesis    ; ACLK                                ; N/A     ;
+; ARESETn                             ; post-fitting ; connected ; Top                            ; post-synthesis    ; ARESETn                             ; N/A     ;
+; AWREADY                             ; post-fitting ; connected ; Top                            ; post-synthesis    ; AWREADY                             ; N/A     ;
+; AWVALID                             ; post-fitting ; connected ; Top                            ; post-synthesis    ; AWVALID                             ; N/A     ;
+; WREADY                              ; post-fitting ; connected ; Top                            ; post-synthesis    ; WREADY                              ; N/A     ;
+; WVALID                              ; post-fitting ; connected ; Top                            ; post-synthesis    ; WVALID                              ; N/A     ;
+; auto_signaltap_0|gnd                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
+; auto_signaltap_0|gnd                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
+; auto_signaltap_0|gnd                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
+; auto_signaltap_0|gnd                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
+; auto_signaltap_0|gnd                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
+; auto_signaltap_0|gnd                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
+; auto_signaltap_0|gnd                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
+; auto_signaltap_0|gnd                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
+; auto_signaltap_0|gnd                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
+; auto_signaltap_0|gnd                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
+; auto_signaltap_0|gnd                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
+; auto_signaltap_0|gnd                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
+; auto_signaltap_0|gnd                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
+; auto_signaltap_0|vcc                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc                ; post-fitting ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_stp_external_storage_qualifier ; dynamic pin  ; connected ; Top                            ; post-synthesis    ; auto_stp_external_storage_qualifier ; N/A     ;
++-------------------------------------+--------------+-----------+--------------------------------+-------------------+-------------------------------------+---------+
 
 
 +-------------------------------+
@@ -613,75 +712,73 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Wed Jun 15 13:00:30 2022
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Wed Jun 15 13:19:48 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off AXI_lite -c AXI_lite
-Critical Warning (138067): Current license file does not support incremental compilation. The Quartus Prime software removes all the user-specified design partitions in the design automatically.
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file axi_lite.v
-    Info (12023): Found entity 1: AXI_lite File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 1
+    Info (12023): Found entity 1: AXI_lite File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 1
 Info (12021): Found 3 design units, including 3 entities, in source file write_address_ms.v
-    Info (12023): Found entity 1: write_address_ms File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 1
-    Info (12023): Found entity 2: write_address_master File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 18
-    Info (12023): Found entity 3: write_address_slave File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 49
+    Info (12023): Found entity 1: write_address_ms File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/write_address_ms.v Line: 1
+    Info (12023): Found entity 2: write_address_master File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/write_address_ms.v Line: 18
+    Info (12023): Found entity 3: write_address_slave File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/write_address_ms.v Line: 49
 Info (12021): Found 3 design units, including 3 entities, in source file write_data_ms.v
-    Info (12023): Found entity 1: write_data_ms File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 1
-    Info (12023): Found entity 2: write_data_master File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 19
-    Info (12023): Found entity 3: write_data_slave File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 81
+    Info (12023): Found entity 1: write_data_ms File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/write_data_ms.v Line: 1
+    Info (12023): Found entity 2: write_data_master File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/write_data_ms.v Line: 19
+    Info (12023): Found entity 3: write_data_slave File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/write_data_ms.v Line: 81
 Info (12021): Found 3 design units, including 3 entities, in source file write_response_ms.v
-    Info (12023): Found entity 1: write_response_ms File: D:/Workspace/AMBA-AXI4-Lite/write_response_ms.v Line: 1
-    Info (12023): Found entity 2: write_response_master File: D:/Workspace/AMBA-AXI4-Lite/write_response_ms.v Line: 18
-    Info (12023): Found entity 3: write_response_slave File: D:/Workspace/AMBA-AXI4-Lite/write_response_ms.v Line: 41
+    Info (12023): Found entity 1: write_response_ms File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/write_response_ms.v Line: 1
+    Info (12023): Found entity 2: write_response_master File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/write_response_ms.v Line: 18
+    Info (12023): Found entity 3: write_response_slave File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/write_response_ms.v Line: 41
 Info (12021): Found 3 design units, including 3 entities, in source file read_address_ms.v
-    Info (12023): Found entity 1: read_address_ms File: D:/Workspace/AMBA-AXI4-Lite/read_address_ms.v Line: 1
-    Info (12023): Found entity 2: read_address_master File: D:/Workspace/AMBA-AXI4-Lite/read_address_ms.v Line: 18
-    Info (12023): Found entity 3: read_address_slave File: D:/Workspace/AMBA-AXI4-Lite/read_address_ms.v Line: 46
+    Info (12023): Found entity 1: read_address_ms File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/read_address_ms.v Line: 1
+    Info (12023): Found entity 2: read_address_master File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/read_address_ms.v Line: 18
+    Info (12023): Found entity 3: read_address_slave File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/read_address_ms.v Line: 46
 Info (12021): Found 3 design units, including 3 entities, in source file read_data_ms.v
-    Info (12023): Found entity 1: read_data_ms File: D:/Workspace/AMBA-AXI4-Lite/read_data_ms.v Line: 1
-    Info (12023): Found entity 2: read_data_master File: D:/Workspace/AMBA-AXI4-Lite/read_data_ms.v Line: 20
-    Info (12023): Found entity 3: read_data_slave File: D:/Workspace/AMBA-AXI4-Lite/read_data_ms.v Line: 44
+    Info (12023): Found entity 1: read_data_ms File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/read_data_ms.v Line: 1
+    Info (12023): Found entity 2: read_data_master File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/read_data_ms.v Line: 20
+    Info (12023): Found entity 3: read_data_slave File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/read_data_ms.v Line: 44
 Info (12127): Elaborating entity "AXI_lite" for the top level hierarchy
-Info (12128): Elaborating entity "write_address_ms" for hierarchy "write_address_ms:wa" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 40
-Info (12128): Elaborating entity "write_address_master" for hierarchy "write_address_ms:wa|write_address_master:addr_m" File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 11
-Info (12128): Elaborating entity "write_address_slave" for hierarchy "write_address_ms:wa|write_address_slave:addr_s" File: D:/Workspace/AMBA-AXI4-Lite/write_address_ms.v Line: 12
-Info (12128): Elaborating entity "write_data_ms" for hierarchy "write_data_ms:wd" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 41
-Info (12128): Elaborating entity "write_data_master" for hierarchy "write_data_ms:wd|write_data_master:data1" File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 12
-Warning (10235): Verilog HDL Always Construct warning at write_data_ms.v(63): variable "i_WDATA" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 63
-Info (12128): Elaborating entity "write_data_slave" for hierarchy "write_data_ms:wd|write_data_slave:data2" File: D:/Workspace/AMBA-AXI4-Lite/write_data_ms.v Line: 13
-Info (12128): Elaborating entity "write_response_ms" for hierarchy "write_response_ms:wr" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 42
-Info (12128): Elaborating entity "write_response_slave" for hierarchy "write_response_ms:wr|write_response_slave:resp_s" File: D:/Workspace/AMBA-AXI4-Lite/write_response_ms.v Line: 10
-Info (12128): Elaborating entity "write_response_master" for hierarchy "write_response_ms:wr|write_response_master:resp_m" File: D:/Workspace/AMBA-AXI4-Lite/write_response_ms.v Line: 11
-Info (12128): Elaborating entity "read_address_ms" for hierarchy "read_address_ms:ra" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 43
-Info (12128): Elaborating entity "read_address_master" for hierarchy "read_address_ms:ra|read_address_master:addr1" File: D:/Workspace/AMBA-AXI4-Lite/read_address_ms.v Line: 12
-Info (12128): Elaborating entity "read_address_slave" for hierarchy "read_address_ms:ra|read_address_slave:addr2" File: D:/Workspace/AMBA-AXI4-Lite/read_address_ms.v Line: 13
-Info (12128): Elaborating entity "read_data_ms" for hierarchy "read_data_ms:rd" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 44
-Info (12128): Elaborating entity "read_data_slave" for hierarchy "read_data_ms:rd|read_data_slave:data2" File: D:/Workspace/AMBA-AXI4-Lite/read_data_ms.v Line: 15
-Info (12128): Elaborating entity "read_data_master" for hierarchy "read_data_ms:rd|read_data_master:data1" File: D:/Workspace/AMBA-AXI4-Lite/read_data_ms.v Line: 16
-Critical Warning (138067): Current license file does not support incremental compilation. The Quartus Prime software removes all the user-specified design partitions in the design automatically.
+Info (12128): Elaborating entity "write_address_ms" for hierarchy "write_address_ms:wa" File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 40
+Info (12128): Elaborating entity "write_address_master" for hierarchy "write_address_ms:wa|write_address_master:addr_m" File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/write_address_ms.v Line: 11
+Info (12128): Elaborating entity "write_address_slave" for hierarchy "write_address_ms:wa|write_address_slave:addr_s" File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/write_address_ms.v Line: 12
+Info (12128): Elaborating entity "write_data_ms" for hierarchy "write_data_ms:wd" File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 41
+Info (12128): Elaborating entity "write_data_master" for hierarchy "write_data_ms:wd|write_data_master:data1" File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/write_data_ms.v Line: 12
+Warning (10235): Verilog HDL Always Construct warning at write_data_ms.v(63): variable "i_WDATA" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/write_data_ms.v Line: 63
+Info (12128): Elaborating entity "write_data_slave" for hierarchy "write_data_ms:wd|write_data_slave:data2" File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/write_data_ms.v Line: 13
+Info (12128): Elaborating entity "write_response_ms" for hierarchy "write_response_ms:wr" File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 42
+Info (12128): Elaborating entity "write_response_slave" for hierarchy "write_response_ms:wr|write_response_slave:resp_s" File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/write_response_ms.v Line: 10
+Info (12128): Elaborating entity "write_response_master" for hierarchy "write_response_ms:wr|write_response_master:resp_m" File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/write_response_ms.v Line: 11
+Info (12128): Elaborating entity "read_address_ms" for hierarchy "read_address_ms:ra" File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 43
+Info (12128): Elaborating entity "read_address_master" for hierarchy "read_address_ms:ra|read_address_master:addr1" File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/read_address_ms.v Line: 12
+Info (12128): Elaborating entity "read_address_slave" for hierarchy "read_address_ms:ra|read_address_slave:addr2" File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/read_address_ms.v Line: 13
+Info (12128): Elaborating entity "read_data_ms" for hierarchy "read_data_ms:rd" File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 44
+Info (12128): Elaborating entity "read_data_slave" for hierarchy "read_data_ms:rd|read_data_slave:data2" File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/read_data_ms.v Line: 15
+Info (12128): Elaborating entity "read_data_master" for hierarchy "read_data_ms:rd|read_data_master:data1" File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/read_data_ms.v Line: 16
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_oc14.tdf
-    Info (12023): Found entity 1: altsyncram_oc14 File: D:/Workspace/AMBA-AXI4-Lite/db/altsyncram_oc14.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_oc14 File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/altsyncram_oc14.tdf Line: 28
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_i7c.tdf
-    Info (12023): Found entity 1: mux_i7c File: D:/Workspace/AMBA-AXI4-Lite/db/mux_i7c.tdf Line: 23
+    Info (12023): Found entity 1: mux_i7c File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/mux_i7c.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_3af.tdf
-    Info (12023): Found entity 1: decode_3af File: D:/Workspace/AMBA-AXI4-Lite/db/decode_3af.tdf Line: 23
+    Info (12023): Found entity 1: decode_3af File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/decode_3af.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_jph.tdf
-    Info (12023): Found entity 1: cntr_jph File: D:/Workspace/AMBA-AXI4-Lite/db/cntr_jph.tdf Line: 28
+    Info (12023): Found entity 1: cntr_jph File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/cntr_jph.tdf Line: 28
 Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_frb.tdf
-    Info (12023): Found entity 1: cmpr_frb File: D:/Workspace/AMBA-AXI4-Lite/db/cmpr_frb.tdf Line: 23
+    Info (12023): Found entity 1: cmpr_frb File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/cmpr_frb.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_8hi.tdf
-    Info (12023): Found entity 1: cntr_8hi File: D:/Workspace/AMBA-AXI4-Lite/db/cntr_8hi.tdf Line: 26
+    Info (12023): Found entity 1: cntr_8hi File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/cntr_8hi.tdf Line: 26
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_4rh.tdf
-    Info (12023): Found entity 1: cntr_4rh File: D:/Workspace/AMBA-AXI4-Lite/db/cntr_4rh.tdf Line: 28
+    Info (12023): Found entity 1: cntr_4rh File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/cntr_4rh.tdf Line: 28
 Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_grb.tdf
-    Info (12023): Found entity 1: cmpr_grb File: D:/Workspace/AMBA-AXI4-Lite/db/cmpr_grb.tdf Line: 23
+    Info (12023): Found entity 1: cmpr_grb File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/cmpr_grb.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_odi.tdf
-    Info (12023): Found entity 1: cntr_odi File: D:/Workspace/AMBA-AXI4-Lite/db/cntr_odi.tdf Line: 28
+    Info (12023): Found entity 1: cntr_odi File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/cntr_odi.tdf Line: 28
 Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_drb.tdf
-    Info (12023): Found entity 1: cmpr_drb File: D:/Workspace/AMBA-AXI4-Lite/db/cmpr_drb.tdf Line: 23
+    Info (12023): Found entity 1: cmpr_drb File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/cmpr_drb.tdf Line: 23
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2022.06.15.13:00:45 Progress: Loading sldd921ae6f/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2022.06.15.13:22:17 Progress: Loading sldd921ae6f/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -692,171 +789,177 @@ Info (11172): Ident: "alt_sld_fab" instantiated altera_connection_identification
 Info (11172): Alt_sld_fab: Done "alt_sld_fab" with 6 modules, 6 files
 Info (11171): Finished IP generation for the debug fabric: alt_sld_fab.
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sldd921ae6f/alt_sld_fab.v
-    Info (12023): Found entity 1: alt_sld_fab File: D:/Workspace/AMBA-AXI4-Lite/db/ip/sldd921ae6f/alt_sld_fab.v Line: 9
+    Info (12023): Found entity 1: alt_sld_fab File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/ip/sldd921ae6f/alt_sld_fab.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab.v
-    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab File: D:/Workspace/AMBA-AXI4-Lite/db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab.v Line: 9
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab_ident.sv
-    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_ident File: D:/Workspace/AMBA-AXI4-Lite/db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab_ident.sv Line: 33
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_ident File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab_ident.sv Line: 33
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab_presplit.sv
-    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_presplit File: D:/Workspace/AMBA-AXI4-Lite/db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab_presplit.sv Line: 3
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_presplit File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab_presplit.sv Line: 3
 Info (12021): Found 2 design units, including 1 entities, in source file db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd
-    Info (12022): Found design unit 1: alt_sld_fab_alt_sld_fab_sldfabric-rtl File: D:/Workspace/AMBA-AXI4-Lite/db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 102
-    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric File: D:/Workspace/AMBA-AXI4-Lite/db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 11
+    Info (12022): Found design unit 1: alt_sld_fab_alt_sld_fab_sldfabric-rtl File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 102
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab_splitter.sv
-    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: D:/Workspace/AMBA-AXI4-Lite/db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/db/ip/sldd921ae6f/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "o_BRESP[1]" is stuck at GND File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 24
+    Warning (13410): Pin "o_BRESP[1]" is stuck at GND File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 24
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
+Info (13000): Registers with preset signals will power-up high File: d:/quartusprime/quartus/libraries/megafunctions/sld_buffer_manager.vhd Line: 145
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286031): Timing-Driven Synthesis is running on partition "sld_signaltap:auto_signaltap_0"
+Info (13000): Registers with preset signals will power-up high File: d:/quartusprime/quartus/libraries/megafunctions/sld_jtag_hub.vhd Line: 386
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286031): Timing-Driven Synthesis is running on partition "sld_hub:auto_hub"
 Info (35024): Successfully connected in-system debug instance "auto_signaltap_0" to all 39 required data inputs, trigger inputs, acquisition clocks, and dynamic pins
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Info (15717): Design contains 128 virtual pins; timing numbers associated with paths containing virtual pins are estimates
-    Info (15719): Pin "o_WDATA[0]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[1]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[2]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[3]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[4]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[5]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[6]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[7]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[8]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[9]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[10]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[11]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[12]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[13]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[14]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[15]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[16]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[17]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[18]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[19]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[20]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[21]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[22]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[23]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[24]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[25]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[26]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[27]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[28]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[29]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[30]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[31]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_AWADDR[0]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[1]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[2]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[3]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[4]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[5]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[6]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[7]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[8]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[9]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[10]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[11]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[12]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[13]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[14]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[15]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[16]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[17]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[18]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[19]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[20]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[21]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[22]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[23]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[24]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[25]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[26]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[27]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[28]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[29]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[30]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[31]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15718): Pin "i_WDATA[0]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[1]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[2]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[3]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[4]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[5]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[6]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[7]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[8]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[9]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[10]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[11]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[12]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[13]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[14]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[15]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[16]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[17]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[18]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[19]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[20]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[21]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[22]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[23]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[24]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[25]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[26]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[27]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[28]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[29]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[30]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[31]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_AWADDR[0]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[1]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[2]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[3]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[4]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[5]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[6]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[7]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[8]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[9]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[10]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[11]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[12]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[13]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[14]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[15]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[16]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[17]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[18]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[19]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[20]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[21]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[22]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[23]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[24]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[25]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[26]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[27]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[28]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[29]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[30]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[31]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15719): Pin "o_WDATA[0]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_WDATA[1]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_WDATA[2]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_WDATA[3]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_WDATA[4]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_WDATA[5]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_WDATA[6]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_WDATA[7]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_WDATA[8]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_WDATA[9]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_WDATA[10]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_WDATA[11]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_WDATA[12]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_WDATA[13]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_WDATA[14]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_WDATA[15]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_WDATA[16]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_WDATA[17]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_WDATA[18]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_WDATA[19]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_WDATA[20]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_WDATA[21]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_WDATA[22]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_WDATA[23]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_WDATA[24]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_WDATA[25]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_WDATA[26]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_WDATA[27]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_WDATA[28]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_WDATA[29]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_WDATA[30]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_WDATA[31]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 18
+    Info (15719): Pin "o_AWADDR[0]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15719): Pin "o_AWADDR[1]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15719): Pin "o_AWADDR[2]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15719): Pin "o_AWADDR[3]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15719): Pin "o_AWADDR[4]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15719): Pin "o_AWADDR[5]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15719): Pin "o_AWADDR[6]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15719): Pin "o_AWADDR[7]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15719): Pin "o_AWADDR[8]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15719): Pin "o_AWADDR[9]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15719): Pin "o_AWADDR[10]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15719): Pin "o_AWADDR[11]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15719): Pin "o_AWADDR[12]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15719): Pin "o_AWADDR[13]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15719): Pin "o_AWADDR[14]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15719): Pin "o_AWADDR[15]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15719): Pin "o_AWADDR[16]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15719): Pin "o_AWADDR[17]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15719): Pin "o_AWADDR[18]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15719): Pin "o_AWADDR[19]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15719): Pin "o_AWADDR[20]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15719): Pin "o_AWADDR[21]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15719): Pin "o_AWADDR[22]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15719): Pin "o_AWADDR[23]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15719): Pin "o_AWADDR[24]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15719): Pin "o_AWADDR[25]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15719): Pin "o_AWADDR[26]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15719): Pin "o_AWADDR[27]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15719): Pin "o_AWADDR[28]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15719): Pin "o_AWADDR[29]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15719): Pin "o_AWADDR[30]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15719): Pin "o_AWADDR[31]" is virtual output pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 11
+    Info (15718): Pin "i_WDATA[0]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_WDATA[1]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_WDATA[2]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_WDATA[3]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_WDATA[4]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_WDATA[5]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_WDATA[6]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_WDATA[7]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_WDATA[8]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_WDATA[9]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_WDATA[10]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_WDATA[11]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_WDATA[12]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_WDATA[13]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_WDATA[14]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_WDATA[15]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_WDATA[16]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_WDATA[17]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_WDATA[18]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_WDATA[19]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_WDATA[20]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_WDATA[21]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_WDATA[22]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_WDATA[23]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_WDATA[24]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_WDATA[25]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_WDATA[26]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_WDATA[27]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_WDATA[28]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_WDATA[29]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_WDATA[30]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_WDATA[31]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 15
+    Info (15718): Pin "i_AWADDR[0]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15718): Pin "i_AWADDR[1]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15718): Pin "i_AWADDR[2]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15718): Pin "i_AWADDR[3]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15718): Pin "i_AWADDR[4]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15718): Pin "i_AWADDR[5]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15718): Pin "i_AWADDR[6]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15718): Pin "i_AWADDR[7]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15718): Pin "i_AWADDR[8]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15718): Pin "i_AWADDR[9]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15718): Pin "i_AWADDR[10]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15718): Pin "i_AWADDR[11]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15718): Pin "i_AWADDR[12]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15718): Pin "i_AWADDR[13]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15718): Pin "i_AWADDR[14]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15718): Pin "i_AWADDR[15]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15718): Pin "i_AWADDR[16]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15718): Pin "i_AWADDR[17]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15718): Pin "i_AWADDR[18]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15718): Pin "i_AWADDR[19]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15718): Pin "i_AWADDR[20]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15718): Pin "i_AWADDR[21]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15718): Pin "i_AWADDR[22]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15718): Pin "i_AWADDR[23]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15718): Pin "i_AWADDR[24]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15718): Pin "i_AWADDR[25]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15718): Pin "i_AWADDR[26]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15718): Pin "i_AWADDR[27]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15718): Pin "i_AWADDR[28]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15718): Pin "i_AWADDR[29]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15718): Pin "i_AWADDR[30]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
+    Info (15718): Pin "i_AWADDR[31]" is virtual input pin File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 9
 Warning (21074): Design contains 7 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "i_BRESP[1]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 23
-    Warning (15610): No output dependent on input pin "AWPROT[0]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 10
-    Warning (15610): No output dependent on input pin "AWPROT[1]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 10
-    Warning (15610): No output dependent on input pin "AWPROT[2]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 10
-    Warning (15610): No output dependent on input pin "ARPROT[0]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 30
-    Warning (15610): No output dependent on input pin "ARPROT[1]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 30
-    Warning (15610): No output dependent on input pin "ARPROT[2]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 30
-Info (21057): Implemented 1167 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 93 input pins
+    Warning (15610): No output dependent on input pin "i_BRESP[1]" File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 23
+    Warning (15610): No output dependent on input pin "AWPROT[0]" File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 10
+    Warning (15610): No output dependent on input pin "AWPROT[1]" File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 10
+    Warning (15610): No output dependent on input pin "AWPROT[2]" File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 10
+    Warning (15610): No output dependent on input pin "ARPROT[0]" File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 30
+    Warning (15610): No output dependent on input pin "ARPROT[1]" File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 30
+    Warning (15610): No output dependent on input pin "ARPROT[2]" File: D:/AMBA AXI4-lite/AMBA-AXI4-Lite/AXI_lite.v Line: 30
+Info (21057): Implemented 1168 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 94 input pins
     Info (21059): Implemented 73 output pins
     Info (21061): Implemented 994 logic cells
     Info (21064): Implemented 6 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 15 warnings
-    Info: Peak virtual memory: 4831 megabytes
-    Info: Processing ended: Wed Jun 15 13:00:55 2022
-    Info: Elapsed time: 00:00:25
-    Info: Total CPU time (on all processors): 00:00:48
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
+    Info: Peak virtual memory: 4872 megabytes
+    Info: Processing ended: Wed Jun 15 13:22:41 2022
+    Info: Elapsed time: 00:02:53
+    Info: Total CPU time (on all processors): 00:01:37
 
 

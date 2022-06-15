@@ -1,4 +1,4 @@
-<session jtag_chain="USB-Blaster [USB-0]" jtag_device="@1: 10M50DA(.|ES)/10M50DC (0x031050DD)" sof_file="">
+<session jtag_chain="Disabled" jtag_device="" sof_file="">
   <display_tree gui_logging_enabled="0">
     <display_branch instance="auto_signaltap_0" log="USE_GLOBAL_TEMP" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
   </display_tree>
@@ -50,14 +50,18 @@
         <trigger_in_editor/>
         <trigger_out_editor/>
       </presentation>
-      <trigger CRC="1EF9D3A5" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2022/06/15 12:55:09  #1" position="post" power_up_trigger_mode="false" record_data_gap="true" segment_size="1" storage_mode="port" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
+      <trigger CRC="1EF9D3A5" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2022/06/15 12:55:09  #1" position="post" power_up_trigger_mode="false" record_data_gap="true" segment_size="1" storage_mode="port" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="false" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
         <power_up_trigger position="pre" storage_qualifier_disabled="no"/>
         <events use_custom_flow_control="no">
-          <level enabled="no" name="condition1" type="basic"><power_up enabled="yes">
-            </power_up><op_node/>
+          <level enabled="no" name="condition1" type="basic">
+            <power_up enabled="yes">
+            </power_up>
+            <op_node/>
           </level>
-          <level enabled="no" name="condition2" type="basic"><power_up enabled="yes">
-            </power_up><op_node/>
+          <level enabled="no" name="condition2" type="basic">
+            <power_up enabled="yes">
+            </power_up>
+            <op_node/>
           </level>
         </events>
         <storage_qualifier_events>
@@ -83,7 +87,7 @@
       </trigger>
     </signal_set>
     <position_info>
-      <single attribute="active tab" value="0"/>
+      <single attribute="active tab" value="1"/>
       <single attribute="data horizontal scroll position" value="127"/>
       <single attribute="data vertical scroll position" value="0"/>
       <single attribute="setup horizontal scroll position" value="0"/>
