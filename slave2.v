@@ -1,6 +1,6 @@
-module slave1(ACLK, ready_out, resp_out, addr_in, data_in);
+module slave2(ACLK, ready_out, resp_out, addr_in, data_in);
 
-parameter addr = 32'h00110022;
+parameter addr = 32'h11111111;
 
 parameter ready = 1'b1;
 
@@ -20,4 +20,3 @@ end
 always @(data_in) resp_out <= 2'b11;
 
 endmodule
-
