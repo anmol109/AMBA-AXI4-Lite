@@ -1,6 +1,7 @@
 module master_slave(input ACLK, 
 		    input ARESETn,
-		    input select);
+		    input select
+		    output o_BRESP);
 		    
 master m (ACLK, addr_req, data_out, valid_out, o_BRESP, select);
 
