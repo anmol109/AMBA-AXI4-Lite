@@ -1,17 +1,17 @@
-Fitter Status : Successful - Wed Jun 15 15:53:40 2022
+Fitter Status : Successful - Wed Jun 15 16:30:47 2022
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : AXI_lite
-Top-level Entity Name : master_slave
+Top-level Entity Name : AXI_lite
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
-Total logic elements : 1 / 49,760 ( < 1 % )
-    Total combinational functions : 1 / 49,760 ( < 1 % )
-    Dedicated logic registers : 0 / 49,760 ( 0 % )
-Total registers : 0
-Total pins : 3 / 360 ( < 1 % )
-Total virtual pins : 0
-Total memory bits : 0 / 1,677,312 ( 0 % )
+Total logic elements : 827 / 49,760 ( 2 % )
+    Total combinational functions : 698 / 49,760 ( 1 % )
+    Dedicated logic registers : 665 / 49,760 ( 1 % )
+Total registers : 665
+Total pins : 162 / 360 ( 45 % )
+Total virtual pins : 128
+Total memory bits : 512 / 1,677,312 ( < 1 % )
 Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )
 Total PLLs : 0 / 4 ( 0 % )
 UFM blocks : 0 / 1 ( 0 % )

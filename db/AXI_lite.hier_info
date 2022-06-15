@@ -1,89 +1,4 @@
-|master_slave
-ACLK => ACLK.IN4
-ARESETn => ARESETn.IN1
-select => select.IN1
-
-
-|master_slave|master:m
-ACLK => ~NO_FANOUT~
-addr_req[0] <= select.DB_MAX_OUTPUT_PORT_TYPE
-addr_req[1] <= select.DB_MAX_OUTPUT_PORT_TYPE
-addr_req[2] <= <GND>
-addr_req[3] <= <GND>
-addr_req[4] <= select.DB_MAX_OUTPUT_PORT_TYPE
-addr_req[5] <= select.DB_MAX_OUTPUT_PORT_TYPE
-addr_req[6] <= <GND>
-addr_req[7] <= <GND>
-addr_req[8] <= select.DB_MAX_OUTPUT_PORT_TYPE
-addr_req[9] <= <GND>
-addr_req[10] <= <GND>
-addr_req[11] <= <GND>
-addr_req[12] <= select.DB_MAX_OUTPUT_PORT_TYPE
-addr_req[13] <= <GND>
-addr_req[14] <= <GND>
-addr_req[15] <= <GND>
-addr_req[16] <= <VCC>
-addr_req[17] <= <GND>
-addr_req[18] <= <GND>
-addr_req[19] <= <GND>
-addr_req[20] <= <VCC>
-addr_req[21] <= <GND>
-addr_req[22] <= <GND>
-addr_req[23] <= <GND>
-addr_req[24] <= select.DB_MAX_OUTPUT_PORT_TYPE
-addr_req[25] <= <GND>
-addr_req[26] <= <GND>
-addr_req[27] <= <GND>
-addr_req[28] <= select.DB_MAX_OUTPUT_PORT_TYPE
-addr_req[29] <= <GND>
-addr_req[30] <= <GND>
-addr_req[31] <= <GND>
-data_out[0] <= <VCC>
-data_out[1] <= <GND>
-data_out[2] <= <GND>
-data_out[3] <= <GND>
-data_out[4] <= <GND>
-data_out[5] <= <GND>
-data_out[6] <= <GND>
-data_out[7] <= <GND>
-data_out[8] <= <VCC>
-data_out[9] <= <GND>
-data_out[10] <= <GND>
-data_out[11] <= <GND>
-data_out[12] <= <GND>
-data_out[13] <= <GND>
-data_out[14] <= <GND>
-data_out[15] <= <GND>
-data_out[16] <= <VCC>
-data_out[17] <= <GND>
-data_out[18] <= <GND>
-data_out[19] <= <GND>
-data_out[20] <= <GND>
-data_out[21] <= <GND>
-data_out[22] <= <GND>
-data_out[23] <= <GND>
-data_out[24] <= <VCC>
-data_out[25] <= <GND>
-data_out[26] <= <GND>
-data_out[27] <= <GND>
-data_out[28] <= <GND>
-data_out[29] <= <GND>
-data_out[30] <= <GND>
-data_out[31] <= <GND>
-valid_out <= <VCC>
-resp_in[0] => ~NO_FANOUT~
-resp_in[1] => ~NO_FANOUT~
-select => addr_req[28].DATAIN
-select => addr_req[24].DATAIN
-select => addr_req[12].DATAIN
-select => addr_req[8].DATAIN
-select => addr_req[5].DATAIN
-select => addr_req[4].DATAIN
-select => addr_req[1].DATAIN
-select => addr_req[0].DATAIN
-
-
-|master_slave|AXI_lite:p
+|AXI_lite
 ACLK => ACLK.IN5
 ARESETn => ARESETn.IN5
 BREADY => BREADY.IN1
@@ -376,7 +291,7 @@ o_RRESP[0] <= read_data_ms:rd.port7
 o_RRESP[1] <= read_data_ms:rd.port7
 
 
-|master_slave|AXI_lite:p|write_address_ms:wa
+|AXI_lite|write_address_ms:wa
 ACLK => ACLK.IN2
 ARESETn => ARESETn.IN2
 AWVALID => AWVALID.IN1
@@ -450,7 +365,7 @@ AWPROT[1] => AWPROT[1].IN1
 AWPROT[2] => AWPROT[2].IN1
 
 
-|master_slave|AXI_lite:p|write_address_ms:wa|write_address_master:addr_m
+|AXI_lite|write_address_ms:wa|write_address_master:addr_m
 ACLK => o_AWADDR[0]~reg0.CLK
 ACLK => o_AWADDR[1]~reg0.CLK
 ACLK => o_AWADDR[2]~reg0.CLK
@@ -557,7 +472,7 @@ AWPROT[1] => ~NO_FANOUT~
 AWPROT[2] => ~NO_FANOUT~
 
 
-|master_slave|AXI_lite:p|write_address_ms:wa|write_address_slave:addr_s
+|AXI_lite|write_address_ms:wa|write_address_slave:addr_s
 ACLK => o_AWADDR[0]~reg0.CLK
 ACLK => o_AWADDR[1]~reg0.CLK
 ACLK => o_AWADDR[2]~reg0.CLK
@@ -661,7 +576,7 @@ o_AWADDR[30] <= o_AWADDR[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 o_AWADDR[31] <= o_AWADDR[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|master_slave|AXI_lite:p|write_data_ms:wd
+|AXI_lite|write_data_ms:wd
 ACLK => ACLK.IN2
 ARESETn => ARESETn.IN2
 WVALID => WVALID.IN1
@@ -740,7 +655,7 @@ o_WSTRB[2] <= write_data_slave:data2.port8
 o_WSTRB[3] <= write_data_slave:data2.port8
 
 
-|master_slave|AXI_lite:p|write_data_ms:wd|write_data_master:data1
+|AXI_lite|write_data_ms:wd|write_data_master:data1
 ACLK => o_WDATA[0]~reg0.CLK
 ACLK => o_WDATA[1]~reg0.CLK
 ACLK => o_WDATA[2]~reg0.CLK
@@ -872,7 +787,7 @@ o_WSTRB[2] <= i_WSTRB[2].DB_MAX_OUTPUT_PORT_TYPE
 o_WSTRB[3] <= i_WSTRB[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|master_slave|AXI_lite:p|write_data_ms:wd|write_data_slave:data2
+|AXI_lite|write_data_ms:wd|write_data_slave:data2
 ACLK => o_WDATA[0]~reg0.CLK
 ACLK => o_WDATA[1]~reg0.CLK
 ACLK => o_WDATA[2]~reg0.CLK
@@ -992,7 +907,7 @@ o_WSTRB[2] <= o_WSTRB[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 o_WSTRB[3] <= o_WSTRB[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|master_slave|AXI_lite:p|write_response_ms:wr
+|AXI_lite|write_response_ms:wr
 ACLK => ACLK.IN2
 ARESETn => ARESETn.IN2
 BREADY => BREADY.IN1
@@ -1003,7 +918,7 @@ o_BRESP[0] <= write_response_master:resp_m.port6
 o_BRESP[1] <= write_response_master:resp_m.port6
 
 
-|master_slave|AXI_lite:p|write_response_ms:wr|write_response_slave:resp_s
+|AXI_lite|write_response_ms:wr|write_response_slave:resp_s
 ACLK => o_BRESP[0]~reg0.CLK
 ACLK => o_BRESP[1]~reg0.CLK
 ACLK => o_BVALID~reg0.CLK
@@ -1019,7 +934,7 @@ o_BRESP[0] <= o_BRESP[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 o_BRESP[1] <= o_BRESP[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|master_slave|AXI_lite:p|write_response_ms:wr|write_response_master:resp_m
+|AXI_lite|write_response_ms:wr|write_response_master:resp_m
 ACLK => o_BRESP[0]~reg0.CLK
 ACLK => o_BRESP[1]~reg0.CLK
 ACLK => o_BREADY~reg0.CLK
@@ -1035,7 +950,7 @@ o_BRESP[0] <= o_BRESP[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 o_BRESP[1] <= o_BRESP[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|master_slave|AXI_lite:p|read_address_ms:ra
+|AXI_lite|read_address_ms:ra
 ACLK => ACLK.IN2
 ARESETn => ARESETn.IN2
 ARVALID => ARVALID.IN1
@@ -1109,7 +1024,7 @@ ARPROT[1] => ARPROT[1].IN1
 ARPROT[2] => ARPROT[2].IN1
 
 
-|master_slave|AXI_lite:p|read_address_ms:ra|read_address_master:addr1
+|AXI_lite|read_address_ms:ra|read_address_master:addr1
 ACLK => o_ARADDR[0]~reg0.CLK
 ACLK => o_ARADDR[1]~reg0.CLK
 ACLK => o_ARADDR[2]~reg0.CLK
@@ -1216,7 +1131,7 @@ ARPROT[1] => ~NO_FANOUT~
 ARPROT[2] => ~NO_FANOUT~
 
 
-|master_slave|AXI_lite:p|read_address_ms:ra|read_address_slave:addr2
+|AXI_lite|read_address_ms:ra|read_address_slave:addr2
 ACLK => o_ARADDR[0]~reg0.CLK
 ACLK => o_ARADDR[1]~reg0.CLK
 ACLK => o_ARADDR[2]~reg0.CLK
@@ -1320,7 +1235,7 @@ o_ARADDR[30] <= o_ARADDR[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 o_ARADDR[31] <= o_ARADDR[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|master_slave|AXI_lite:p|read_data_ms:rd
+|AXI_lite|read_data_ms:rd
 ACLK => ACLK.IN2
 ARESETn => ARESETn.IN2
 RVALID => RVALID.IN1
@@ -1395,7 +1310,7 @@ o_RRESP[0] <= read_data_master:data1.port8
 o_RRESP[1] <= read_data_master:data1.port8
 
 
-|master_slave|AXI_lite:p|read_data_ms:rd|read_data_slave:data2
+|AXI_lite|read_data_ms:rd|read_data_slave:data2
 ACLK => o_RRESP[0]~reg0.CLK
 ACLK => o_RRESP[1]~reg0.CLK
 ACLK => o_RDATA[0]~reg0.CLK
@@ -1539,7 +1454,7 @@ o_RRESP[0] <= o_RRESP[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 o_RRESP[1] <= o_RRESP[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|master_slave|AXI_lite:p|read_data_ms:rd|read_data_master:data1
+|AXI_lite|read_data_ms:rd|read_data_master:data1
 ACLK => o_RREADY~reg0.CLK
 ACLK => o_RDATA[0]~reg0.CLK
 ACLK => o_RDATA[1]~reg0.CLK
@@ -1679,147 +1594,5 @@ i_RRESP[0] => o_RRESP[0]~reg0.DATAIN
 i_RRESP[1] => o_RRESP[1]~reg0.DATAIN
 o_RRESP[0] <= o_RRESP[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 o_RRESP[1] <= o_RRESP[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|master_slave|slave1:s1
-ACLK => ~NO_FANOUT~
-ready_out <= <VCC>
-resp_out[0] <= <VCC>
-resp_out[1] <= <VCC>
-addr_in[0] => ~NO_FANOUT~
-addr_in[1] => ~NO_FANOUT~
-addr_in[2] => ~NO_FANOUT~
-addr_in[3] => ~NO_FANOUT~
-addr_in[4] => ~NO_FANOUT~
-addr_in[5] => ~NO_FANOUT~
-addr_in[6] => ~NO_FANOUT~
-addr_in[7] => ~NO_FANOUT~
-addr_in[8] => ~NO_FANOUT~
-addr_in[9] => ~NO_FANOUT~
-addr_in[10] => ~NO_FANOUT~
-addr_in[11] => ~NO_FANOUT~
-addr_in[12] => ~NO_FANOUT~
-addr_in[13] => ~NO_FANOUT~
-addr_in[14] => ~NO_FANOUT~
-addr_in[15] => ~NO_FANOUT~
-addr_in[16] => ~NO_FANOUT~
-addr_in[17] => ~NO_FANOUT~
-addr_in[18] => ~NO_FANOUT~
-addr_in[19] => ~NO_FANOUT~
-addr_in[20] => ~NO_FANOUT~
-addr_in[21] => ~NO_FANOUT~
-addr_in[22] => ~NO_FANOUT~
-addr_in[23] => ~NO_FANOUT~
-addr_in[24] => ~NO_FANOUT~
-addr_in[25] => ~NO_FANOUT~
-addr_in[26] => ~NO_FANOUT~
-addr_in[27] => ~NO_FANOUT~
-addr_in[28] => ~NO_FANOUT~
-addr_in[29] => ~NO_FANOUT~
-addr_in[30] => ~NO_FANOUT~
-addr_in[31] => ~NO_FANOUT~
-data_in[0] => ~NO_FANOUT~
-data_in[1] => ~NO_FANOUT~
-data_in[2] => ~NO_FANOUT~
-data_in[3] => ~NO_FANOUT~
-data_in[4] => ~NO_FANOUT~
-data_in[5] => ~NO_FANOUT~
-data_in[6] => ~NO_FANOUT~
-data_in[7] => ~NO_FANOUT~
-data_in[8] => ~NO_FANOUT~
-data_in[9] => ~NO_FANOUT~
-data_in[10] => ~NO_FANOUT~
-data_in[11] => ~NO_FANOUT~
-data_in[12] => ~NO_FANOUT~
-data_in[13] => ~NO_FANOUT~
-data_in[14] => ~NO_FANOUT~
-data_in[15] => ~NO_FANOUT~
-data_in[16] => ~NO_FANOUT~
-data_in[17] => ~NO_FANOUT~
-data_in[18] => ~NO_FANOUT~
-data_in[19] => ~NO_FANOUT~
-data_in[20] => ~NO_FANOUT~
-data_in[21] => ~NO_FANOUT~
-data_in[22] => ~NO_FANOUT~
-data_in[23] => ~NO_FANOUT~
-data_in[24] => ~NO_FANOUT~
-data_in[25] => ~NO_FANOUT~
-data_in[26] => ~NO_FANOUT~
-data_in[27] => ~NO_FANOUT~
-data_in[28] => ~NO_FANOUT~
-data_in[29] => ~NO_FANOUT~
-data_in[30] => ~NO_FANOUT~
-data_in[31] => ~NO_FANOUT~
-
-
-|master_slave|slave2:s2
-ACLK => ~NO_FANOUT~
-ready_out <= <VCC>
-resp_out[0] <= <VCC>
-resp_out[1] <= <VCC>
-addr_in[0] => ~NO_FANOUT~
-addr_in[1] => ~NO_FANOUT~
-addr_in[2] => ~NO_FANOUT~
-addr_in[3] => ~NO_FANOUT~
-addr_in[4] => ~NO_FANOUT~
-addr_in[5] => ~NO_FANOUT~
-addr_in[6] => ~NO_FANOUT~
-addr_in[7] => ~NO_FANOUT~
-addr_in[8] => ~NO_FANOUT~
-addr_in[9] => ~NO_FANOUT~
-addr_in[10] => ~NO_FANOUT~
-addr_in[11] => ~NO_FANOUT~
-addr_in[12] => ~NO_FANOUT~
-addr_in[13] => ~NO_FANOUT~
-addr_in[14] => ~NO_FANOUT~
-addr_in[15] => ~NO_FANOUT~
-addr_in[16] => ~NO_FANOUT~
-addr_in[17] => ~NO_FANOUT~
-addr_in[18] => ~NO_FANOUT~
-addr_in[19] => ~NO_FANOUT~
-addr_in[20] => ~NO_FANOUT~
-addr_in[21] => ~NO_FANOUT~
-addr_in[22] => ~NO_FANOUT~
-addr_in[23] => ~NO_FANOUT~
-addr_in[24] => ~NO_FANOUT~
-addr_in[25] => ~NO_FANOUT~
-addr_in[26] => ~NO_FANOUT~
-addr_in[27] => ~NO_FANOUT~
-addr_in[28] => ~NO_FANOUT~
-addr_in[29] => ~NO_FANOUT~
-addr_in[30] => ~NO_FANOUT~
-addr_in[31] => ~NO_FANOUT~
-data_in[0] => ~NO_FANOUT~
-data_in[1] => ~NO_FANOUT~
-data_in[2] => ~NO_FANOUT~
-data_in[3] => ~NO_FANOUT~
-data_in[4] => ~NO_FANOUT~
-data_in[5] => ~NO_FANOUT~
-data_in[6] => ~NO_FANOUT~
-data_in[7] => ~NO_FANOUT~
-data_in[8] => ~NO_FANOUT~
-data_in[9] => ~NO_FANOUT~
-data_in[10] => ~NO_FANOUT~
-data_in[11] => ~NO_FANOUT~
-data_in[12] => ~NO_FANOUT~
-data_in[13] => ~NO_FANOUT~
-data_in[14] => ~NO_FANOUT~
-data_in[15] => ~NO_FANOUT~
-data_in[16] => ~NO_FANOUT~
-data_in[17] => ~NO_FANOUT~
-data_in[18] => ~NO_FANOUT~
-data_in[19] => ~NO_FANOUT~
-data_in[20] => ~NO_FANOUT~
-data_in[21] => ~NO_FANOUT~
-data_in[22] => ~NO_FANOUT~
-data_in[23] => ~NO_FANOUT~
-data_in[24] => ~NO_FANOUT~
-data_in[25] => ~NO_FANOUT~
-data_in[26] => ~NO_FANOUT~
-data_in[27] => ~NO_FANOUT~
-data_in[28] => ~NO_FANOUT~
-data_in[29] => ~NO_FANOUT~
-data_in[30] => ~NO_FANOUT~
-data_in[31] => ~NO_FANOUT~
 
 

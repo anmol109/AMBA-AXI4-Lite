@@ -1,7 +1,7 @@
 module master_slave(input ACLK, 
 		    input ARESETn,
-		    input select
-		    output o_BRESP);
+		    input select,
+		    output [1:0]o_BRESP);
 		    
 master m (ACLK, addr_req, data_out, valid_out, o_BRESP, select);
 
@@ -11,7 +11,7 @@ AXI_lite p (ACLK,ARESETn,BREADY, BVALID, resp_out, o_BRESP
 	    ,i_ARADDR, o_ARADDR, RVALID, RREADY, i_RDATA, i_RRESP,o_RDATA, o_RRESP);
 
 slave1 s1 (ACLK, ready_out, resp_out, o_AWADDR, o_WDATA);
-slave2 s2 (ACLK, ready_out, resp_out, o_AWADDR, o_WDATA);
+//slave2 s2 (ACLK, ready_out, resp_out2, o_AWADDR, o_WDATA);
 
 endmodule
 

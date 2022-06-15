@@ -1,5 +1,5 @@
 Flow report for AXI_lite
-Wed Jun 15 15:53:49 2022
+Wed Jun 15 16:31:00 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -41,20 +41,20 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed Jun 15 15:53:49 2022       ;
+; Flow Status                        ; Successful - Wed Jun 15 16:31:00 2022       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; AXI_lite                                    ;
-; Top-level Entity Name              ; master_slave                                ;
+; Top-level Entity Name              ; AXI_lite                                    ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 1 / 49,760 ( < 1 % )                        ;
-;     Total combinational functions  ; 1 / 49,760 ( < 1 % )                        ;
-;     Dedicated logic registers      ; 0 / 49,760 ( 0 % )                          ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 3 / 360 ( < 1 % )                           ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0 / 1,677,312 ( 0 % )                       ;
+; Total logic elements               ; 827 / 49,760 ( 2 % )                        ;
+;     Total combinational functions  ; 698 / 49,760 ( 1 % )                        ;
+;     Dedicated logic registers      ; 665 / 49,760 ( 1 % )                        ;
+; Total registers                    ; 665                                         ;
+; Total pins                         ; 162 / 360 ( 45 % )                          ;
+; Total virtual pins                 ; 128                                         ;
+; Total memory bits                  ; 512 / 1,677,312 ( < 1 % )                   ;
 ; Embedded Multiplier 9-bit elements ; 0 / 288 ( 0 % )                             ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
 ; UFM blocks                         ; 0 / 1 ( 0 % )                               ;
@@ -67,38 +67,64 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/15/2022 15:53:25 ;
+; Start date & time ; 06/15/2022 16:30:07 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; AXI_lite            ;
 +-------------------+---------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                ;
-+-------------------------------------+----------------------------------------+---------------+--------------+-----------------------------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name  ; Section Id                        ;
-+-------------------------------------+----------------------------------------+---------------+--------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 141734666511465.165528860518412        ; --            ; --           ; --                                ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --           ; eda_board_design_timing           ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --           ; eda_board_design_boundary_scan    ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --           ; eda_board_design_signal_integrity ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --           ; eda_board_design_symbol           ;
-; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --           ; eda_simulation                    ;
-; EDA_SIMULATION_TOOL                 ; ModelSim (Verilog)                     ; <None>        ; --           ; --                                ;
-; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --           ; eda_simulation                    ;
-; ENABLE_SIGNALTAP                    ; On                                     ; --            ; --           ; --                                ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --           ; --                                ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --           ; --                                ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; master_slave ; Top                               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; master_slave ; Top                               ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; master_slave ; Top                               ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --           ; --                                ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --           ; --                                ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --           ; --                                ;
-; SLD_FILE                            ; db/stp1_auto_stripped.stp              ; --            ; --           ; --                                ;
-; TOP_LEVEL_ENTITY                    ; master_slave                           ; AXI_lite      ; --           ; --                                ;
-; USE_SIGNALTAP_FILE                  ; stp1.stp                               ; --            ; --           ; --                                ;
-+-------------------------------------+----------------------------------------+---------------+--------------+-----------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                      ;
++-------------------------------------+-----------------------------------------------+---------------+-------------+-----------------------------------+
+; Assignment Name                     ; Value                                         ; Default Value ; Entity Name ; Section Id                        ;
++-------------------------------------+-----------------------------------------------+---------------+-------------+-----------------------------------+
+; COMPILER_SIGNATURE_ID               ; 141734666511465.165529080701956               ; --            ; --          ; --                                ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                           ; --            ; --          ; eda_board_design_timing           ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                           ; --            ; --          ; eda_board_design_boundary_scan    ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                           ; --            ; --          ; eda_board_design_signal_integrity ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                           ; --            ; --          ; eda_board_design_symbol           ;
+; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                                   ; --            ; --          ; eda_simulation                    ;
+; EDA_SIMULATION_TOOL                 ; ModelSim (Verilog)                            ; <None>        ; --          ; --                                ;
+; EDA_TIME_SCALE                      ; 1 ps                                          ; --            ; --          ; eda_simulation                    ;
+; ENABLE_SIGNALTAP                    ; On                                            ; --            ; --          ; --                                ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                            ; --            ; --          ; --                                ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                             ; --            ; --          ; --                                ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family)        ; --            ; --          ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)        ; --            ; --          ; Top                               ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)        ; --            ; --          ; Top                               ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                           ; --            ; --          ; --                                ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW         ; --            ; --          ; --                                ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                                  ; --            ; --          ; --                                ;
+; SLD_FILE                            ; db/stp1_auto_stripped.stp                     ; --            ; --          ; --                                ;
+; SLD_NODE_CREATOR_ID                 ; 110                                           ; --            ; --          ; auto_signaltap_0                  ;
+; SLD_NODE_ENTITY_NAME                ; sld_signaltap                                 ; --            ; --          ; auto_signaltap_0                  ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_RAM_BLOCK_TYPE=AUTO                       ; --            ; --          ; auto_signaltap_0                  ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_INFO=805334528                       ; --            ; --          ; auto_signaltap_0                  ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_POWER_UP_TRIGGER=0                        ; --            ; --          ; auto_signaltap_0                  ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SEGMENT_SIZE=128                          ; --            ; --          ; auto_signaltap_0                  ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ATTRIBUTE_MEM_MODE=OFF                    ; --            ; --          ; auto_signaltap_0                  ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_FLOW_USE_GENERATED=0                ; --            ; --          ; auto_signaltap_0                  ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_BITS=11                             ; --            ; --          ; auto_signaltap_0                  ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_BUFFER_FULL_STOP=1                        ; --            ; --          ; auto_signaltap_0                  ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_CURRENT_RESOURCE_WIDTH=1                  ; --            ; --          ; auto_signaltap_0                  ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INCREMENTAL_ROUTING=1                     ; --            ; --          ; auto_signaltap_0                  ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL=1                           ; --            ; --          ; auto_signaltap_0                  ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SAMPLE_DEPTH=128                          ; --            ; --          ; auto_signaltap_0                  ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_IN_ENABLED=0                      ; --            ; --          ; auto_signaltap_0                  ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_PIPELINE=0                        ; --            ; --          ; auto_signaltap_0                  ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_RAM_PIPELINE=0                            ; --            ; --          ; auto_signaltap_0                  ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_COUNTER_PIPELINE=0                        ; --            ; --          ; auto_signaltap_0                  ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL_PIPELINE=1                  ; --            ; --          ; auto_signaltap_0                  ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ENABLE_ADVANCED_TRIGGER=0                 ; --            ; --          ; auto_signaltap_0                  ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_BITS=1                            ; --            ; --          ; auto_signaltap_0                  ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0 ; --            ; --          ; auto_signaltap_0                  ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ADVANCED_TRIGGER_ENTITY=basic,1,          ; --            ; --          ; auto_signaltap_0                  ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_DATA_BITS=4                               ; --            ; --          ; auto_signaltap_0                  ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_BITS=4                  ; --            ; --          ; auto_signaltap_0                  ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK=000000000000000000000000   ; --            ; --          ; auto_signaltap_0                  ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK_LENGTH=24                  ; --            ; --          ; auto_signaltap_0                  ;
+; USE_SIGNALTAP_FILE                  ; stp1.stp                                      ; --            ; --          ; --                                ;
++-------------------------------------+-----------------------------------------------+---------------+-------------+-----------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -106,12 +132,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4721 MB             ; 00:00:22                           ;
-; Fitter               ; 00:00:06     ; 1.0                     ; 5640 MB             ; 00:00:08                           ;
-; Assembler            ; 00:00:04     ; 1.0                     ; 4687 MB             ; 00:00:04                           ;
-; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 4831 MB             ; 00:00:02                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4643 MB             ; 00:00:00                           ;
-; Total                ; 00:00:20     ; --                      ; --                  ; 00:00:36                           ;
+; Analysis & Synthesis ; 00:00:23     ; 1.0                     ; 4831 MB             ; 00:00:49                           ;
+; Fitter               ; 00:00:14     ; 1.2                     ; 5656 MB             ; 00:00:19                           ;
+; Assembler            ; 00:00:05     ; 1.0                     ; 4694 MB             ; 00:00:04                           ;
+; Timing Analyzer      ; 00:00:03     ; 1.2                     ; 4838 MB             ; 00:00:04                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4664 MB             ; 00:00:02                           ;
+; Total                ; 00:00:47     ; --                      ; --                  ; 00:01:18                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
