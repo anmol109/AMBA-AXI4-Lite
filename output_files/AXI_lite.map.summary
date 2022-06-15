@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Wed Jun 15 16:30:32 2022
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : AXI_lite
+Top-level Entity Name : AXI_lite
+Family : MAX 10
+Total logic elements : 834
+    Total combinational functions : 695
+    Dedicated logic registers : 665
+Total registers : 665
+Total pins : 162
+Total virtual pins : 128
+Total memory bits : 512
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0

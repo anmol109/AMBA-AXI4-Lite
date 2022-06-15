@@ -1,0 +1,21 @@
+module write_response_ms_tb;
+
+reg ACLK, ARESETn;
+reg BVALID, BREADY;
+reg [1:0] i_BRESP;
+
+wire [1:0] o_BRESP;
+
+write_response_ms uut(ACLK,ARESETn,BREADY, BVALID, i_BRESP, o_BRESP);
+
+initial	begin
+i_BRESP = 2'b11;
+#5 BREADY=1'b0;  BVALID=1'b1;
+
+#200 $finish;
+end
+initial begin
+ACLK=1'b0;
+forever #3 ACLK<=~ACLK;
+end
+endmodule

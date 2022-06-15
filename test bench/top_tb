@@ -1,0 +1,47 @@
+module top_tb;
+	reg ACLK;
+	reg ARESETn;
+	reg AWREADY, AWVALID;
+	reg [31:0] i_AWADDR;
+	reg [2:0] AWPROT;
+	reg WVALID, WREADY;
+	reg [31:0] i_WDATA;
+	reg [3:0] i_WSTRB;  
+	wire [3:0] o_WSTRB;
+	wire [31:0] o_WDATA;
+	reg BVALID, BREADY;
+	reg [1:0] i_BRESP;
+	wire [1:0] o_BRESP;
+
+	reg ARVALID;
+	reg ARREADY;
+	reg [2:0] ARPROT;
+	reg [31:0] i_ARADDR;
+	wire [31:0] o_ARADDR;
+	reg RVALID, RREADY;
+	reg [31:0] i_RDATA;
+	reg [1:0] i_RRESP;
+	wire [31:0] o_RDATA;
+	wire [1:0] o_RRESP;
+
+	top2 top_uut(ACLK,ARESETn,BREADY, BVALID, i_BRESP, o_BRESP
+,WVALID, WREADY, i_WDATA, o_WDATA, i_WSTRB, o_WSTRB
+ ,AWVALID, AWREADY, i_AWADDR, o_AWADDR, AWPROT, ARVALID, ARREADY, ARPROT,
+ i_ARADDR, o_ARADDR, RVALID, RREADY, i_RDATA, i_RRESP,o_RDATA, o_RRESP);
+
+
+	initial begin
+		ACLK=1'b0
+		forever #5 ACLK=~ACLK;
+	end
+
+	initial begin
+		ARESET<=1'b0;
+		AWREADY<=1'b0; AWVALID<=1'b0;
+		WVALID<=1'b0; WREADY<=1'b0;
+		BVALID<=1'b0; BREADY<=1'b0;
+		i_AWADDR<= 32'hFFFFFFFF;
+		AWPROT<= 3'b0;
+	end
+				 
+	
