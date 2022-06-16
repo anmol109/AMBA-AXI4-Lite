@@ -2,13 +2,152 @@ module master_ar(
 		input ACLK,
 		input rst,
 		input write,
-		input read);
+		input read,
+		//input[3:0] fpga_ip;
+		output [31:0] o_RDATA,
+		output reg [6:0]SSD1,
+		output reg [6:0]SSD2,
+		output reg [6:0]SSD3,
+		output reg [6:0]SSD4,
+		output reg [6:0]SSD5,
+		output reg [6:0]SSD6);
 
 wire RVALID,o_ARVALID,o_RREADY;
-wire [31:0] i_RDATA, o_ARADDR, s_ARADDR, o_RDATA;
+wire [31:0] i_RDATA, o_ARADDR, s_ARADDR;
+
 wire [1:0] i_RRESP, o_RRESP;
 wire ARREADY;
+always @(posedge ACLK)
+begin
 
+/*case (fpga_ip)
+4'b1111: DATA = 32'hffffffff;
+4'b1110: DATA = 32'hffffff00;
+4'b1101: DATA = 32'hffff00ff;
+4'b1100: DATA = 32'hffff0000;
+4'b1011: DATA = 32'hff00ffff;
+4'b1010: DATA = 32'hff00ff00;
+4'b1001: DATA = 32'hff0000ff;
+4'b1000: DATA = 32'hff000000;
+4'b0111: DATA = 32'h00ffffff;
+4'b0110: DATA = 32'h00ffff00;
+4'b0101: DATA = 32'h00fff00f;
+4'b0100: DATA = 32'h00ff0000;
+4'b0011: DATA = 32'h0000ffff;
+4'b0010: DATA = 32'h0000ff00;
+4'b0001: DATA = 32'h000000ff;
+4'b0000: DATA = 32'hff000000;
+default: DATA=0;
+endcase*/
+case(o_RDATA[3:0])
+4'b0000 : SSD1=7'b1000000;
+4'b0001 : SSD1=7'b1111001;
+4'b0010 : SSD1=7'b0100100;
+4'b0011 : SSD1=7'b0110000;
+4'b0100 : SSD1=7'b0011001;
+4'b0101 : SSD1=7'b0010010;
+4'b0110 : SSD1=7'b0000010;
+4'b0111 : SSD1=7'b1111000;
+4'b1000 : SSD1=7'b0000000;
+4'b1001 : SSD1=7'b0010000;
+4'b1010 : SSD1=7'b0001000;
+4'b1011 : SSD1=7'b0000011;
+4'b1100 : SSD1=7'b1000110;
+4'b1101 : SSD1=7'b0100001;
+4'b1110 : SSD1=7'b0000100;
+4'b1111 : SSD1=7'b0001110;
+endcase
+case(o_RDATA[7:4])
+4'b0000 : SSD2=7'b1000000;
+4'b0001 : SSD2=7'b1111001;
+4'b0010 : SSD2=7'b0100100;
+4'b0011 : SSD2=7'b0110000;
+4'b0100 : SSD2=7'b0011001;
+4'b0101 : SSD2=7'b0010010;
+4'b0110 : SSD2=7'b0000010;
+4'b0111 : SSD2=7'b1111000;
+4'b1000 : SSD2=7'b0000000;
+4'b1001 : SSD2=7'b0010000;
+4'b1010 : SSD2=7'b0001000;
+4'b1011 : SSD2=7'b0000011;
+4'b1100 : SSD2=7'b1000110;
+4'b1101 : SSD2=7'b0100001;
+4'b1110 : SSD2=7'b0000100;
+4'b1111 : SSD2=7'b0001110;
+endcase
+case(o_RDATA[11:8])
+4'b0000 : SSD3=7'b1000000;
+4'b0001 : SSD3=7'b1111001;
+4'b0010 : SSD3=7'b0100100;
+4'b0011 : SSD3=7'b0110000;
+4'b0100 : SSD3=7'b0011001;
+4'b0101 : SSD3=7'b0010010;
+4'b0110 : SSD3=7'b0000010;
+4'b0111 : SSD3=7'b1111000;
+4'b1000 : SSD3=7'b0000000;
+4'b1001 : SSD3=7'b0010000;
+4'b1010 : SSD3=7'b0001000;
+4'b1011 : SSD3=7'b0000011;
+4'b1100 : SSD3=7'b1000110;
+4'b1101 : SSD3=7'b0100001;
+4'b1110 : SSD3=7'b0000100;
+4'b1111 : SSD3=7'b0001110;
+endcase
+case(o_RDATA[15:12])
+4'b0000 : SSD4=7'b1000000;
+4'b0001 : SSD4=7'b1111001;
+4'b0010 : SSD4=7'b0100100;
+4'b0011 : SSD4=7'b0110000;
+4'b0100 : SSD4=7'b0011001;
+4'b0101 : SSD4=7'b0010010;
+4'b0110 : SSD4=7'b0000010;
+4'b0111 : SSD4=7'b1111000;
+4'b1000 : SSD4=7'b0000000;
+4'b1001 : SSD4=7'b0010000;
+4'b1010 : SSD4=7'b0001000;
+4'b1011 : SSD4=7'b0000011;
+4'b1100 : SSD4=7'b1000110;
+4'b1101 : SSD4=7'b0100001;
+4'b1110 : SSD4=7'b0000100;
+4'b1111 : SSD4=7'b0001110;
+endcase
+case(o_RDATA[19:16])
+4'b0000 : SSD5=7'b1000000;
+4'b0001 : SSD5=7'b1111001;
+4'b0010 : SSD5=7'b0100100;
+4'b0011 : SSD5=7'b0110000;
+4'b0100 : SSD5=7'b0011001;
+4'b0101 : SSD5=7'b0010010;
+4'b0110 : SSD5=7'b0000010;
+4'b0111 : SSD5=7'b1111000;
+4'b1000 : SSD5=7'b0000000;
+4'b1001 : SSD5=7'b0010000;
+4'b1010 : SSD5=7'b0001000;
+4'b1011 : SSD5=7'b0000011;
+4'b1100 : SSD5=7'b1000110;
+4'b1101 : SSD5=7'b0100001;
+4'b1110 : SSD5=7'b0000100;
+4'b1111 : SSD5=7'b0001110;
+endcase
+case(o_RDATA[23:20])
+4'b0000 : SSD6=7'b1000000;
+4'b0001 : SSD6=7'b1111001;
+4'b0010 : SSD6=7'b0100100;
+4'b0011 : SSD6=7'b0110000;
+4'b0100 : SSD6=7'b0011001;
+4'b0101 : SSD6=7'b0010010;
+4'b0110 : SSD6=7'b0000010;
+4'b0111 : SSD6=7'b1111000;
+4'b1000 : SSD6=7'b0000000;
+4'b1001 : SSD6=7'b0010000;
+4'b1010 : SSD6=7'b0001000;
+4'b1011 : SSD6=7'b0000011;
+4'b1100 : SSD6=7'b1000110;
+4'b1101 : SSD6=7'b0100001;
+4'b1110 : SSD6=7'b0000100;
+4'b1111 : SSD6=7'b0001110;
+endcase
+end
 master m (ACLK, rst, write, read, RVALID, i_RDATA, i_RRESP, o_ARVALID, o_ARADDR, o_RREADY, o_RRESP,o_RDATA);
 slave_ar s (ACLK, rst, write, read,o_ARVALID,o_RREADY, o_ARADDR, ARREADY, RVALID,i_RRESP, s_ARADDR, i_RDATA);                                        //check arready
 
@@ -21,7 +160,7 @@ module master(
 		input read,
 
 		input RVALID,
-		input AWREADY,
+		//input AWREADY,
 		input [31:0] i_RDATA,
 		input [1:0] i_RRESP,
 
@@ -29,7 +168,7 @@ module master(
 		output [31:0] o_ARADDR,
 		output o_RREADY,
 		output [1:0] o_RRESP,
-		output o_AWVALID
+		//output o_AWVALID,
 		output [31:0] o_RDATA
 		);
 reg aw_valid;
