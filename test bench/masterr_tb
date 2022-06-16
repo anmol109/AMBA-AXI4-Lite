@@ -1,0 +1,30 @@
+module masterr_tb;
+reg ACLK;
+reg ARESETn;
+reg [31:0] data;
+reg ARREADY;
+reg RVALID;
+reg read;
+wire [2:0] ARPROT;
+wire o_ARVALID; 
+wire o_RREADY;
+wire[31:0] o_ARADDR;
+wire[1:0] o_RRESP;
+wire [31:0] o_RDATA;
+master(ACLK, ARESETn,ARREADY,RVALID, o_ARVALID,o_RREADY,o_ARADDR,o_RDATA,o_RRESP,ARPROT, read, data,
+AWREADY,WREADY,BVALID,write,o_AWVALID,o_AWADDR,o_WVALID,o_WDATA,o_WSTRB,AWPROT,o_BREADY,o_BRESP);
+initial begin
+ACLK<=1;
+forever #10 ACLK=~ACLK;
+end
+initial begin
+ARESETn<=0;
+data<=32'hffffffff;
+ARREADY<=0;
+RVALID<=0;
+read<=0;
+#20 ARREADY<=1;
+#40 RVALID<=1;
+#60 read<=1;
+end
+endmodule

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for AXI_lite
-Wed Jun 15 16:49:32 2022
+Thu Jun 16 14:18:23 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -54,7 +54,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jun 15 16:49:32 2022       ;
+; Analysis & Synthesis Status        ; Successful - Thu Jun 16 14:18:23 2022       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; AXI_lite                                    ;
 ; Top-level Entity Name              ; AXI_lite                                    ;
@@ -63,8 +63,8 @@ https://fpgasoftware.intel.com/eula.
 ;     Total combinational functions  ; 633                                         ;
 ;     Dedicated logic registers      ; 610                                         ;
 ; Total registers                    ; 610                                         ;
-; Total pins                         ; 162                                         ;
-; Total virtual pins                 ; 128                                         ;
+; Total pins                         ; 290                                         ;
+; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 512                                         ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
 ; Total PLLs                         ; 0                                           ;
@@ -269,16 +269,15 @@ https://fpgasoftware.intel.com/eula.
 ;     -- Dedicated logic registers            ; 610        ;
 ;     -- I/O registers                        ; 0          ;
 ;                                             ;            ;
-; Virtual pins                                ; 128        ;
-; I/O pins                                    ; 162        ;
+; I/O pins                                    ; 290        ;
 ; Total memory bits                           ; 512        ;
 ;                                             ;            ;
 ; Embedded Multiplier 9-bit elements          ; 0          ;
 ;                                             ;            ;
 ; Maximum fan-out node                        ; ACLK~input ;
 ; Maximum fan-out                             ; 348        ;
-; Total fan-out                               ; 4052       ;
-; Average fan-out                             ; 2.37       ;
+; Total fan-out                               ; 4180       ;
+; Average fan-out                             ; 2.28       ;
 +---------------------------------------------+------------+
 
 
@@ -287,7 +286,7 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                  ; Entity Name                       ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |AXI_lite                                                                                                                               ; 633 (3)             ; 610 (0)                   ; 512         ; 0          ; 0            ; 0       ; 0         ; 162  ; 128          ; 0          ; |AXI_lite                                                                                                                                                                                                                                                                                                                                            ; AXI_lite                          ; work         ;
+; |AXI_lite                                                                                                                               ; 633 (3)             ; 610 (0)                   ; 512         ; 0          ; 0            ; 0       ; 0         ; 290  ; 0            ; 0          ; |AXI_lite                                                                                                                                                                                                                                                                                                                                            ; AXI_lite                          ; work         ;
 ;    |read_address_ms:ra|                                                                                                                 ; 4 (0)               ; 11 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |AXI_lite|read_address_ms:ra                                                                                                                                                                                                                                                                                                                         ; read_address_ms                   ; work         ;
 ;       |read_address_master:addr1|                                                                                                       ; 1 (1)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |AXI_lite|read_address_ms:ra|read_address_master:addr1                                                                                                                                                                                                                                                                                               ; read_address_master               ; work         ;
 ;       |read_address_slave:addr2|                                                                                                        ; 3 (3)               ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |AXI_lite|read_address_ms:ra|read_address_slave:addr2                                                                                                                                                                                                                                                                                                ; read_address_slave                ; work         ;
@@ -663,7 +662,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Wed Jun 15 16:49:07 2022
+    Info: Processing started: Thu Jun 16 14:17:57 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off AXI_lite -c AXI_lite
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -726,7 +725,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_drb File: D:/Workspace/AMBA-AXI4-Lite/db/cmpr_drb.tdf Line: 23
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2022.06.15.16:49:22 Progress: Loading sldd921ae6f/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2022.06.16.14:18:12 Progress: Loading sldd921ae6f/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -780,135 +779,6 @@ Info (286031): Timing-Driven Synthesis is running on partition "Top"
 Critical Warning (35025): Partially connected in-system debug instance "auto_signaltap_0" to 36 of its 37 required data inputs, trigger inputs, acquisition clocks, and dynamic pins.  There were 0 illegal, 0 inaccessible, and 1 missing sources or connections.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (15717): Design contains 128 virtual pins; timing numbers associated with paths containing virtual pins are estimates
-    Info (15719): Pin "o_WDATA[0]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[1]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[2]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[3]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[4]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[5]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[6]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[7]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[8]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[9]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[10]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[11]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[12]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[13]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[14]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[15]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[16]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[17]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[18]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[19]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[20]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[21]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[22]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[23]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[24]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[25]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[26]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[27]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[28]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[29]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[30]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_WDATA[31]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 18
-    Info (15719): Pin "o_AWADDR[0]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[1]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[2]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[3]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[4]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[5]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[6]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[7]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[8]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[9]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[10]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[11]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[12]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[13]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[14]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[15]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[16]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[17]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[18]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[19]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[20]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[21]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[22]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[23]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[24]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[25]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[26]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[27]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[28]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[29]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[30]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15719): Pin "o_AWADDR[31]" is virtual output pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 11
-    Info (15718): Pin "i_WDATA[0]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[1]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[2]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[3]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[4]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[5]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[6]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[7]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[8]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[9]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[10]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[11]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[12]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[13]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[14]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[15]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[16]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[17]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[18]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[19]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[20]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[21]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[22]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[23]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[24]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[25]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[26]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[27]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[28]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[29]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[30]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_WDATA[31]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 15
-    Info (15718): Pin "i_AWADDR[0]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[1]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[2]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[3]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[4]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[5]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[6]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[7]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[8]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[9]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[10]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[11]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[12]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[13]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[14]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[15]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[16]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[17]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[18]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[19]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[20]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[21]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[22]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[23]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[24]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[25]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[26]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[27]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[28]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[29]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[30]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-    Info (15718): Pin "i_AWADDR[31]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
 Warning (21074): Design contains 39 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "i_BRESP[1]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 23
     Warning (15610): No output dependent on input pin "AWPROT[0]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 10
@@ -950,14 +820,14 @@ Warning (21074): Design contains 39 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "i_ARADDR[30]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
     Warning (15610): No output dependent on input pin "i_ARADDR[31]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
 Info (21057): Implemented 1092 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 93 input pins
-    Info (21059): Implemented 73 output pins
-    Info (21061): Implemented 921 logic cells
+    Info (21058): Implemented 157 input pins
+    Info (21059): Implemented 137 output pins
+    Info (21061): Implemented 793 logic cells
     Info (21064): Implemented 4 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 70 warnings
-    Info: Peak virtual memory: 4832 megabytes
-    Info: Processing ended: Wed Jun 15 16:49:32 2022
-    Info: Elapsed time: 00:00:25
-    Info: Total CPU time (on all processors): 00:00:49
+    Info: Peak virtual memory: 4830 megabytes
+    Info: Processing ended: Thu Jun 16 14:18:23 2022
+    Info: Elapsed time: 00:00:26
+    Info: Total CPU time (on all processors): 00:00:51
 
 
