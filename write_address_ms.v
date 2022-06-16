@@ -71,6 +71,6 @@ module write_address_slave(ACLK,ARESETn, AWVALID, i_AWREADY, o_AWREADY, i_AWADDR
 	
 	end
 	
-   //Hand Shaking and addr sending
+  
 
 endmodule

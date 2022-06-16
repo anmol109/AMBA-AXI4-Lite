@@ -1,4 +1,4 @@
-module master(ACLK, ARESETn,ARREADY,RVALID, o_ARVALID,o_RREADY,o_ARADDR,i_RDATA,o_RDATA,o_RRESP,ARPROT, read, data,
+module master(ACLK, ARESETn,ARREADY,RVALID, o_ARVALID,o_RREADY,o_ARADDR,i_RDATA,o_RRESP,ARPROT, read, data,o_RDATA,
 AWREADY,WREADY,BVALID,write,o_AWVALID,o_AWADDR,o_WVALID,o_WDATA,o_WSTRB,AWPROT,o_BREADY,o_BRESP);
 input ACLK;
 input ARESETn;
@@ -13,13 +13,12 @@ output [2:0] ARPROT;
 output o_ARVALID; 
 output o_RREADY;
 output[31:0] o_ARADDR;
-input [31:0] i_RDATA;
 output[1:0] o_RRESP;
 reg i_ARVALID;
 reg i_RREADY;
 reg [31:0] i_ARADDR;
-output [31:0] o_RDATA;
-reg [31:0]conv_data;
+output reg [31:0] o_RDATA;
+input [31:0]i_RDATA;
 parameter addr=32'h11111111;
 //parameter data=32'h01010101;
 
@@ -63,6 +62,7 @@ begin
 i_ARVALID<=1;
 i_RREADY<=1;
 i_ARADDR<=addr;
+o_RDATA<=i_RDATA;
 end
 else
 begin

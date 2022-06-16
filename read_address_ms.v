@@ -33,7 +33,7 @@ o_ARVALID <= 0;
 end
 
 if(o_ARVALID && ARREADY) 
-o_ARADDR <= 32'b11111111;     //handshaking and address send
+o_ARADDR <= i_ARADDR;     //handshaking and address send
 else  
 o_ARADDR <= 32'b0;
 

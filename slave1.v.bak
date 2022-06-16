@@ -69,9 +69,9 @@ end
 
 end
 end
-write_address_slave(ACLK,ARESETn, AWVALID, i_AWREADY, o_AWREADY, i_AWADDR, o_AWADDR);
-write_data_slave (ACLK, ARESETn,WVALID, o_WREADY, i_WREADY, i_WDATA, o_WDATA,i_WSTRB, o_WSTRB);
-write_response_slave(ACLK, ARESETn,i_BVALID, o_BVALID, BREADY, i_BRESP, o_BRESP);
+write_address_slave was(ACLK,ARESETn, AWVALID, i_AWREADY, o_AWREADY, i_AWADDR, o_AWADDR);
+write_data_slave wds(ACLK, ARESETn,WVALID, o_WREADY, i_WREADY, i_WDATA, o_WDATA,i_WSTRB, o_WSTRB);
+write_response_slave wrs(ACLK, ARESETn,i_BVALID, o_BVALID, BREADY, i_BRESP, o_BRESP);
 
 read_address_slave ras(ACLK, ARESETn, i_ARREADY, o_ARREADY, ARVALID, i_ARADDR, o_ARADDR);
 read_data_slave rds(ACLK, ARESETn, i_RVALID, o_RVALID, RREADY, i_RDATA, o_RDATA, i_RRESP, o_RRESP);
