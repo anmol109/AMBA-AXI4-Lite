@@ -40,7 +40,7 @@ output o_BRESP;
 reg i_AWVALID;
 reg [31:0] i_AWADDR;
 reg i_WVALID;
-reg i_WDATA;
+reg [31:0] i_WDATA;
 reg [3:0] i_WSTRB;
 reg[1:0] i_BRESP;
 reg i_BREADY;
@@ -86,8 +86,6 @@ else
 begin
 i_AWVALID<=0;
 i_WVALID<=0;
-i_AWADDR<=0;
-i_WDATA<=0;
 i_BREADY<=0;
 i_BRESP<=0;
 end
@@ -95,7 +93,7 @@ end
 end
 
 write_address_master wam(ACLK, ARESETn,i_AWVALID, o_AWVALID, AWREADY, i_AWADDR, o_AWADDR, AWPROT);
-write_data_master wdm(ACLK, ARESETn,i_WVALID,o_WVALID, WREADY, i_WDATA, o_WDATA, i_WSTRB, o_WSTRB);
+write_data_master wdm (ACLK, ARESETn,i_WVALID,o_WVALID, WREADY, i_WDATA, o_WDATA, i_WSTRB, o_WSTRB);
 write_response_master wrm(ACLK,ARESETn, BVALID, i_BREADY, o_BREADY, i_BRESP, o_BRESP);
 
 read_address_master ram(ACLK, ARESETn, i_ARVALID, o_ARVALID, ARREADY, i_ARADDR, o_ARADDR, ARPROT);

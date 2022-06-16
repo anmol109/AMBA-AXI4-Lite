@@ -2,7 +2,7 @@ module master(ACLK, ARESETn,ARREADY,RVALID, o_ARVALID,o_RREADY,o_ARADDR,i_RDATA,
 AWREADY,WREADY,BVALID,write,o_AWVALID,o_AWADDR,o_WVALID,o_WDATA,o_WSTRB,AWPROT,o_BREADY,o_BRESP);
 input ACLK;
 input ARESETn;
-input [3:0] data;
+input [31:0] data;
 
 //read signals
 
@@ -40,7 +40,7 @@ output o_BRESP;
 reg i_AWVALID;
 reg [31:0] i_AWADDR;
 reg i_WVALID;
-reg i_WDATA;
+reg [31:0] i_WDATA;
 reg [3:0] i_WSTRB;
 reg[1:0] i_BRESP;
 reg i_BREADY;
@@ -86,8 +86,6 @@ else
 begin
 i_AWVALID<=0;
 i_WVALID<=0;
-i_AWADDR<=0;
-i_WDATA<=0;
 i_BREADY<=0;
 i_BRESP<=0;
 end
