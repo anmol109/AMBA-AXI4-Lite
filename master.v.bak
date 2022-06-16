@@ -75,7 +75,7 @@ if (write)//write transaction code
 begin
 i_AWVALID<=1;
 i_WVALID<=1;
-i_AWADDR<=addr;
+i_AWADDR<=addr; $display(i_AWADDR);
 i_WDATA<=data;
 if(WREADY)begin
 i_BREADY<=1;i_BRESP<=1; end
@@ -93,7 +93,7 @@ end
 end
 
 write_address_master wam(ACLK, ARESETn,i_AWVALID, o_AWVALID, AWREADY, i_AWADDR, o_AWADDR, AWPROT);
-write_data_master wdm(ACLK, ARESETn,i_WVALID,o_WVALID, WREADY, i_WDATA, o_WDATA, i_WSTRB, o_WSTRB);
+write_data_master wdm (ACLK, ARESETn,i_WVALID,o_WVALID, WREADY, i_WDATA, o_WDATA, i_WSTRB, o_WSTRB);
 write_response_master wrm(ACLK,ARESETn, BVALID, i_BREADY, o_BREADY, i_BRESP, o_BRESP);
 
 read_address_master ram(ACLK, ARESETn, i_ARVALID, o_ARVALID, ARREADY, i_ARADDR, o_ARADDR, ARPROT);

@@ -75,7 +75,7 @@ if (write)//write transaction code
 begin
 i_AWVALID<=1;
 i_WVALID<=1;
-i_AWADDR<=addr;
+i_AWADDR<=addr; $display("hello");$display(i_AWADDR);
 i_WDATA<=data;
 if(WREADY)begin
 i_BREADY<=1;i_BRESP<=1; end
