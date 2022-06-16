@@ -35,6 +35,7 @@ reg i_WREADY;
 reg i_BVALID;
 wire [31:0] o_WDATA; 
 wire o_BRESP;
+wire [31:0] o_AWADDR;
 
 always@(posedge ACLK)
 begin
