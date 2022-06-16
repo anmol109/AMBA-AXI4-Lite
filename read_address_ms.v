@@ -24,7 +24,6 @@ input [2:0] ARPROT; // unfinished
 output reg o_ARVALID;
 output reg [31:0] o_ARADDR;
 
-
 always @(posedge ACLK) begin
 o_ARVALID <= i_ARVALID;
 
@@ -34,7 +33,7 @@ o_ARVALID <= 0;
 end
 
 if(o_ARVALID && ARREADY) 
-o_ARADDR <= i_ARADDR;     //handshaking and address send
+o_ARADDR <= 32'b11111111;     //handshaking and address send
 else  
 o_ARADDR <= 32'b0;
 

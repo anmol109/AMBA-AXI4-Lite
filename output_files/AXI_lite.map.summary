@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Wed Jun 15 16:30:32 2022
+Analysis & Synthesis Status : Successful - Wed Jun 15 16:49:32 2022
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : AXI_lite
 Top-level Entity Name : AXI_lite
 Family : MAX 10
-Total logic elements : 834
-    Total combinational functions : 695
-    Dedicated logic registers : 665
-Total registers : 665
+Total logic elements : 779
+    Total combinational functions : 633
+    Dedicated logic registers : 610
+Total registers : 610
 Total pins : 162
 Total virtual pins : 128
 Total memory bits : 512

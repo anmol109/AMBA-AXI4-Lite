@@ -185,7 +185,6 @@ set_instance_assignment -name VIRTUAL_PIN ON -to o_WDATA[30]
 set_instance_assignment -name VIRTUAL_PIN ON -to o_WDATA[31]
 set_instance_assignment -name VIRTUAL_PIN ON -to i_WDATA[0]
 set_location_assignment PIN_P11 -to ACLK
-set_location_assignment PIN_C10 -to ARESETn
 set_global_assignment -name ENABLE_SIGNALTAP ON
 set_global_assignment -name USE_SIGNALTAP_FILE stp1.stp
 set_global_assignment -name SLD_NODE_CREATOR_ID 110 -section_id auto_signaltap_0
@@ -238,9 +237,6 @@ set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[17] -
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[11] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0" -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ADVANCED_TRIGGER_ENTITY=basic,1," -section_id auto_signaltap_0
-set_location_assignment PIN_A8 -to o_BRESP[1]
-set_location_assignment PIN_A9 -to o_BRESP[0]
-set_location_assignment PIN_F15 -to select
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[29] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_clk -to ACLK -section_id auto_signaltap_0
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[1] -to o_BRESP[0] -section_id auto_signaltap_0
@@ -265,5 +261,12 @@ set_global_assignment -name SIGNALTAP_FILE stp1.stp
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name SLD_FILE db/stp1_auto_stripped.stp
+set_location_assignment PIN_B14 -to ARREADY
+set_location_assignment PIN_F15 -to ARVALID
+set_location_assignment PIN_B11 -to o_ARADDR[0]
+set_location_assignment PIN_A11 -to o_ARADDR[1]
+set_location_assignment PIN_D14 -to o_ARADDR[2]
+set_location_assignment PIN_E14 -to o_ARADDR[3]
+set_location_assignment PIN_C13 -to o_ARADDR[4]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SLD_FILE db/stp1_auto_stripped.stp

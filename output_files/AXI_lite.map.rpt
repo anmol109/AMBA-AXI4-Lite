@@ -1,5 +1,5 @@
 Analysis & Synthesis report for AXI_lite
-Wed Jun 15 16:30:32 2022
+Wed Jun 15 16:49:32 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -54,15 +54,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jun 15 16:30:32 2022       ;
+; Analysis & Synthesis Status        ; Successful - Wed Jun 15 16:49:32 2022       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; AXI_lite                                    ;
 ; Top-level Entity Name              ; AXI_lite                                    ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 834                                         ;
-;     Total combinational functions  ; 695                                         ;
-;     Dedicated logic registers      ; 665                                         ;
-; Total registers                    ; 665                                         ;
+; Total logic elements               ; 779                                         ;
+;     Total combinational functions  ; 633                                         ;
+;     Dedicated logic registers      ; 610                                         ;
+; Total registers                    ; 610                                         ;
 ; Total pins                         ; 162                                         ;
 ; Total virtual pins                 ; 128                                         ;
 ; Total memory bits                  ; 512                                         ;
@@ -253,20 +253,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+------------+
 ; Resource                                    ; Usage      ;
 +---------------------------------------------+------------+
-; Estimated Total logic elements              ; 834        ;
+; Estimated Total logic elements              ; 779        ;
 ;                                             ;            ;
-; Total combinational functions               ; 695        ;
+; Total combinational functions               ; 633        ;
 ; Logic element usage by number of LUT inputs ;            ;
 ;     -- 4 input functions                    ; 236        ;
-;     -- 3 input functions                    ; 283        ;
-;     -- <=2 input functions                  ; 176        ;
+;     -- 3 input functions                    ; 220        ;
+;     -- <=2 input functions                  ; 177        ;
 ;                                             ;            ;
 ; Logic elements by mode                      ;            ;
-;     -- normal mode                          ; 625        ;
+;     -- normal mode                          ; 563        ;
 ;     -- arithmetic mode                      ; 70         ;
 ;                                             ;            ;
-; Total registers                             ; 665        ;
-;     -- Dedicated logic registers            ; 665        ;
+; Total registers                             ; 610        ;
+;     -- Dedicated logic registers            ; 610        ;
 ;     -- I/O registers                        ; 0          ;
 ;                                             ;            ;
 ; Virtual pins                                ; 128        ;
@@ -276,9 +276,9 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0          ;
 ;                                             ;            ;
 ; Maximum fan-out node                        ; ACLK~input ;
-; Maximum fan-out                             ; 403        ;
-; Total fan-out                               ; 4373       ;
-; Average fan-out                             ; 2.40       ;
+; Maximum fan-out                             ; 348        ;
+; Total fan-out                               ; 4052       ;
+; Average fan-out                             ; 2.37       ;
 +---------------------------------------------+------------+
 
 
@@ -287,10 +287,10 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                  ; Entity Name                       ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |AXI_lite                                                                                                                               ; 695 (3)             ; 665 (0)                   ; 512         ; 0          ; 0            ; 0       ; 0         ; 162  ; 128          ; 0          ; |AXI_lite                                                                                                                                                                                                                                                                                                                                            ; AXI_lite                          ; work         ;
-;    |read_address_ms:ra|                                                                                                                 ; 66 (0)              ; 66 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |AXI_lite|read_address_ms:ra                                                                                                                                                                                                                                                                                                                         ; read_address_ms                   ; work         ;
-;       |read_address_master:addr1|                                                                                                       ; 33 (33)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |AXI_lite|read_address_ms:ra|read_address_master:addr1                                                                                                                                                                                                                                                                                               ; read_address_master               ; work         ;
-;       |read_address_slave:addr2|                                                                                                        ; 33 (33)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |AXI_lite|read_address_ms:ra|read_address_slave:addr2                                                                                                                                                                                                                                                                                                ; read_address_slave                ; work         ;
+; |AXI_lite                                                                                                                               ; 633 (3)             ; 610 (0)                   ; 512         ; 0          ; 0            ; 0       ; 0         ; 162  ; 128          ; 0          ; |AXI_lite                                                                                                                                                                                                                                                                                                                                            ; AXI_lite                          ; work         ;
+;    |read_address_ms:ra|                                                                                                                 ; 4 (0)               ; 11 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |AXI_lite|read_address_ms:ra                                                                                                                                                                                                                                                                                                                         ; read_address_ms                   ; work         ;
+;       |read_address_master:addr1|                                                                                                       ; 1 (1)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |AXI_lite|read_address_ms:ra|read_address_master:addr1                                                                                                                                                                                                                                                                                               ; read_address_master               ; work         ;
+;       |read_address_slave:addr2|                                                                                                        ; 3 (3)               ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |AXI_lite|read_address_ms:ra|read_address_slave:addr2                                                                                                                                                                                                                                                                                                ; read_address_slave                ; work         ;
 ;    |read_data_ms:rd|                                                                                                                    ; 68 (0)              ; 70 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |AXI_lite|read_data_ms:rd                                                                                                                                                                                                                                                                                                                            ; read_data_ms                      ; work         ;
 ;       |read_data_master:data1|                                                                                                          ; 33 (33)             ; 35 (35)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |AXI_lite|read_data_ms:rd|read_data_master:data1                                                                                                                                                                                                                                                                                                     ; read_data_master                  ; work         ;
 ;       |read_data_slave:data2|                                                                                                           ; 35 (35)             ; 35 (35)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |AXI_lite|read_data_ms:rd|read_data_slave:data2                                                                                                                                                                                                                                                                                                      ; read_data_slave                   ; work         ;
@@ -372,15 +372,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 
 
-+-------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                    ;
-+--------------------------------------------------------------+----------------------------------------+
-; Register name                                                ; Reason for Removal                     ;
-+--------------------------------------------------------------+----------------------------------------+
-; write_response_ms:wr|write_response_slave:resp_s|o_BRESP[1]  ; Stuck at GND due to stuck port data_in ;
-; write_response_ms:wr|write_response_master:resp_m|o_BRESP[1] ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 2                        ;                                        ;
-+--------------------------------------------------------------+----------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                  ;
++--------------------------------------------------------------+----------------------------------------------------------------------+
+; Register name                                                ; Reason for Removal                                                   ;
++--------------------------------------------------------------+----------------------------------------------------------------------+
+; read_address_ms:ra|read_address_master:addr1|o_ARADDR[8..31] ; Stuck at GND due to stuck port data_in                               ;
+; write_response_ms:wr|write_response_slave:resp_s|o_BRESP[1]  ; Stuck at GND due to stuck port data_in                               ;
+; write_response_ms:wr|write_response_master:resp_m|o_BRESP[1] ; Stuck at GND due to stuck port data_in                               ;
+; read_address_ms:ra|read_address_slave:addr2|o_ARADDR[8..31]  ; Stuck at GND due to stuck port data_in                               ;
+; read_address_ms:ra|read_address_master:addr1|o_ARADDR[0..6]  ; Merged with read_address_ms:ra|read_address_master:addr1|o_ARADDR[7] ;
+; Total Number of Removed Registers = 57                       ;                                                                      ;
++--------------------------------------------------------------+----------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -388,6 +391,54 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------+---------------------------+--------------------------------------------------------------+
 ; Register name                                               ; Reason for Removal        ; Registers Removed due to This Register                       ;
 +-------------------------------------------------------------+---------------------------+--------------------------------------------------------------+
+; read_address_ms:ra|read_address_master:addr1|o_ARADDR[31]   ; Stuck at GND              ; read_address_ms:ra|read_address_slave:addr2|o_ARADDR[31]     ;
+;                                                             ; due to stuck port data_in ;                                                              ;
+; read_address_ms:ra|read_address_master:addr1|o_ARADDR[30]   ; Stuck at GND              ; read_address_ms:ra|read_address_slave:addr2|o_ARADDR[30]     ;
+;                                                             ; due to stuck port data_in ;                                                              ;
+; read_address_ms:ra|read_address_master:addr1|o_ARADDR[29]   ; Stuck at GND              ; read_address_ms:ra|read_address_slave:addr2|o_ARADDR[29]     ;
+;                                                             ; due to stuck port data_in ;                                                              ;
+; read_address_ms:ra|read_address_master:addr1|o_ARADDR[28]   ; Stuck at GND              ; read_address_ms:ra|read_address_slave:addr2|o_ARADDR[28]     ;
+;                                                             ; due to stuck port data_in ;                                                              ;
+; read_address_ms:ra|read_address_master:addr1|o_ARADDR[27]   ; Stuck at GND              ; read_address_ms:ra|read_address_slave:addr2|o_ARADDR[27]     ;
+;                                                             ; due to stuck port data_in ;                                                              ;
+; read_address_ms:ra|read_address_master:addr1|o_ARADDR[26]   ; Stuck at GND              ; read_address_ms:ra|read_address_slave:addr2|o_ARADDR[26]     ;
+;                                                             ; due to stuck port data_in ;                                                              ;
+; read_address_ms:ra|read_address_master:addr1|o_ARADDR[25]   ; Stuck at GND              ; read_address_ms:ra|read_address_slave:addr2|o_ARADDR[25]     ;
+;                                                             ; due to stuck port data_in ;                                                              ;
+; read_address_ms:ra|read_address_master:addr1|o_ARADDR[24]   ; Stuck at GND              ; read_address_ms:ra|read_address_slave:addr2|o_ARADDR[24]     ;
+;                                                             ; due to stuck port data_in ;                                                              ;
+; read_address_ms:ra|read_address_master:addr1|o_ARADDR[23]   ; Stuck at GND              ; read_address_ms:ra|read_address_slave:addr2|o_ARADDR[23]     ;
+;                                                             ; due to stuck port data_in ;                                                              ;
+; read_address_ms:ra|read_address_master:addr1|o_ARADDR[22]   ; Stuck at GND              ; read_address_ms:ra|read_address_slave:addr2|o_ARADDR[22]     ;
+;                                                             ; due to stuck port data_in ;                                                              ;
+; read_address_ms:ra|read_address_master:addr1|o_ARADDR[21]   ; Stuck at GND              ; read_address_ms:ra|read_address_slave:addr2|o_ARADDR[21]     ;
+;                                                             ; due to stuck port data_in ;                                                              ;
+; read_address_ms:ra|read_address_master:addr1|o_ARADDR[20]   ; Stuck at GND              ; read_address_ms:ra|read_address_slave:addr2|o_ARADDR[20]     ;
+;                                                             ; due to stuck port data_in ;                                                              ;
+; read_address_ms:ra|read_address_master:addr1|o_ARADDR[19]   ; Stuck at GND              ; read_address_ms:ra|read_address_slave:addr2|o_ARADDR[19]     ;
+;                                                             ; due to stuck port data_in ;                                                              ;
+; read_address_ms:ra|read_address_master:addr1|o_ARADDR[18]   ; Stuck at GND              ; read_address_ms:ra|read_address_slave:addr2|o_ARADDR[18]     ;
+;                                                             ; due to stuck port data_in ;                                                              ;
+; read_address_ms:ra|read_address_master:addr1|o_ARADDR[17]   ; Stuck at GND              ; read_address_ms:ra|read_address_slave:addr2|o_ARADDR[17]     ;
+;                                                             ; due to stuck port data_in ;                                                              ;
+; read_address_ms:ra|read_address_master:addr1|o_ARADDR[16]   ; Stuck at GND              ; read_address_ms:ra|read_address_slave:addr2|o_ARADDR[16]     ;
+;                                                             ; due to stuck port data_in ;                                                              ;
+; read_address_ms:ra|read_address_master:addr1|o_ARADDR[15]   ; Stuck at GND              ; read_address_ms:ra|read_address_slave:addr2|o_ARADDR[15]     ;
+;                                                             ; due to stuck port data_in ;                                                              ;
+; read_address_ms:ra|read_address_master:addr1|o_ARADDR[14]   ; Stuck at GND              ; read_address_ms:ra|read_address_slave:addr2|o_ARADDR[14]     ;
+;                                                             ; due to stuck port data_in ;                                                              ;
+; read_address_ms:ra|read_address_master:addr1|o_ARADDR[13]   ; Stuck at GND              ; read_address_ms:ra|read_address_slave:addr2|o_ARADDR[13]     ;
+;                                                             ; due to stuck port data_in ;                                                              ;
+; read_address_ms:ra|read_address_master:addr1|o_ARADDR[12]   ; Stuck at GND              ; read_address_ms:ra|read_address_slave:addr2|o_ARADDR[12]     ;
+;                                                             ; due to stuck port data_in ;                                                              ;
+; read_address_ms:ra|read_address_master:addr1|o_ARADDR[11]   ; Stuck at GND              ; read_address_ms:ra|read_address_slave:addr2|o_ARADDR[11]     ;
+;                                                             ; due to stuck port data_in ;                                                              ;
+; read_address_ms:ra|read_address_master:addr1|o_ARADDR[10]   ; Stuck at GND              ; read_address_ms:ra|read_address_slave:addr2|o_ARADDR[10]     ;
+;                                                             ; due to stuck port data_in ;                                                              ;
+; read_address_ms:ra|read_address_master:addr1|o_ARADDR[9]    ; Stuck at GND              ; read_address_ms:ra|read_address_slave:addr2|o_ARADDR[9]      ;
+;                                                             ; due to stuck port data_in ;                                                              ;
+; read_address_ms:ra|read_address_master:addr1|o_ARADDR[8]    ; Stuck at GND              ; read_address_ms:ra|read_address_slave:addr2|o_ARADDR[8]      ;
+;                                                             ; due to stuck port data_in ;                                                              ;
 ; write_response_ms:wr|write_response_slave:resp_s|o_BRESP[1] ; Stuck at GND              ; write_response_ms:wr|write_response_master:resp_m|o_BRESP[1] ;
 ;                                                             ; due to stuck port data_in ;                                                              ;
 +-------------------------------------------------------------+---------------------------+--------------------------------------------------------------+
@@ -398,7 +449,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 665   ;
+; Total registers                              ; 610   ;
 ; Number of registers using Synchronous Clear  ; 49    ;
 ; Number of registers using Synchronous Load   ; 60    ;
 ; Number of registers using Asynchronous Clear ; 135   ;
@@ -432,7 +483,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |AXI_lite|read_data_ms:rd|read_data_slave:data2|o_RDATA[6] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |AXI_lite|read_data_ms:rd|read_data_slave:data2|o_RDATA[4] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
 
 
@@ -536,15 +587,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 290                         ;
-; cycloneiii_ff         ; 276                         ;
+; cycloneiii_ff         ; 221                         ;
 ;     ENA               ; 2                           ;
 ;     SCLR              ; 1                           ;
-;     plain             ; 273                         ;
-; cycloneiii_lcell_comb ; 278                         ;
-;     normal            ; 278                         ;
+;     plain             ; 218                         ;
+; cycloneiii_lcell_comb ; 216                         ;
+;     normal            ; 216                         ;
 ;         0 data inputs ; 1                           ;
-;         2 data inputs ; 47                          ;
-;         3 data inputs ; 163                         ;
+;         2 data inputs ; 48                          ;
+;         3 data inputs ; 100                         ;
 ;         4 data inputs ; 67                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.00                        ;
@@ -612,7 +663,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Wed Jun 15 16:30:07 2022
+    Info: Processing started: Wed Jun 15 16:49:07 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off AXI_lite -c AXI_lite
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -633,7 +684,7 @@ Info (12021): Found 3 design units, including 3 entities, in source file write_r
 Info (12021): Found 3 design units, including 3 entities, in source file read_address_ms.v
     Info (12023): Found entity 1: read_address_ms File: D:/Workspace/AMBA-AXI4-Lite/read_address_ms.v Line: 1
     Info (12023): Found entity 2: read_address_master File: D:/Workspace/AMBA-AXI4-Lite/read_address_ms.v Line: 18
-    Info (12023): Found entity 3: read_address_slave File: D:/Workspace/AMBA-AXI4-Lite/read_address_ms.v Line: 46
+    Info (12023): Found entity 3: read_address_slave File: D:/Workspace/AMBA-AXI4-Lite/read_address_ms.v Line: 45
 Info (12021): Found 3 design units, including 3 entities, in source file read_data_ms.v
     Info (12023): Found entity 1: read_data_ms File: D:/Workspace/AMBA-AXI4-Lite/read_data_ms.v Line: 1
     Info (12023): Found entity 2: read_data_master File: D:/Workspace/AMBA-AXI4-Lite/read_data_ms.v Line: 20
@@ -675,7 +726,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_drb File: D:/Workspace/AMBA-AXI4-Lite/db/cmpr_drb.tdf Line: 23
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2022.06.15.16:30:22 Progress: Loading sldd921ae6f/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2022.06.15.16:49:22 Progress: Loading sldd921ae6f/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -701,6 +752,30 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/ip/s
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "o_BRESP[1]" is stuck at GND File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 24
+    Warning (13410): Pin "o_ARADDR[8]" is stuck at GND File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 32
+    Warning (13410): Pin "o_ARADDR[9]" is stuck at GND File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 32
+    Warning (13410): Pin "o_ARADDR[10]" is stuck at GND File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 32
+    Warning (13410): Pin "o_ARADDR[11]" is stuck at GND File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 32
+    Warning (13410): Pin "o_ARADDR[12]" is stuck at GND File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 32
+    Warning (13410): Pin "o_ARADDR[13]" is stuck at GND File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 32
+    Warning (13410): Pin "o_ARADDR[14]" is stuck at GND File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 32
+    Warning (13410): Pin "o_ARADDR[15]" is stuck at GND File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 32
+    Warning (13410): Pin "o_ARADDR[16]" is stuck at GND File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 32
+    Warning (13410): Pin "o_ARADDR[17]" is stuck at GND File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 32
+    Warning (13410): Pin "o_ARADDR[18]" is stuck at GND File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 32
+    Warning (13410): Pin "o_ARADDR[19]" is stuck at GND File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 32
+    Warning (13410): Pin "o_ARADDR[20]" is stuck at GND File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 32
+    Warning (13410): Pin "o_ARADDR[21]" is stuck at GND File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 32
+    Warning (13410): Pin "o_ARADDR[22]" is stuck at GND File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 32
+    Warning (13410): Pin "o_ARADDR[23]" is stuck at GND File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 32
+    Warning (13410): Pin "o_ARADDR[24]" is stuck at GND File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 32
+    Warning (13410): Pin "o_ARADDR[25]" is stuck at GND File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 32
+    Warning (13410): Pin "o_ARADDR[26]" is stuck at GND File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 32
+    Warning (13410): Pin "o_ARADDR[27]" is stuck at GND File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 32
+    Warning (13410): Pin "o_ARADDR[28]" is stuck at GND File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 32
+    Warning (13410): Pin "o_ARADDR[29]" is stuck at GND File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 32
+    Warning (13410): Pin "o_ARADDR[30]" is stuck at GND File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 32
+    Warning (13410): Pin "o_ARADDR[31]" is stuck at GND File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 32
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
 Critical Warning (35025): Partially connected in-system debug instance "auto_signaltap_0" to 36 of its 37 required data inputs, trigger inputs, acquisition clocks, and dynamic pins.  There were 0 illegal, 0 inaccessible, and 1 missing sources or connections.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -834,7 +909,7 @@ Info (15717): Design contains 128 virtual pins; timing numbers associated with p
     Info (15718): Pin "i_AWADDR[29]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
     Info (15718): Pin "i_AWADDR[30]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
     Info (15718): Pin "i_AWADDR[31]" is virtual input pin File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 9
-Warning (21074): Design contains 7 input pin(s) that do not drive logic
+Warning (21074): Design contains 39 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "i_BRESP[1]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 23
     Warning (15610): No output dependent on input pin "AWPROT[0]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 10
     Warning (15610): No output dependent on input pin "AWPROT[1]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 10
@@ -842,15 +917,47 @@ Warning (21074): Design contains 7 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "ARPROT[0]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 30
     Warning (15610): No output dependent on input pin "ARPROT[1]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 30
     Warning (15610): No output dependent on input pin "ARPROT[2]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 30
-Info (21057): Implemented 1146 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "i_ARADDR[0]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+    Warning (15610): No output dependent on input pin "i_ARADDR[1]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+    Warning (15610): No output dependent on input pin "i_ARADDR[2]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+    Warning (15610): No output dependent on input pin "i_ARADDR[3]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+    Warning (15610): No output dependent on input pin "i_ARADDR[4]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+    Warning (15610): No output dependent on input pin "i_ARADDR[5]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+    Warning (15610): No output dependent on input pin "i_ARADDR[6]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+    Warning (15610): No output dependent on input pin "i_ARADDR[7]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+    Warning (15610): No output dependent on input pin "i_ARADDR[8]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+    Warning (15610): No output dependent on input pin "i_ARADDR[9]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+    Warning (15610): No output dependent on input pin "i_ARADDR[10]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+    Warning (15610): No output dependent on input pin "i_ARADDR[11]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+    Warning (15610): No output dependent on input pin "i_ARADDR[12]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+    Warning (15610): No output dependent on input pin "i_ARADDR[13]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+    Warning (15610): No output dependent on input pin "i_ARADDR[14]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+    Warning (15610): No output dependent on input pin "i_ARADDR[15]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+    Warning (15610): No output dependent on input pin "i_ARADDR[16]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+    Warning (15610): No output dependent on input pin "i_ARADDR[17]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+    Warning (15610): No output dependent on input pin "i_ARADDR[18]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+    Warning (15610): No output dependent on input pin "i_ARADDR[19]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+    Warning (15610): No output dependent on input pin "i_ARADDR[20]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+    Warning (15610): No output dependent on input pin "i_ARADDR[21]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+    Warning (15610): No output dependent on input pin "i_ARADDR[22]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+    Warning (15610): No output dependent on input pin "i_ARADDR[23]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+    Warning (15610): No output dependent on input pin "i_ARADDR[24]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+    Warning (15610): No output dependent on input pin "i_ARADDR[25]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+    Warning (15610): No output dependent on input pin "i_ARADDR[26]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+    Warning (15610): No output dependent on input pin "i_ARADDR[27]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+    Warning (15610): No output dependent on input pin "i_ARADDR[28]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+    Warning (15610): No output dependent on input pin "i_ARADDR[29]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+    Warning (15610): No output dependent on input pin "i_ARADDR[30]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+    Warning (15610): No output dependent on input pin "i_ARADDR[31]" File: D:/Workspace/AMBA-AXI4-Lite/AXI_lite.v Line: 31
+Info (21057): Implemented 1092 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 93 input pins
     Info (21059): Implemented 73 output pins
-    Info (21061): Implemented 975 logic cells
+    Info (21061): Implemented 921 logic cells
     Info (21064): Implemented 4 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 14 warnings
-    Info: Peak virtual memory: 4831 megabytes
-    Info: Processing ended: Wed Jun 15 16:30:32 2022
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 70 warnings
+    Info: Peak virtual memory: 4832 megabytes
+    Info: Processing ended: Wed Jun 15 16:49:32 2022
     Info: Elapsed time: 00:00:25
-    Info: Total CPU time (on all processors): 00:00:50
+    Info: Total CPU time (on all processors): 00:00:49
 
 

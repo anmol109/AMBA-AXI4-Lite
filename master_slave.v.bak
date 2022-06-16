@@ -1,16 +1,28 @@
-module master_slave(input ACLK, 
-		    input ARESETn,
-		    input select);
-		    
-master m (ACLK, addr_req, data_out, valid_out, o_BRESP, select);
+module master_slave(ACLK,ARESETn,write,read,data,o_RDATA);
 
-AXI_lite p (ACLK,ARESETn,BREADY, BVALID, resp_out, o_BRESP
-	    ,WVALID, WREADY, data_out, o_WDATA, i_WSTRB, o_WSTRB
-	    ,valid_out, ready_out, addr_req, o_AWADDR, AWPROT, ARVALID, ARREADY, ARPROT
-	    ,i_ARADDR, o_ARADDR, RVALID, RREADY, i_RDATA, i_RRESP,o_RDATA, o_RRESP);
+input ACLK;
+input ARESETn;
+input write;
+input read;
+input [31:0] data;
+output[31:0] o_RDATA;
+wire [31:0] RDATA;
+wire [31:0]WDATA;
+wire [31:0]AWADDR;
+wire [31:0]ARADDR;
+wire[3:0] WSTRB;
+wire [2:0] AWPROT;
+wire [2:0] ARPROT;
+wire [1:0]o_RRESP;
+wire [1:0] BRESP
+wire [1:0] o_BRESP
+wire ARREADY,RVALID, ARVALID,RREADY,
+AWREADY,WREADY,BVALID,AWVALID,WVALID,BREADY;
 
-slave1 s1 (ACLK, ready_out, resp_out, o_AWADDR, o_WDATA);
-slave2 s2 (ACLK, ready_out, resp_out, o_AWADDR, o_WDATA);
+master mt(ACLK, ARESETn,ARREADY,RVALID, ARVALID,RREADY,ARADDR,RDATA,o_RDATA,o_RRESP,ARPROT, read, data,
+AWREADY,WREADY,BVALID,write,AWVALID,AWADDR,WVALID,WDATA,WSTRB,AWPROT,BREADY,BRESP);
+
+slave1 st(ACLK, ARESETn,ARVALID,RREADY,ARREADY,ARADDR,RVALID,RDATA,o_RRESP,read,
+write,AWVALID,WVALID,BREADY,AWADDR,WDATA,WSTRB,BRESP,AWREADY,WREADY,BVALID,o_BRESP);
 
 endmodule
-
